@@ -1,0 +1,72 @@
+{
+ "response": {
+  "store_items": [
+   {
+    "item_type": 0,
+    "id": 2208350,
+    "success": 1,
+    "name": "Total Chaos",
+    "appid": 2208350,
+    "tagids": [
+     19,
+     1721,
+     1667,
+     21,
+     4166,
+     4106,
+     3834,
+     1663,
+     3839,
+     4175
+    ],
+    "tags": [
+     {
+      "tagid": 19,
+      "weight": 622
+     },
+     {
+      "tagid": 1721,
+      "weight": 600
+     },
+     {
+      "tagid": 1667,
+      "weight": 591
+     },
+     {
+      "tagid": 21,
+      "weight": 590
+     },
+     {
+      "tagid": 4166,
+      "weight": 588
+     },
+     {
+      "tagid": 4106,
+      "weight": 547
+     },
+     {
+      "tagid": 3834,
+      "weight": 544
+     },
+     {
+      "tagid": 1663,
+      "weight": 538
+     },
+     {
+      "tagid": 3839,
+      "weight": 532
+     },
+     {
+      "tagid": 4175,
+      "weight": 509
+     }
+    ],
+    "assets": {
+     "asset_url_format": "steam/apps/2208350/${FILENAME}?t=1784890778",
+     "header": "f2086b3eef4ec934190e5faec66b0a21ae734a1a/header.jpg",
+     "library_capsule": "51c4460bc1d6608bc4f434b78b18efdd10af9a48/library_capsule.jpg"
+    }
+   }
+  ]
+ }
+}

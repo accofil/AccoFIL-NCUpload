@@ -1,0 +1,35 @@
+{
+ "292030": {
+  "success": true,
+  "data": {
+   "type": "game",
+   "name": "The Witcher 3: Wild Hunt — Remastered",
+   "steam_appid": 292030,
+   "short_description": "The Witcher 3: Wild Hunt — Remastered modernizes the acclaimed role-playing game with a range of upgrades and enhancements. Become monster slayer for hire Geralt of Rivia and journey across a dark fantasy open world in an epic quest to find your adopted daughter Ciri.",
+   "about_the_game": "<p class=\"bb_paragraph\" ><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/extras/e5a768f996d27d44badc99347dbde4a6.avif?t=1790845156\" width=780 height=300 /></span><br><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/extras/69b5f727848c8549d79ac90692c66dce.avif?t=1790845156\" width=780 height=300 /></span><br><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/extras/9bb9d29a0f4e1c1dc117488bb8afd137.avif?t=1790845156\" data-big-src=https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/extras_big/9bb9d29a0f4e1c1dc117488bb8afd137.avif?t=1790845156 width=1560 height=600 /></span><br><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/extras/48b0d24228cb36cd184a5e53c7f81885.avif?t=1790845156\" width=780 height=300 /></span><br><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/extras/3dd11505073c278f76eaff0aa49b2003.avif?t=1790845156\" width=780 height=300 /></span></p>",
+   "supported_languages": "English<strong>*</strong>, French<strong>*</strong>, Italian, German<strong>*</strong>, Spanish - Spain, Arabic, Czech, Hungarian, Japanese<strong>*</strong>, Korean<strong>*</strong>, Polish<strong>*</strong>, Portuguese - Brazil<strong>*</strong>, Russian<strong>*</strong>, Traditional Chinese, Turkish, Simplified Chinese<strong>*</strong>, Spanish - Latin America, Ukrainian<br><strong>*</strong>languages with full audio support",
+   "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/e8afc4252e3fee8ed2525ab2fd7675cca39aa38d/header_alt_assets_1.jpg?t=1790845156",
+   "website": "https://www.thewitcher.com/witcher3",
+   "pc_requirements": {
+    "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"><li><strong>OS:</strong> 64-bit Windows 11<br></li><li><strong>Processor:</strong> Core i5-8400 / Ryzen 5 2600<br></li><li><strong>Memory:</strong> 12 GB RAM<br></li><li><strong>Graphics:</strong> GeForce GTX 1660 / Radeon RX 5500 XT 8GB / Arc A580<br></li><li><strong>Storage:</strong> 60 SSD GB available space<br></li><li><strong>Additional Notes:</strong> VRAM 6 GB</li></ul>",
+    "recommended": "<strong>Recommended:</strong><br><ul class=\"bb_ul\"><li><strong>OS:</strong> 64-bit Windows 11<br></li><li><strong>Processor:</strong> Intel Core i7 8700K / AMD Ryzen 5 3600X<br></li><li><strong>Memory:</strong> 16 GB RAM<br></li><li><strong>Graphics:</strong> RTX 2060 Super / AMD Radeon RX 6600 XT / Intel Arc B580<br></li><li><strong>Storage:</strong> 60 SSD GB available space<br></li><li><strong>Additional Notes:</strong> VRAM 8 GB</li></ul>"
+   },
+   "developers": [
+    "CD PROJEKT RED"
+   ],
+   "publishers": [
+    "CD PROJEKT RED"
+   ],
+   "genres": [
+    {
+     "id": "3",
+     "description": "RPG"
+    }
+   ],
+   "release_date": {
+    "coming_soon": false,
+    "date": "18 May, 2015"
+   }
+  }
+ }
+}

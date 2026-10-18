@@ -1,0 +1,112 @@
+{
+ "id": 509488,
+ "_id": "69d51d265ca4e2e819ca8290",
+ "air_date": "2026-08-27",
+ "episodes": [
+  {
+   "air_date": "2026-08-27",
+   "episode_number": 1,
+   "name": "Nyugis élet",
+   "overview": "Dessenékhez nemkívánatos látogató érkezik. Ryan rátalál Amandára. Leighton megtalálja önmagát.",
+   "runtime": 54,
+   "season_number": 2,
+   "show_id": 196322,
+   "id": 7122410
+  },
+  {
+   "air_date": "2026-09-03",
+   "episode_number": 2,
+   "name": "Egy tökéletes világ",
+   "overview": "Ismét megkezdődik az új otthon keresése. Amanda és Ryan küldetésre indulnak.",
+   "runtime": 58,
+   "season_number": 2,
+   "show_id": 196322,
+   "id": 7122411
+  },
+  {
+   "air_date": "2026-09-10",
+   "episode_number": 3,
+   "name": "Minden csodálatos, minden rémes",
+   "overview": "Jason rögeszméjévé válik a doboz, ami a házasságát is veszélybe sodorja. Ryan és Amanda egy örökre megváltozott világba érkeznek.",
+   "runtime": 59,
+   "season_number": 2,
+   "show_id": 196322,
+   "id": 7122412
+  },
+  {
+   "air_date": "2026-09-17",
+   "episode_number": 4,
+   "name": "Csillagok, oltsátok ki tüzeteket!",
+   "overview": "Dessenék elérik a tűrőképességük határát.",
+   "runtime": 52,
+   "season_number": 2,
+   "show_id": 196322,
+   "id": 7122413
+  },
+  {
+   "air_date": "2026-09-24",
+   "episode_number": 5,
+   "name": "Szeress, hogy szeressenek!",
+   "overview": "Egy családját vesztett Jason története.",
+   "runtime": 55,
+   "season_number": 2,
+   "show_id": 196322,
+   "id": 7122414
+  },
+  {
+   "air_date": "2026-10-01",
+   "episode_number": 6,
+   "name": "Amiből az univerzum épült",
+   "overview": "Daniela összefut valakivel a múltjából. Jason az álmát hajszolja. Leighton új projektet mutat be.",
+   "runtime": 48,
+   "season_number": 2,
+   "show_id": 196322,
+   "id": 7122415
+  },
+  {
+   "air_date": "2026-10-08",
+   "episode_number": 7,
+   "name": "A piramis",
+   "overview": "Charlie egy kedves idegennel találkozik. Blair figyelmezteti Leightont. Amanda és Ryan ismeretlen szörnyűséggel néznek szembe.",
+   "runtime": 64,
+   "season_number": 2,
+   "show_id": 196322,
+   "id": 7122416
+  },
+  {
+   "air_date": "2026-10-15",
+   "episode_number": 8,
+   "name": "A világmindenség alapvető egysége",
+   "overview": "Laurel új célt talál magának, miután egy döbbenetes esemény megrázza a világát.",
+   "runtime": 65,
+   "season_number": 2,
+   "show_id": 196322,
+   "id": 7122417
+  },
+  {
+   "air_date": "2026-10-22",
+   "episode_number": 9,
+   "name": "9. epizód",
+   "overview": "",
+   "runtime": 60,
+   "season_number": 2,
+   "show_id": 196322,
+   "id": 7122418
+  },
+  {
+   "air_date": "2026-10-29",
+   "episode_number": 10,
+   "name": "10. epizód",
+   "overview": "",
+   "runtime": 51,
+   "season_number": 2,
+   "show_id": 196322,
+   "id": 7122419
+  }
+ ],
+ "name": "2. évad",
+ "overview": "",
+ "poster_path": "/iAB58dmYzISRinHiw3nEQ7XTjHh.jpg",
+ "season_number": 2,
+ "vote_average": 8.0
+}

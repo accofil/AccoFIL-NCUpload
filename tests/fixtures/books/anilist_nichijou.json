@@ -1,0 +1,205 @@
+{
+ "data": {
+  "Page": {
+   "media": [
+    {
+     "id": 33082,
+     "idMal": 3082,
+     "title": {
+      "romaji": "Nichijou",
+      "english": "Nichijou",
+      "native": "日常"
+     },
+     "synonyms": [
+      "Everyday",
+      "My Ordinary Life",
+      "Arki"
+     ],
+     "description": "<i>Nichijou</i> primarily focuses on the daily antics of a trio of childhood friends—high school girls Mio Naganohara, Yuuko Aioi and Mai Minakami—whose stories soon intertwine with the young genius Hakase Shinonome, her robot caretaker Nano, and their talking cat Sakamoto. With every passing day, the lives of these six, as well as of the many people around them, experience both the calms of normal life and the insanity of the absurd. Walking to school, being bitten by a talking crow, spending time with friends, and watching the principal suplex a deer: they are all in a day's work in the extraordinary everyday lives of those in <i>Nichijou</i>.<br><br>",
+     "format": "MANGA",
+     "status": "RELEASING",
+     "countryOfOrigin": "JP",
+     "isAdult": false,
+     "startDate": {
+      "year": 2006,
+      "month": 6,
+      "day": 26
+     },
+     "volumes": null,
+     "chapters": null,
+     "genres": [
+      "Comedy",
+      "Slice of Life"
+     ],
+     "tags": [
+      {
+       "name": "Slapstick",
+       "rank": 94,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "Surreal Comedy",
+       "rank": 94,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "Episodic",
+       "rank": 92,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "Ensemble Cast",
+       "rank": 90,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "School",
+       "rank": 86,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "Primarily Female Cast",
+       "rank": 80,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "Shounen",
+       "rank": 76,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "Female Protagonist",
+       "rank": 75,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "Parody",
+       "rank": 66,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "4-koma",
+       "rank": 64,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "Robots",
+       "rank": 62,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "Teacher",
+       "rank": 55,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "Time Skip",
+       "rank": 53,
+       "isMediaSpoiler": true
+      },
+      {
+       "name": "Go",
+       "rank": 53,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "Heterosexual",
+       "rank": 46,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "Tsundere",
+       "rank": 40,
+       "isMediaSpoiler": false
+      },
+      {
+       "name": "Tanned Skin",
+       "rank": 13,
+       "isMediaSpoiler": true
+      }
+     ],
+     "staff": {
+      "edges": [
+       {
+        "role": "Story & Art",
+        "node": {
+         "name": {
+          "full": "Keiichi Arawi",
+          "native": "あらゐけいいち"
+         }
+        }
+       },
+       {
+        "role": "Translator (English)",
+        "node": {
+         "name": {
+          "full": "Jenny McKeon",
+          "native": null
+         }
+        }
+       }
+      ]
+     },
+     "coverImage": {
+      "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx33082-YrGJ9Tj3UJ3a.png",
+      "large": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx33082-YrGJ9Tj3UJ3a.png"
+     },
+     "siteUrl": "https://anilist.co/manga/33082"
+    },
+    {
+     "id": 90295,
+     "idMal": 65891,
+     "title": {
+      "romaji": "Mizuno Rina [Ryuushutsu]",
+      "english": null,
+      "native": "水野リナ[流出]"
+     },
+     "synonyms": [
+      "Guuzou",
+      "Nichijou",
+      "Yuushi",
+      "Tomodachi",
+      "Kekkon",
+      "Ane Chichi",
+      "Houteishiki",
+      "Kikkake"
+     ],
+     "description": "1-4. Guuzou (偶像, Idol) <BR>\n5. Nichijou (日常) <BR>\n6-7. Yuushi (遊糸) <BR>\n8. Tomodachi (ともだち) <BR>\n9. Kekkon (結婚) <BR>\n10. Ane Chichi (姉乳) <BR>\n11. Houteishiki (方程式) <BR>\n12. Kikkake (きっかけ)",
+     "format": "MANGA",
+     "status": "FINISHED",
+     "countryOfOrigin": "JP",
+     "isAdult": true,
+     "startDate": {
+      "year": 2013,
+      "month": 7,
+      "day": 5
+     },
+     "volumes": 1,
+     "chapters": 12,
+     "genres": [
+      "Hentai"
+     ],
+     "tags": [],
+     "staff": {
+      "edges": [
+       {
+        "role": "Story & Art",
+        "node": {
+         "name": {
+          "full": "Makoto Hashida",
+          "native": "橋田鎮"
+         }
+        }
+       }
+      ]
+     },
+     "coverImage": {
+      "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/90295-ROuOb14JJESD.jpg",
+      "large": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/90295-ROuOb14JJESD.jpg"
+     },
+     "siteUrl": "https://anilist.co/manga/90295"
+    }
+   ]
+  }
+ }
+}

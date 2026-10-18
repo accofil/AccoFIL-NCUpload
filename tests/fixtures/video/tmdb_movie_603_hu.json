@@ -1,0 +1,138 @@
+{
+ "adult": false,
+ "backdrop_path": "/tlm8UkiQsitc8rSuIAscQDCnP8d.jpg",
+ "budget": 63000000,
+ "genres": [
+  {
+   "id": 28,
+   "name": "Akció"
+  },
+  {
+   "id": 878,
+   "name": "Sci-Fi"
+  }
+ ],
+ "homepage": "",
+ "id": 603,
+ "imdb_id": "tt0133093",
+ "origin_country": [
+  "US"
+ ],
+ "original_language": "en",
+ "original_title": "The Matrix",
+ "overview": "Két valóság létezik. Az egyik mindennapi életünk - a másik az, ami mögötte van. Az egyik álom. A másik a mátrix. Neo kétségbeesetten kutatja az igazságot a mátrixról. Erről a titokzatos és ismeretlen valamiről. Neo csak mendemondákból hallott - de biztos benne, hogy ez az elképzelhetetlen dolog rosszindulatú, és titokban irányítja az életét. Neo úgy véli, Morpheus, ez a legendák övezte férfi, akit a világ legveszélyesebb emberének tartanak, megmutatja neki az igazságot.",
+ "popularity": 50.5242,
+ "poster_path": "/zgJgkFJrLPWQaBtVx9OtTeMrJmo.jpg",
+ "production_countries": [
+  {
+   "iso_3166_1": "US",
+   "name": "United States of America"
+  }
+ ],
+ "release_date": "1999-03-31",
+ "revenue": 463517383,
+ "runtime": 144,
+ "softcore": false,
+ "status": "Released",
+ "tagline": "Beépülsz a rendszerbe",
+ "title": "Mátrix",
+ "video": false,
+ "vote_average": 8.26,
+ "vote_count": 28967,
+ "credits": {
+  "cast": [
+   {
+    "name": "Keanu Reeves",
+    "character": "Neo",
+    "order": 0
+   },
+   {
+    "name": "Laurence Fishburne",
+    "character": "Morpheus",
+    "order": 1
+   },
+   {
+    "name": "Carrie-Anne Moss",
+    "character": "Trinity",
+    "order": 2
+   },
+   {
+    "name": "Hugo Weaving",
+    "character": "Agent Smith",
+    "order": 3
+   },
+   {
+    "name": "Gloria Foster",
+    "character": "Oracle",
+    "order": 4
+   },
+   {
+    "name": "Joe Pantoliano",
+    "character": "Cypher",
+    "order": 5
+   }
+  ],
+  "crew": [
+   {
+    "name": "Lana Wachowski",
+    "job": "Director",
+    "department": "Directing"
+   },
+   {
+    "name": "Lilly Wachowski",
+    "job": "Director",
+    "department": "Directing"
+   }
+  ]
+ },
+ "external_ids": {
+  "imdb_id": "tt0133093",
+  "wikidata_id": "Q83495",
+  "facebook_id": "TheMatrixMovie",
+  "instagram_id": null,
+  "twitter_id": null
+ },
+ "translations": {
+  "translations": [
+   {
+    "iso_3166_1": "US",
+    "iso_639_1": "en",
+    "name": "English",
+    "english_name": "English",
+    "data": {
+     "homepage": "http://www.warnerbros.com/matrix",
+     "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
+     "runtime": 136,
+     "tagline": "Believe the unbelievable.",
+     "title": ""
+    }
+   },
+   {
+    "iso_3166_1": "DE",
+    "iso_639_1": "de",
+    "name": "Deutsch",
+    "english_name": "German",
+    "data": {
+     "homepage": "",
+     "overview": "Der Hacker Neo wird übers Internet von einer geheimnisvollen Untergrund-Organisation kontaktiert. Der Kopf der Gruppe – der gesuchte Terrorist Morpheus – weiht ihn in ein entsetzliches Geheimnis ein: Die Realität, wie wir sie erleben, ist nur eine Scheinwelt. In Wahrheit werden die Menschen längst von einer unheimlichen virtuellen Macht beherrscht – der „Matrix“, deren Agenten Neo bereits im Visier haben …",
+     "runtime": 136,
+     "tagline": "Glaube das Unglaubliche.",
+     "title": "Matrix"
+    }
+   },
+   {
+    "iso_3166_1": "HU",
+    "iso_639_1": "hu",
+    "name": "Magyar",
+    "english_name": "Hungarian",
+    "data": {
+     "homepage": "",
+     "overview": "Két valóság létezik. Az egyik mindennapi életünk - a másik az, ami mögötte van. Az egyik álom. A másik a mátrix. Neo kétségbeesetten kutatja az igazságot a mátrixról. Erről a titokzatos és ismeretlen valamiről. Neo csak mendemondákból hallott - de biztos benne, hogy ez az elképzelhetetlen dolog rosszindulatú, és titokban irányítja az életét. Neo úgy véli, Morpheus, ez a legendák övezte férfi, akit a világ legveszélyesebb emberének tartanak, megmutatja neki az igazságot.",
+     "runtime": 144,
+     "tagline": "Beépülsz a rendszerbe",
+     "title": "Mátrix"
+    }
+   }
+  ]
+ }
+}

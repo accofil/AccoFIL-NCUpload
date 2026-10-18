@@ -1,0 +1,176 @@
+{
+ "id": 2147483045,
+ "title": "MechWarrior 5: Mercenaries",
+ "slug": "mechwarrior_5_mercenaries",
+ "languages": {
+  "de": "Deutsch",
+  "en": "English",
+  "fr": "français",
+  "ru": "русский"
+ },
+ "links": {
+  "purchase_link": "https://www.gog.com/en/checkout/manual/mechwarrior_5_mercenaries",
+  "product_card": "https://www.gog.com/game/mechwarrior_5_mercenaries",
+  "support": "https://www.gog.com/support/mechwarrior_5_mercenaries",
+  "forum": "https://www.gog.com/forum/mechwarrior_5_mercenaries"
+ },
+ "game_type": "game",
+ "release_date": "2021-05-27T01:55:00+0200",
+ "dlcs": {
+  "products": [
+   {
+    "id": 1254147353,
+    "link": "https://api.gog.com/products/1254147353",
+    "expanded_link": "https://api.gog.com/products/1254147353?expand=description,downloads"
+   },
+   {
+    "id": 1444478826,
+    "link": "https://api.gog.com/products/1444478826",
+    "expanded_link": "https://api.gog.com/products/1444478826?expand=description,downloads"
+   },
+   {
+    "id": 1459558952,
+    "link": "https://api.gog.com/products/1459558952",
+    "expanded_link": "https://api.gog.com/products/1459558952?expand=description,downloads"
+   },
+   {
+    "id": 1543101560,
+    "link": "https://api.gog.com/products/1543101560",
+    "expanded_link": "https://api.gog.com/products/1543101560?expand=description,downloads"
+   },
+   {
+    "id": 1554421209,
+    "link": "https://api.gog.com/products/1554421209",
+    "expanded_link": "https://api.gog.com/products/1554421209?expand=description,downloads"
+   },
+   {
+    "id": 1687807209,
+    "link": "https://api.gog.com/products/1687807209",
+    "expanded_link": "https://api.gog.com/products/1687807209?expand=description,downloads"
+   },
+   {
+    "id": 1811346339,
+    "link": "https://api.gog.com/products/1811346339",
+    "expanded_link": "https://api.gog.com/products/1811346339?expand=description,downloads"
+   },
+   {
+    "id": 1984078926,
+    "link": "https://api.gog.com/products/1984078926",
+    "expanded_link": "https://api.gog.com/products/1984078926?expand=description,downloads"
+   },
+   {
+    "id": 2038424921,
+    "link": "https://api.gog.com/products/2038424921",
+    "expanded_link": "https://api.gog.com/products/2038424921?expand=description,downloads"
+   },
+   {
+    "id": 2116482465,
+    "link": "https://api.gog.com/products/2116482465",
+    "expanded_link": "https://api.gog.com/products/2116482465?expand=description,downloads"
+   }
+  ],
+  "all_products_url": "https://api.gog.com/products?ids=1254147353,1444478826,1459558952,1543101560,1554421209,1687807209,1811346339,1984078926,2038424921,2116482465",
+  "expanded_all_products_url": "https://api.gog.com/products?ids=1254147353,1444478826,1459558952,1543101560,1554421209,1687807209,1811346339,1984078926,2038424921,2116482465&expand=description,downloads"
+ },
+ "description": {
+  "lead": "<p class=\"module\" style=\"box-shadow:0 1px 5px rgba(255,0,0);\">\r\nMechWarrior 5: Mercenaries requires GOG Galaxy for online multiplayer.\r\n</p>\r\n<h4>BE YOUR OWN WEAPON OF WAR</h4>\r\n<p>\r\nWelcome to the year 3015! It’s a hell of a time to be alive.<br>\r\nHumanity has colonized thousands of star systems spanning a vast region of space known as the Inner Sphere. The golden age of cooperation and advancement is now a distant memory, and humanity has once again splintered into disparate factions all vying for supremacy.<br>\r\n<br>\r\nIn the midst of these Succession Wars, power hungry Mercenaries like yourself are in a privileged position to capitalize big time. It’s dangerous work but that’s why you’re here, right? If you’ve got an itch to blast, wreck, stomp and go all out ballistic, step inside and become your own weapon of war!\r\n</p>\r\n<h4>STORY</h4>\r\n<p>\r\nAs the inheritor of a once-prominent Mercenary company, reborn in the flames of its near destruction at the hands of conspiring factions, your quest for glory and revenge will stretch light-years as you chase threads of interstellar intrigue along your journey to becoming an elite MechWarrior and mercenary commander.\r\n</p>\r\n<h4>THE INNER SPHERE</h4>\r\n<p>\r\nHome to thousands of star systems and an array of stunning biomes, the Inner Sphere is alive with activity, purpose, consequence, and variety. Systems will be captured and reclaimed, major events will unfold, and new technologies will come to light.<br>\r\n<br>\r\nThe rigors of war will",
+  "full": "<p class=\"module\" style=\"box-shadow:0 1px 5px rgba(255,0,0);\">\r\nMechWarrior 5: Mercenaries requires GOG Galaxy for online multiplayer.\r\n</p>\r\n<h4>BE YOUR OWN WEAPON OF WAR</h4>\r\n<p>\r\nWelcome to the year 3015! It’s a hell of a time to be alive.<br>\r\nHumanity has colonized thousands of star systems spanning a vast region of space known as the Inner Sphere. The golden age of cooperation and advancement is now a distant memory, and humanity has once again splintered into disparate factions all vying for supremacy.<br>\r\n<br>\r\nIn the midst of these Succession Wars, power hungry Mercenaries like yourself are in a privileged position to capitalize big time. It’s dangerous work but that’s why you’re here, right? If you’ve got an itch to blast, wreck, stomp and go all out ballistic, step inside and become your own weapon of war!\r\n</p>\r\n<h4>STORY</h4>\r\n<p>\r\nAs the inheritor of a once-prominent Mercenary company, reborn in the flames of its near destruction at the hands of conspiring factions, your quest for glory and revenge will stretch light-years as you chase threads of interstellar intrigue along your journey to becoming an elite MechWarrior and mercenary commander.\r\n</p>\r\n<h4>THE INNER SPHERE</h4>\r\n<p>\r\nHome to thousands of star systems and an array of stunning biomes, the Inner Sphere is alive with activity, purpose, consequence, and variety. Systems will be captured and reclaimed, major events will unfold, and new technologies will come to light.<br>\r\n<br>\r\nThe rigors of war will be seen with each passing week as your relationships with the various factions fluctuate according to the relentless Succession Wars and your choices as the leader of a Mercenary outfit.\r\n</p>\r\n<h4>GAMEPLAY</h4>\r\n<p>\r\nThe battlefields of the future are dominated by BattleMechs, hulking machines of war capable of leveling entire cities. As a BattleMech pilot you’ll rain havoc upon enemy ‘Mechs and targets, including tanks, ground vehicles, aircraft, advanced defenses, and reinforced bases.<br>\r\n<br>\r\nFew things can withstand the power of a ‘Mech for long, and the worlds of the Inner Sphere are veritable playgrounds of destruction awaiting your shielding defense or crushing devastation.\r\n</p>\r\n<h4>BATTLEMECHS</h4>\r\n<p>\r\nWith over 50 unique ‘Mech chassis and hundreds of sub-variants, all fully-realized with high-fidelity models, damage states, and equipment, no two ‘Mechs are the same!<br>\r\nWhether acquired from scouring the markets of the Inner Sphere for rare and valuable chassis and e"
+ },
+ "downloads": {
+  "installers": [
+   {
+    "id": "installer_windows_en",
+    "name": "MechWarrior 5: Mercenaries",
+    "os": "windows",
+    "language": "en",
+    "language_full": "English",
+    "version": "1.15.398",
+    "total_size": 50924093440,
+    "files": [
+     {
+      "id": "en1installer0",
+      "size": 2097152
+     },
+     {
+      "id": "en1installer1",
+      "size": 4291821568
+     },
+     {
+      "id": "en1installer10",
+      "size": 4293918720
+     },
+     {
+      "id": "en1installer11",
+      "size": 4293918720
+     },
+     {
+      "id": "en1installer12",
+      "size": 3690987520
+     },
+     {
+      "id": "en1installer2",
+      "size": 4293918720
+     },
+     {
+      "id": "en1installer3",
+      "size": 4293918720
+     },
+     {
+      "id": "en1installer4",
+      "size": 4293918720
+     },
+     {
+      "id": "en1installer5",
+      "size": 4293918720
+     },
+     {
+      "id": "en1installer6",
+      "size": 4293918720
+     },
+     {
+      "id": "en1installer7",
+      "size": 4293918720
+     },
+     {
+      "id": "en1installer8",
+      "size": 4293918720
+     },
+     {
+      "id": "en1installer9",
+      "size": 4293918720
+     }
+    ]
+   }
+  ],
+  "patches": [
+   {
+    "id": "en1patch0",
+    "name": "Patch (1.14.389 to 1.14.390)",
+    "os": "windows",
+    "language": "en",
+    "version": "1.14.390",
+    "total_size": 123731968,
+    "files": [
+     {
+      "id": "en1patch0",
+      "size": 123731968
+     }
+    ]
+   },
+   {
+    "id": "en1patch1",
+    "name": "Patch (1.13.387 to 1.14.389)",
+    "os": "windows",
+    "language": "en",
+    "version": "1.14.389",
+    "total_size": 113246208,
+    "files": [
+     {
+      "id": "en1patch1",
+      "size": 113246208
+     }
+    ]
+   }
+  ]
+ }
+}

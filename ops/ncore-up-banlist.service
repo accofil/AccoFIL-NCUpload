@@ -1,0 +1,9 @@
+# systemd USER unit; a telepítő a választott útvonallal generálja.
+[Unit]
+Description=AccoFIL NCUpload weekly ban list refresh
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/ncupload --refresh-banlist --json
+TimeoutStartSec=180
+UMask=0077

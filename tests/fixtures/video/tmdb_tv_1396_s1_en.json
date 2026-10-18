@@ -1,0 +1,82 @@
+{
+ "id": 3572,
+ "_id": "52542272760ee313280005f8",
+ "air_date": "2008-01-20",
+ "episodes": [
+  {
+   "air_date": "2008-01-20",
+   "episode_number": 1,
+   "name": "Pilot",
+   "overview": "When an unassuming high school chemistry teacher discovers he has a rare form of lung cancer, he decides to team up with a former student and create a top of the line crystal meth in a used RV, to provide for his family once he is gone.",
+   "runtime": 59,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62085
+  },
+  {
+   "air_date": "2008-01-27",
+   "episode_number": 2,
+   "name": "Cat's in the Bag...",
+   "overview": "Walt and Jesse attempt to tie up loose ends. The desperate situation gets more complicated with the flip of a coin. Walt's wife, Skyler, becomes suspicious of Walt's strange behavior.",
+   "runtime": 49,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62086
+  },
+  {
+   "air_date": "2008-02-10",
+   "episode_number": 3,
+   "name": "...And the Bag's in the River",
+   "overview": "Walter fights with Jesse over his drug use, causing him to leave Walter alone with their captive, Krazy-8. Meanwhile, Hank has a scared straight moment with Walter Jr. after his aunt discovers he has been smoking pot. Also, Skylar is upset when Walter stays away from home.",
+   "runtime": 49,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62087
+  },
+  {
+   "air_date": "2008-02-17",
+   "episode_number": 4,
+   "name": "Cancer Man",
+   "overview": "Walter finally tells his family that he has been stricken with cancer. Meanwhile, the DEA believes Albuquerque has a new, big time player to worry about. Meanwhile, a worthy recipient is the target of a depressed Walter's anger, and Jesse makes a surprise visit to his parents home.",
+   "runtime": 49,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62088
+  },
+  {
+   "air_date": "2008-02-24",
+   "episode_number": 5,
+   "name": "Gray Matter",
+   "overview": "Walter and Skyler attend a former colleague's party. Jesse tries to free himself from the drugs, while Skyler organizes an intervention.",
+   "runtime": 49,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62089
+  },
+  {
+   "air_date": "2008-03-02",
+   "episode_number": 6,
+   "name": "Crazy Handful of Nothin'",
+   "overview": "The side effects of chemo begin to plague Walt. Meanwhile, the DEA rounds up suspected dealers.",
+   "runtime": 49,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62090
+  },
+  {
+   "air_date": "2008-03-09",
+   "episode_number": 7,
+   "name": "A No Rough Stuff Type Deal",
+   "overview": "Walter accepts his new identity as a drug dealer after a PTA meeting. Elsewhere, Jesse decides to put his aunt's house on the market and Skyler is the recipient of a baby shower.",
+   "runtime": 48,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62091
+  }
+ ],
+ "name": "Season 1",
+ "overview": "High school chemistry teacher Walter White's life is suddenly transformed by a dire medical diagnosis. Street-savvy former student Jesse Pinkman \"teaches\" Walter a new trade.",
+ "poster_path": "/1BP4xYv9ZG4ZVHkL7ocOziBbSYH.jpg",
+ "season_number": 1,
+ "vote_average": 8.4
+}

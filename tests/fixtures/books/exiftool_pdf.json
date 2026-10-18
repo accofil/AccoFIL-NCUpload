@@ -1,0 +1,19 @@
+[{
+  "SourceFile": "/tmp/books-samples/book.pdf",
+  "ExifTool:ExifToolVersion": 12.57,
+  "File:FileName": "book.pdf",
+  "File:FileType": "PDF",
+  "File:FileTypeExtension": "pdf",
+  "File:MIMEType": "application/pdf",
+  "PDF:PDFVersion": 1.4,
+  "PDF:Linearized": "No",
+  "PDF:PageCount": 20,
+  "PDF:Title": "Az ajtó",
+  "PDF:Author": "Szabó Magda",
+  "PDF:Creator": "Microsoft® Word 2016",
+  "PDF:Producer": "ncore-up tests",
+  "PDF:Keywords": "regény, magyar irodalom",
+  "XMP:Creator": "Szabó Magda",
+  "XMP:Identifier": "ISBN 978-963-14-2796-7",
+  "XMP:Language": "hu-HU"
+}]

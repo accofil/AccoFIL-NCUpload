@@ -1,0 +1,82 @@
+{
+ "id": "EP9000-CUSA00207_00-BLOODBORNE0000EU",
+ "name": "Bloodborne™",
+ "long_desc": "<b>To play this game on PS5, your system may need to be updated to the latest system software. Although this game is playable on PS5, some features available on PS4 may be absent. See PlayStation.com/bc for more details.</b><br>Hunt your nightmares<br/>A lone traveller. A cursed town. A deadly mystery that swallows everything it touches. Face your fears as you enter the decaying city of Yharnam, a forsaken place ravaged by a terrible, all-consuming illness. Scour its darkest shadows, fight for your life with blades and guns and discover secrets that will make your blood run cold – but just might save your skin...<br/><br/>https://userguides.eu.playstation.com/en/bloodborne/<br/><br/><br/>Offline single player<br/>Online multiplayer (2-5 players). A paid-for PlayStation Plus membership is required. Online features require an account and are subject to our terms of service (playstationnetwork.com/terms-of-service), our privacy policy (playstationnetwork.com/privacy-policy), and the game publisher’s privacy policy.<br/>Uses DUALSHOCK 4 vibration function<br/>Remote Play allows users to connect to and play games on their PlayStation®4 or PlayStation®5 using a mobile device, PC, or anot",
+ "provider_name": "Sony Interactive Entertainment",
+ "release_date": "2015-03-25T00:00:00Z",
+ "game_contentType": "Full Game",
+ "playable_platform": [
+  "PS4™"
+ ],
+ "content_rating": {
+  "description": "PEGI 16+",
+  "rating_system": "PEGI",
+  "url": "https://cdn-a.sonyentertainmentnetwork.com/grc/images/ratings/hd/pegi/16.png",
+  "url4k": "https://cdn-a.sonyentertainmentnetwork.com/grc/images/ratings/4k/pegi/16.png"
+ },
+ "age_limit": 16,
+ "images": [
+  {
+   "type": 10,
+   "url": "https://vulcan.dl.playstation.net/img/rnd/202011/0713/WSZqsrnejjt85wYmUqeBQvMQ.png"
+  },
+  {
+   "type": 12,
+   "url": "https://vulcan.dl.playstation.net/img/rnd/202010/2614/DbHk1vfm0crso6MJZevAqfLA.png"
+  },
+  {
+   "type": 13,
+   "url": "https://vulcan.dl.playstation.net/img/rnd/202010/2614/anWzJh9hctYVOk1oGzCXOzDY.png"
+  }
+ ],
+ "short_name": "Bloodborne™",
+ "title_name": "BLOODBORNE",
+ "top_category": "downloadable_game",
+ "metadata": {
+  "genre": {
+   "name": "Genre",
+   "values": [
+    "Action",
+    "Role-Playing Games (RPG)"
+   ]
+  },
+  "game_genre": {
+   "name": "Genre",
+   "values": [
+    "ACTION",
+    "ROLE_PLAYING_GAMES"
+   ]
+  },
+  "playable_platform": {
+   "name": "playable_platform",
+   "values": [
+    "PS4™"
+   ]
+  }
+ },
+ "mediaList": {
+  "screenshots": [
+   {
+    "type": "SCREENSHOT",
+    "typeId": 4,
+    "source": "PRODUCT_MEDIA",
+    "url": "https://apollo2.dl.playstation.net/cdn/EP9000/CUSA00207_00/FREE_CONTENTqTph7aohFHoFoDDgHrpm/Bloodborne_1.jpg",
+    "order": 0
+   },
+   {
+    "type": "SCREENSHOT",
+    "typeId": 4,
+    "source": "PRODUCT_MEDIA",
+    "url": "https://apollo2.dl.playstation.net/cdn/EP9000/CUSA00207_00/FREE_CONTENTnrxMl17Bh6Tx8oAHWlZI/Bloodborne_2.jpg",
+    "order": 1
+   },
+   {
+    "type": "SCREENSHOT",
+    "typeId": 4,
+    "source": "PRODUCT_MEDIA",
+    "url": "https://apollo2.dl.playstation.net/cdn/EP9000/CUSA00207_00/FREE_CONTENTV9Veu3vRyCrPbLkHyWew/Bloodborne_3.jpg",
+    "order": 2
+   }
+  ]
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "entities": {
+  "Q83495": {
+   "id": "Q83495",
+   "type": "item",
+   "labels": {
+    "hu": {
+     "language": "hu",
+     "value": "Mátrix"
+    },
+    "en": {
+     "language": "en",
+     "value": "The Matrix"
+    }
+   },
+   "descriptions": {
+    "en": {
+     "language": "en",
+     "value": "1999 American science fiction action thriller film"
+    },
+    "hu": {
+     "language": "hu",
+     "value": "1999-es amerikai sci-fi film"
+    }
+   },
+   "sitelinks": {
+    "enwiki": {
+     "site": "enwiki",
+     "title": "The Matrix"
+    },
+    "huwiki": {
+     "site": "huwiki",
+     "title": "Mátrix (film)"
+    }
+   },
+   "claims": {
+    "P345": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P345",
+       "datavalue": {
+        "value": "tt0133093",
+        "type": "string"
+       }
+      },
+      "rank": "normal"
+     }
+    ],
+    "P905": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P905",
+       "datavalue": {
+        "value": "7241",
+        "type": "string"
+       }
+      },
+      "rank": "normal"
+     }
+    ],
+    "P4947": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P4947",
+       "datavalue": {
+        "value": "603",
+        "type": "string"
+       }
+      },
+      "rank": "normal"
+     }
+    ]
+   }
+  }
+ }
+}

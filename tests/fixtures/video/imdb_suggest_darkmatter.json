@@ -1,0 +1,56 @@
+{
+ "d": [
+  {
+   "id": "tt19231492",
+   "l": "Dark Matter",
+   "q": "TV series",
+   "qid": "tvSeries",
+   "rank": 45,
+   "s": "Joel Edgerton, Jennifer Connelly",
+   "tl": "2024 TV Series",
+   "y": 2024
+  },
+  {
+   "id": "tt33500791",
+   "l": "Dark Matter",
+   "q": "short",
+   "qid": "short",
+   "rank": 262660,
+   "s": "Leo Berkeley",
+   "tl": "2024 Short",
+   "y": 2024
+  },
+  {
+   "id": "tt34911056",
+   "l": "Across Dark Matter",
+   "q": "feature",
+   "qid": "movie",
+   "rank": 685587,
+   "s": "",
+   "tl": "2024",
+   "y": 2024
+  },
+  {
+   "id": "tt38718121",
+   "l": "Dark Matter",
+   "q": "short",
+   "qid": "short",
+   "rank": 1164690,
+   "s": "",
+   "tl": "2024 Short",
+   "y": 2024
+  },
+  {
+   "id": "tt32139964",
+   "l": "Dark Matter Ninja Goes Dinosaur Hunting",
+   "q": "feature",
+   "qid": "movie",
+   "rank": 1157982,
+   "s": "Ralph Ardin, Oliver Barnaby",
+   "tl": "2024",
+   "y": 2024
+  }
+ ],
+ "q": "dark%20matter%202024",
+ "v": 1
+}

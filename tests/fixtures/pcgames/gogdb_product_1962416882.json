@@ -1,0 +1,136 @@
+{
+ "id": 1962416882,
+ "title": "Tank Squad",
+ "slug": "tank_squad",
+ "type": "game",
+ "builds": [
+  {
+   "branch": null,
+   "date_published": "2026-10-13T09:56:35+00:00",
+   "generation": 2,
+   "id": 60125694960598198,
+   "os": "windows",
+   "public": true,
+   "version": "1.3.10 v4"
+  },
+  {
+   "branch": null,
+   "date_published": "2026-10-13T13:37:39+00:00",
+   "generation": 2,
+   "id": 60126139600203751,
+   "os": "windows",
+   "public": true,
+   "version": "1.3.10 v5 staging"
+  },
+  {
+   "branch": null,
+   "date_published": "2026-10-16T16:55:19+00:00",
+   "generation": 2,
+   "id": 60135225705417565,
+   "os": "windows",
+   "public": true,
+   "version": "1.3.10 16733"
+  }
+ ],
+ "dl_installer": [
+  {
+   "id": "installer_windows_en",
+   "language": {
+    "code": "en",
+    "name": "English"
+   },
+   "name": "Tank Squad",
+   "os": "windows",
+   "total_size": 12135170048,
+   "version": "1.3.10 16733"
+  }
+ ],
+ "localizations": [
+  {
+   "audio": false,
+   "code": "br",
+   "name": "Portuguese (Brazilian)",
+   "text": true
+  },
+  {
+   "audio": false,
+   "code": "cn",
+   "name": "Chinese Simplified",
+   "text": true
+  },
+  {
+   "audio": false,
+   "code": "de",
+   "name": "German",
+   "text": true
+  },
+  {
+   "audio": true,
+   "code": "en",
+   "name": "English",
+   "text": true
+  },
+  {
+   "audio": false,
+   "code": "es",
+   "name": "Spanish",
+   "text": true
+  },
+  {
+   "audio": false,
+   "code": "fr",
+   "name": "French",
+   "text": true
+  },
+  {
+   "audio": false,
+   "code": "hu",
+   "name": "Hungarian",
+   "text": true
+  },
+  {
+   "audio": false,
+   "code": "it",
+   "name": "Italian",
+   "text": true
+  },
+  {
+   "audio": false,
+   "code": "jp",
+   "name": "Japanese",
+   "text": true
+  },
+  {
+   "audio": false,
+   "code": "pl",
+   "name": "Polish",
+   "text": true
+  },
+  {
+   "audio": false,
+   "code": "pt",
+   "name": "Portuguese",
+   "text": true
+  },
+  {
+   "audio": false,
+   "code": "ru",
+   "name": "Russian",
+   "text": true
+  },
+  {
+   "audio": false,
+   "code": "tr",
+   "name": "Turkish",
+   "text": true
+  }
+ ],
+ "developers": [
+  "DeGenerals"
+ ],
+ "publishers": [
+  "DeGenerals"
+ ],
+ "global_date": "2025-05-08T00:00:00+02:00",
+ "store_date": "2026-10-13T13:00:00+02:00"
+}

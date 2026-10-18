@@ -1,0 +1,38 @@
+clrmamepro (
+	name "Sony - PlayStation 2"
+	description "Sony - PlayStation 2"
+	version "2026.10.07"
+	extensions "bin|iso"
+	homepage "http://github.com/robloach/libretro-dats"
+)
+
+game (
+	name "Grand Theft Auto III (Europe) (En,Fr,De,Es,It) (v1.40)"
+	region "Europe"
+	serial "SLES-50330"
+	rom ( name "Grand Theft Auto III (Europe) (En,Fr,De,Es,It) (v1.40).iso" size 4698767360 crc B76D10AF md5 19F51D7F087C1E079AC4D14DFF60DDE9 sha1 91B32049BA17B4ACEEBD5C0D1E7AA70790080DBC serial "SLES-50330" )
+)
+game (
+	name "Grand Theft Auto III (Europe) (En,Fr,De,Es,It) (v1.40)"
+	region "Europe"
+	serial "SLES-50330/EURO"
+	rom ( name "Grand Theft Auto III (Europe) (En,Fr,De,Es,It) (v1.40).iso" size 4698767360 crc B76D10AF md5 19F51D7F087C1E079AC4D14DFF60DDE9 sha1 91B32049BA17B4ACEEBD5C0D1E7AA70790080DBC serial "SLES-50330/EURO" )
+)
+game (
+	name "Grand Theft Auto III (Europe, Australia) (En,Fr,De,Es,It) (v1.60)"
+	region "Europe"
+	serial "SLES-50330"
+	rom ( name "Grand Theft Auto III (Europe, Australia) (En,Fr,De,Es,It) (v1.60).iso" size 4698767360 crc 1582E336 md5 DF2302B38DC447E0F63A0336E759FB46 sha1 8EDDC0D173A889BAC2AFD4650AE97CD17B7566E9 serial "SLES-50330" )
+)
+game (
+	name "Grand Theft Auto III (USA, Canada)"
+	region "USA"
+	serial "SLUS-20062"
+	rom ( name "Grand Theft Auto III (USA, Canada).iso" size 4640997376 crc 431C2B33 md5 C4C935CC566A32A81AF471FEF6CDE741 sha1 C053FFCBE14D7176608A3D4C113319DFACF91391 serial "SLUS-20062" )
+)
+game (
+	name "0 Story (Japan) (Disc 1)"
+	region "Japan"
+	serial "SLPM-65002"
+	rom ( name "0 Story (Japan) (Disc 1).iso" size 4481286144 crc 1C6ED37F md5 AC0AA78F60108DA577581839D0A22011 sha1 9A7EB026FEBE8D7240C70CEA31480E9150A625F1 serial "SLPM-65002" )
+)

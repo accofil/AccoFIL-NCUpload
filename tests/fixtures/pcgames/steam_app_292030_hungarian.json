@@ -1,0 +1,35 @@
+{
+ "292030": {
+  "success": true,
+  "data": {
+   "type": "game",
+   "name": "The Witcher 3: Wild Hunt — Remastered",
+   "steam_appid": 292030,
+   "short_description": "A The Witcher 3: Wild Hunt – Remastered számos fejlesztéssel és bővítéssel modernizálja a népszerű szerepjátékot. Ríviai Geralt, a felbérelhető szörnyvadász szerepében indulj epikus küldetésre egy nyílt sötétfantasy-világban, és kutasd fel örökbe fogadott lányodat, Cirit.",
+   "about_the_game": "<p class=\"bb_paragraph\" ><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/extras/3bc7837869dec0c3e0e12e538fd5ea06.avif?t=1790845156\" width=780 height=300 /></span><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/extras/cb673c2c66795934d086a6d47c142335.avif?t=1790845156\" width=780 height=300 /></span><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/extras/9034e90dbc99d26db018c673bc38bbe2.avif?t=1790845156\" width=780 height=300 /></span><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/extras/5abb45f490efc8898061d636f4622b5e.avif?t=1790845156\" width=780 height=300 /></span><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/extras/c10e75035250231611d92fa8676b1787.avif?t=1790845156\" width=780 height=300 /></span></p>",
+   "supported_languages": "Angol<strong>*</strong>, Francia<strong>*</strong>, Olasz, Német<strong>*</strong>, Spanyolországi spanyol, Arab, Cseh, Magyar, Japán<strong>*</strong>, Koreai<strong>*</strong>, Lengyel<strong>*</strong>, Brazíliai portugál<strong>*</strong>, Orosz<strong>*</strong>, Hagyományos kínai, Török, Egyszerűsített kínai<strong>*</strong>, Latin-amerikai spanyol, Ukrán<br><strong>*</strong>nyelvek teljes hangtámogatással",
+   "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/e8afc4252e3fee8ed2525ab2fd7675cca39aa38d/header_alt_assets_1.jpg?t=1790845156",
+   "website": "https://www.thewitcher.com/witcher3",
+   "pc_requirements": {
+    "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"><li><strong>Op. rendszer:</strong> 64-bit Windows 11<br></li><li><strong>Processzor:</strong> Core i5-8400 / Ryzen 5 2600<br></li><li><strong>Memória:</strong> 12 GB RAM<br></li><li><strong>Grafika:</strong> GeForce GTX 1660 / Radeon RX 5500 XT 8GB / Arc A580<br></li><li><strong>Tárhely:</strong> 60 SSD GB szabad hely<br></li><li><strong>Egyéb megjegyzések:</strong> VRAM 6 GB</li></ul>",
+    "recommended": "<strong>Ajánlott:</strong><br><ul class=\"bb_ul\"><li><strong>Op. rendszer:</strong> 64-bit Windows 11<br></li><li><strong>Processzor:</strong> Intel Core i7 8700K / AMD Ryzen 5 3600X<br></li><li><strong>Memória:</strong> 16 GB RAM<br></li><li><strong>Grafika:</strong> RTX 2060 Super / AMD Radeon RX 6600 XT / Intel Arc B580<br></li><li><strong>Tárhely:</strong> 60 SSD GB szabad hely<br></li><li><strong>Egyéb megjegyzések:</strong> VRAM 8 GB</li></ul>"
+   },
+   "developers": [
+    "CD PROJEKT RED"
+   ],
+   "publishers": [
+    "CD PROJEKT RED"
+   ],
+   "genres": [
+    {
+     "id": "3",
+     "description": "Szerepjáték"
+    }
+   ],
+   "release_date": {
+    "coming_soon": false,
+    "date": "2015. máj. 18."
+   }
+  }
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "page": 1,
+ "results": [
+  {
+   "adult": false,
+   "backdrop_path": "/wFEAy4xRes1eeclsu7Z73Vzz7ET.jpg",
+   "genre_ids": [
+    10765,
+    18
+   ],
+   "id": 196322,
+   "origin_country": [
+    "US"
+   ],
+   "original_language": "en",
+   "original_name": "Dark Matter",
+   "overview": "Jason Dessen is abducted into an alternate version of his life. To get back to his real family, he embarks on a harrowing journey to save them from the most terrifying foe imaginable: himself.",
+   "popularity": 88.5843,
+   "poster_path": "/2DPmTlv8F0V1TQBPmlsGOVOhtWk.jpg",
+   "first_air_date": "2024-05-07",
+   "softcore": false,
+   "name": "Dark Matter",
+   "vote_average": 7.803,
+   "vote_count": 834
+  }
+ ],
+ "total_pages": 1,
+ "total_results": 1
+}

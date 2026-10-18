@@ -1,0 +1,19 @@
+{
+ "type": "standard",
+ "title": "Mátrix (film)",
+ "extract": "A Mátrix 1999-ben bemutatott amerikai–ausztrál koprodukcióban készült sci-fi film Lana és Lilly Wachowski írásában és rendezésében, Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Joe Pantoliano és Hugo Weaving főszereplésével.",
+ "content_urls": {
+  "desktop": {
+   "page": "https://hu.wikipedia.org/wiki/M%C3%A1trix_(film)",
+   "revisions": "https://hu.wikipedia.org/wiki/M%C3%A1trix_(film)?action=history",
+   "edit": "https://hu.wikipedia.org/wiki/M%C3%A1trix_(film)?action=edit",
+   "talk": "https://hu.wikipedia.org/wiki/Vita:M%C3%A1trix_(film)"
+  },
+  "mobile": {
+   "page": "https://hu.wikipedia.org/wiki/M%C3%A1trix_(film)",
+   "revisions": "https://hu.wikipedia.org/wiki/Special:History/M%C3%A1trix_(film)",
+   "edit": "https://hu.wikipedia.org/wiki/M%C3%A1trix_(film)?action=edit",
+   "talk": "https://hu.wikipedia.org/wiki/Vita:M%C3%A1trix_(film)"
+  }
+ }
+}

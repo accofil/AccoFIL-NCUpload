@@ -1,0 +1,51 @@
+{
+ "response": {
+  "version_hash": "100046661",
+  "tags": [
+   {
+    "tagid": 9,
+    "name": "Stratégia"
+   },
+   {
+    "tagid": 19,
+    "name": "Akció"
+   },
+   {
+    "tagid": 21,
+    "name": "Kaland"
+   },
+   {
+    "tagid": 1663,
+    "name": "FPS"
+   },
+   {
+    "tagid": 1667,
+    "name": "Horror"
+   },
+   {
+    "tagid": 1721,
+    "name": "Pszicho-horror"
+   },
+   {
+    "tagid": 3834,
+    "name": "Felfedezés"
+   },
+   {
+    "tagid": 3839,
+    "name": "Belső nézetes"
+   },
+   {
+    "tagid": 4106,
+    "name": "Akció-kaland"
+   },
+   {
+    "tagid": 4166,
+    "name": "Hangulatos"
+   },
+   {
+    "tagid": 4175,
+    "name": "Valósághű"
+   }
+  ]
+ }
+}

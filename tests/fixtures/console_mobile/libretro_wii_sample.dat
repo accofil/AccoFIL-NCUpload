@@ -1,0 +1,20 @@
+clrmamepro (
+	name "Nintendo - Wii"
+	description "Nintendo - Wii"
+	version "2026.10.07"
+	extensions "iso"
+	homepage "http://github.com/robloach/libretro-dats"
+)
+
+game (
+	name "Mario Kart Wii (Europe, Australia) (En,Fr,De,Es,It)"
+	region "Europe"
+	serial "RVL-RMCP-EUR"
+	rom ( name "Mario Kart Wii (Europe, Australia) (En,Fr,De,Es,It).iso" size 4699979776 crc 3A70D78B md5 E7B1FF1FABB0789482CE2CB0661D986E sha1 4FDE5CE38D68F632D92C5B0D52BBAB0B1D355A95 serial "RVL-RMCP-EUR" )
+)
+game (
+	name "$1,000,000 Pyramid, The (USA)"
+	region "USA"
+	serial "RVL-SP3E-USA-B0"
+	rom ( name "$1,000,000 Pyramid, The (USA).iso" size 4699979776 crc 762F0503 md5 B4E4DC324AB6300B9EDE3722F8355E54 sha1 43724FDD3F0DBDBF23DCAD2B3036749B53DE173B serial "RVL-SP3E-USA-B0" )
+)

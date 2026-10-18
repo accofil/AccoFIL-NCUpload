@@ -1,0 +1,120 @@
+{
+ "id": 1207658787,
+ "title": "Heroes of Might and Magic® 3: Complete",
+ "slug": "heroes_of_might_and_magic_3_complete_edition",
+ "languages": {
+  "en": "English",
+  "fr": "français",
+  "pl": "polski",
+  "ru": "русский"
+ },
+ "links": {
+  "purchase_link": "https://www.gog.com/en/checkout/manual/heroes_of_might_and_magic_3_complete_edition",
+  "product_card": "https://www.gog.com/game/heroes_of_might_and_magic_3_complete_edition",
+  "support": "https://www.gog.com/support/heroes_of_might_and_magic_3_complete_edition",
+  "forum": "https://www.gog.com/forum/heroes_of_might_and_magic_series"
+ },
+ "game_type": "game",
+ "release_date": null,
+ "dlcs": [],
+ "description": {
+  "lead": "<video muted preload=\"auto\" loop autoplay=\"autoplay\" style=\"margin: auto;display:block;width:100%\">\n  <source src=\"https://items.gog.com/heroes_of_might_and_magic_3_complete_edition/mp4/homm3_map2.mp4\" type=\"video/mp4\"></video>\n<br>\n<b>Includes Heroes of Might & Magic III and its expansions: Armageddon's Blade and The Shadow of Death</b>\n<br><br>\nMurder, treachery, resurrection, savage battles and ultimately-freedom!<br><br>When Erathia's King Gryphonheart is murdered by traitors he is resurrected as an undead warlord who leads a ruthless invasion of his former Kingdom. Little resistance is met until his daughter Catherine, Queen of Enroth, returns to her homeland commanding an army of elite Enrothian warriors. Meanwhile the Necromancers raise large hordes of undead and advance towards the Erathian capitol. Queen Catherine receives the aid of her father's survived generals and embarks on a crusade to reclaim her lost land.<br><br>You control the greatest heroes and fiercest creatures in a conflict of epic proportions, as Cathereine fights to restore her family's rightful reign, uncover her father's killers and free him from the dark prison of his undead body! <br><br>This is a must have for every Might and Magic series fan! ",
+  "full": "<video muted preload=\"auto\" loop autoplay=\"autoplay\" style=\"margin: auto;display:block;width:100%\">\n  <source src=\"https://items.gog.com/heroes_of_might_and_magic_3_complete_edition/mp4/homm3_map2.mp4\" type=\"video/mp4\"></video>\n<br>\n<b>Includes Heroes of Might & Magic III and its expansions: Armageddon's Blade and The Shadow of Death</b>\n<br><br>\nMurder, treachery, resurrection, savage battles and ultimately-freedom!<br><br>When Erathia's King Gryphonheart is murdered by traitors he is resurrected as an undead warlord who leads a ruthless invasion of his former Kingdom. Little resistance is met until his daughter Catherine, Queen of Enroth, returns to her homeland commanding an army of elite Enrothian warriors. Meanwhile the Necromancers raise large hordes of undead and advance towards the Erathian capitol. Queen Catherine receives the aid of her father's survived generals and embarks on a crusade to reclaim her lost land.<br><br>You control the greatest heroes and fiercest creatures in a conflict of epic proportions, as Cathereine fights to restore her family's rightful reign, uncover her father's killers and free him from the dark prison of his undead body! <br><br>This is a must have for every Might and Magic series fan! "
+ },
+ "downloads": {
+  "installers": [
+   {
+    "id": "installer_windows_en",
+    "name": "Heroes of Might and Magic® 3: Complete",
+    "os": "windows",
+    "language": "en",
+    "language_full": "English",
+    "version": "4.0 (3.2) GOG 0.1",
+    "total_size": 1006632960,
+    "files": [
+     {
+      "id": "en1installer0",
+      "size": 1048576
+     },
+     {
+      "id": "en1installer1",
+      "size": 1005584384
+     }
+    ]
+   },
+   {
+    "id": "installer_windows_fr",
+    "name": "Heroes of Might and Magic® 3: Complete",
+    "os": "windows",
+    "language": "fr",
+    "language_full": "français",
+    "version": "4.0 (3.2) GOG 0.1",
+    "total_size": 999292928,
+    "files": [
+     {
+      "id": "fr1installer0",
+      "size": 1048576
+     },
+     {
+      "id": "fr1installer1",
+      "size": 998244352
+     }
+    ]
+   },
+   {
+    "id": "installer_windows_pl",
+    "name": "Heroes of Might and Magic® 3: Complete",
+    "os": "windows",
+    "language": "pl",
+    "language_full": "polski",
+    "version": "4.0 (3.2) GOG 0.1",
+    "total_size": 852492288,
+    "files": [
+     {
+      "id": "pl1installer0",
+      "size": 1048576
+     },
+     {
+      "id": "pl1installer1",
+      "size": 851443712
+     }
+    ]
+   },
+   {
+    "id": "installer_windows_ru",
+    "name": "Heroes of Might and Magic® 3: Complete",
+    "os": "windows",
+    "language": "ru",
+    "language_full": "русский",
+    "version": "4.0 (3.2) GOG 0.1",
+    "total_size": 982515712,
+    "files": [
+     {
+      "id": "ru1installer0",
+      "size": 1048576
+     },
+     {
+      "id": "ru1installer1",
+      "size": 981467136
+     }
+    ]
+   }
+  ],
+  "patches": [
+   {
+    "id": "en1patch0",
+    "name": "Patch (4.0 to 4.0 (3.2) GOG 0.1)",
+    "os": "windows",
+    "language": "en",
+    "version": "4.0 (3.2) GOG 0.1",
+    "total_size": 4194304,
+    "files": [
+     {
+      "id": "en1patch0",
+      "size": 4194304
+     }
+    ]
+   }
+  ]
+ }
+}

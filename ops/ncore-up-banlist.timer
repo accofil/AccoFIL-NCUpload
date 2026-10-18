@@ -1,0 +1,11 @@
+[Unit]
+Description=AccoFIL NCUpload weekly ban list refresh
+
+[Timer]
+OnCalendar=Mon *-*-* 04:15:00 UTC
+RandomizedDelaySec=300
+Persistent=true
+Unit=ncore-up-banlist.service
+
+[Install]
+WantedBy=timers.target

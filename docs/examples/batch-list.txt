@@ -1,0 +1,5 @@
+# Egy sor egy feltöltendő szerveres fájl vagy release-mappa.
+# A saját útvonalaiddal töltsd ki; albumhoz az egész album mappáját válaszd.
+/adat/Film.2026.1080p-GROUP
+/adat/Series.S01E03.mkv
+/zene/Artist-Album-FLAC-2026-GROUP

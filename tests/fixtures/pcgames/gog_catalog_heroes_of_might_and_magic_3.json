@@ -1,0 +1,63 @@
+{
+ "productCount": 2,
+ "products": [
+  {
+   "id": "1207658787",
+   "slug": "heroes_of_might_and_magic_3_complete_edition",
+   "title": "Heroes of Might and Magic® 3: Complete",
+   "productType": "game",
+   "releaseDate": "1999.06.01",
+   "developers": [
+    "New World Computing, Inc."
+   ],
+   "publishers": [
+    "Ubisoft"
+   ],
+   "genres": [
+    {
+     "name": "Strategy",
+     "slug": "strategy"
+    },
+    {
+     "name": "Turn-based",
+     "slug": "turnbased"
+    },
+    {
+     "name": "Fantasy",
+     "slug": "fantasy"
+    }
+   ],
+   "coverVertical": "https://images.gog-statics.com/869b56a1048405d97f48358ea537af2c08c9d8cd508f8e4a82883bf8eafad361.jpg",
+   "storeLink": "https://www.gog.com/en/game/heroes_of_might_and_magic_3_complete_edition"
+  },
+  {
+   "id": "1718139055",
+   "slug": "heroes_of_might_and_magic_iii_horn_of_the_abyss",
+   "title": "Heroes of Might and Magic III: Horn of the Abyss",
+   "productType": "game",
+   "releaseDate": "2011.12.31",
+   "developers": [
+    "HotA Crew"
+   ],
+   "publishers": [
+    "HotA Crew"
+   ],
+   "genres": [
+    {
+     "name": "Strategy",
+     "slug": "strategy"
+    },
+    {
+     "name": "Turn-based",
+     "slug": "turnbased"
+    },
+    {
+     "name": "Fantasy",
+     "slug": "fantasy"
+    }
+   ],
+   "coverVertical": "https://images.gog-statics.com/d26b2ce6e97995cf6e3a183214f84bea5385230876176facfca097378adac2fa.jpg",
+   "storeLink": "https://www.gog.com/en/game/heroes_of_might_and_magic_iii_horn_of_the_abyss"
+  }
+ ]
+}

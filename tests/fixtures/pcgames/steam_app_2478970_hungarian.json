@@ -1,0 +1,40 @@
+{
+ "2478970": {
+  "success": true,
+  "data": {
+   "type": "game",
+   "name": "Tomb Raider I-III Remastered Starring Lara Croft",
+   "steam_appid": 2478970,
+   "short_description": "Discover Lara Croft’s Original Adventures, Lovingly Restored – Now with New Challenge Mode",
+   "about_the_game": "<p class=\"bb_paragraph\" ><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2478970/extras/bd13dfd0e7dd6d8e68fbb5108270ecc4.avif?t=1788752575\" data-big-src=https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2478970/extras_big/bd13dfd0e7dd6d8e68fbb5108270ecc4.avif?t=1788752575 width=1560 height=878 /></span></p><h2 class=\"bb_tag\" >Discover Lara Croft’s Original Adventures, Lovingly Restored – Now with New Challenge Mode</h2><p class=\"bb_paragraph\" >Play the Original Three Tomb Raider Adventures: For the first time ever, play the complete experience with all expansions and secret levels on modern platforms in this definitive collection. Now with more bonus content in the FREE Challenge Mode patch.</p><h2 class=\"bb_tag\" >Included Game Titles</h2><p class=\"bb_paragraph\" >Tomb Raider I + Unfinished Business</p><p class=\"bb_paragraph\" >Tomb Raider II + Golden Mask</p><p class=\"bb_paragraph\" >Tomb Raider III + The Lost Artifact</p><p class=\"bb_paragraph\" ></p><p class=\"bb_paragraph\" ><strong>NEW Challenge Mode</strong>: Replay levels with customized modifiers and complete achievements to unlock 10 New Outfits that enhance Lara’s abilities.</p><p class=\"bb_paragraph\" ></p><p class=\"bb_paragraph\" ><strong>Solve Ancient Mysteries</strong>: Uncover treasures of the ancient world by solving puzzles and unraveling mysteries lost to the ravages of time.</p><p class=\"bb_paragraph\" ></p><p class=\"bb_paragraph\" ><strong>Globe-trotting Adventure</strong>: Follow Lara Croft around the world and face off against deadly foes and dangerous myths.</p><p class=\"bb_paragraph\" ></p><p class=\"bb_paragraph\" ><strong>Lovingly Restored</strong>: Experience the classics boasting upgraded graphics, with the option to switch to the original polygon look at any time.</p><p class=\"bb_paragraph\" ></p><p class=\"bb_paragraph\" ><strong>Photo Mode</strong>: Capture Lara with any weapon and unlocked outfit in 21 poses, or look around the level for hidden items and secrets.</p>",
+   "supported_languages": "Angol<strong>*</strong>, Francia<strong>*</strong>, Német<strong>*</strong>, Orosz<strong>*</strong>, Cseh, Dán, Holland, Finn, Görög, Magyar, Lengyel, Brazíliai portugál, Svéd, Török, Ukrán, Szlovák, Japán<strong>*</strong>, Egyszerűsített kínai, Olasz, Spanyolországi spanyol<br><strong>*</strong>nyelvek teljes hangtámogatással",
+   "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2478970/a94ccfdb7582dc5564cdf736b0f239531b66bf1d/header.jpg?t=1788752575",
+   "website": "https://tombraider.com",
+   "pc_requirements": {
+    "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"><li>64 bites processzor és operációs rendszer szükséges<br></li><li><strong>Op. rendszer *:</strong> Windows 7 or later<br></li><li><strong>Processzor:</strong> Intel i3 3240 or AMD FX 4100<br></li><li><strong>Memória:</strong> 4 GB RAM<br></li><li><strong>Grafika:</strong> NVIDA GT730 or AMD R7 240<br></li><li><strong>DirectX:</strong> Verzió: 12<br></li><li><strong>Tárhely:</strong> 5 GB szabad hely</li></ul>",
+    "recommended": "<strong>Ajánlott:</strong><br><ul class=\"bb_ul\"><li>64 bites processzor és operációs rendszer szükséges</li></ul>"
+   },
+   "developers": [
+    "Aspyr",
+    "Crystal Dynamics"
+   ],
+   "publishers": [
+    "Aspyr"
+   ],
+   "genres": [
+    {
+     "id": "1",
+     "description": "Akció"
+    },
+    {
+     "id": "25",
+     "description": "Kaland"
+    }
+   ],
+   "release_date": {
+    "coming_soon": false,
+    "date": "2024. febr. 13."
+   }
+  }
+ }
+}

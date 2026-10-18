@@ -1,0 +1,47 @@
+{
+ "total_count": 47,
+ "count": 5,
+ "items": [
+  {
+   "build_id": "60089001912254513",
+   "product_id": "1407750955",
+   "os": "windows",
+   "branch": null,
+   "version_name": "Day 90",
+   "date_published": "2026-10-06T15:51:50+0000",
+   "public": true,
+   "generation": 2
+  },
+  {
+   "build_id": "59950045773244114",
+   "product_id": "1407750955",
+   "os": "windows",
+   "branch": null,
+   "version_name": "Community Patch",
+   "date_published": "2026-08-13T19:52:11+0000",
+   "public": true,
+   "generation": 2
+  },
+  {
+   "build_id": "59605403823559106",
+   "product_id": "1407750955",
+   "os": "windows",
+   "branch": null,
+   "version_name": "1.1.2a",
+   "date_published": "2026-04-16T22:45:43+0000",
+   "public": true,
+   "generation": 2
+  },
+  {
+   "build_id": "59544189101327614",
+   "product_id": "1407750955",
+   "os": "windows",
+   "branch": null,
+   "version_name": "1.1.1",
+   "date_published": "2026-03-26T20:00:04+0000",
+   "public": true,
+   "generation": 2
+  }
+ ],
+ "has_private_branches": true
+}

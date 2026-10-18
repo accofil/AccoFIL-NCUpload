@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=ncore-up teszt, O=ncore-up, C=HU
+Signer #1 certificate SHA-256 digest: e5d3b01364f484d1f81034f14d47d64a0cf8d101392b563d4a348d46edeb2465
+Signer #1 certificate SHA-1 digest: f3a1caa23afb34d68d95ba41b62a923c5bb96234
+Signer #1 certificate MD5 digest: 5c15954bfaa7dc18807a54997ca107bd
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 2048
+Signer #1 public key SHA-256 digest: fde8e791fa75c96b10ddc24100b648629ad53f9aef22f8591a43193ba5171d21
+Signer #1 public key SHA-1 digest: 6fc1183656e3a2684b9d8dfb17256d4d5c6f883c
+Signer #1 public key MD5 digest: e80b7dcffa92b26bd375c770d770a8ca
+

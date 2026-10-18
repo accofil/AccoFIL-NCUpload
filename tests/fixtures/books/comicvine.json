@@ -1,0 +1,52 @@
+{
+ "_note": "Constructed after the documented ComicVine API responses (no key available to capture live ones).",
+ "search": {
+  "error": "OK",
+  "limit": 10,
+  "offset": 0,
+  "number_of_page_results": 1,
+  "number_of_total_results": 1,
+  "status_code": 1,
+  "results": [
+   {
+    "count_of_issues": 72,
+    "deck": "Epic space opera/fantasy from Brian K. Vaughan and Fiona Staples.",
+    "description": "<p><i>Saga</i> is the story of <a href=\"/alana/4005-1/\">Alana</a> and Marko, lovers from long-warring extraterrestrial races.</p><h2>Collected Editions</h2><table><tr><td>Vol 1</td></tr></table>",
+    "id": 43489,
+    "image": {
+     "medium_url": "https://comicvine.gamespot.com/a/uploads/scale_medium/6/67663/2333154-01.jpg",
+     "original_url": "https://comicvine.gamespot.com/a/uploads/original/6/67663/2333154-01.jpg"
+    },
+    "name": "Saga",
+    "publisher": {"api_detail_url": "https://comicvine.gamespot.com/api/publisher/4010-513/", "id": 513, "name": "Image"},
+    "site_detail_url": "https://comicvine.gamespot.com/saga/4050-43489/",
+    "start_year": "2012",
+    "resource_type": "volume"
+   }
+  ],
+  "version": "1.0"
+ },
+ "issues": {
+  "error": "OK",
+  "status_code": 1,
+  "results": [
+   {
+    "id": 325347,
+    "name": "Chapter One",
+    "issue_number": "1",
+    "cover_date": "2012-03-31",
+    "store_date": "2012-03-14",
+    "deck": null,
+    "description": "<p>The first chapter of the saga.</p>",
+    "image": {"original_url": "https://comicvine.gamespot.com/a/uploads/original/6/67663/2232331-saga_001.jpg"},
+    "site_detail_url": "https://comicvine.gamespot.com/saga-1-chapter-one/4000-325347/",
+    "volume": {"id": 43489, "name": "Saga"},
+    "person_credits": [
+     {"id": 40439, "name": "Brian K. Vaughan", "role": "writer"},
+     {"id": 59751, "name": "Fiona Staples", "role": "artist, cover"},
+     {"id": 1, "name": "Fonografiks", "role": "letterer"}
+    ]
+   }
+  ]
+ }
+}

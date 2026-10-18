@@ -1,0 +1,30 @@
+=== pdfinfo -f 3 -l 4 book.pdf
+Title:           Az ajtó
+Author:          Szabó Magda
+Producer:        ncore-up tests
+Custom Metadata: no
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           20
+Encrypted:       no
+Page    3 size:  595 x 842 pts (A4)
+Page    3 rot:   0
+Page    4 size:  595 x 842 pts (A4)
+Page    4 rot:   0
+File size:       99837 bytes
+Optimized:       no
+PDF version:     1.4
+=== pdfimages -list -f 11 -l 11 book.pdf
+page   num  type   width height color comp bpc  enc interp  object ID x-ppi y-ppi size ratio
+--------------------------------------------------------------------------------------------
+  11     0 image     150   212  gray    1   8  image  no        24  0    18    18  208B 0.7%
+  11     1 smask     150   212  gray    1   8  image  no        25  0    18    18  208B 0.7%
+  11     2 image      40    40  rgb     3   8  jpeg   no        26  0    72    72  2K  0.5%
+=== djvused -e print-meta book.djvu
+Producer	"ncore-up tests"
+Author	"Szab\303\263 Magda"
+Title	"Az ajt\303\263"

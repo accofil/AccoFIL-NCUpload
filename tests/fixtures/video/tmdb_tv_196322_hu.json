@@ -1,0 +1,164 @@
+{
+ "adult": false,
+ "backdrop_path": "/wFEAy4xRes1eeclsu7Z73Vzz7ET.jpg",
+ "created_by": [
+  {
+   "id": 1701194,
+   "name": "Blake Crouch"
+  }
+ ],
+ "episode_run_time": [],
+ "first_air_date": "2024-05-07",
+ "genres": [
+  {
+   "id": 10765,
+   "name": "Sci-Fi & Fantasy"
+  },
+  {
+   "id": 18,
+   "name": "Dráma"
+  }
+ ],
+ "homepage": "https://tv.apple.com/show/umc.cmc.4luj45vtqpmjsvb6sc2675oeg",
+ "id": 196322,
+ "in_production": true,
+ "languages": [
+  "en"
+ ],
+ "last_air_date": "2026-10-08",
+ "name": "Sötét anyag",
+ "number_of_episodes": 19,
+ "number_of_seasons": 2,
+ "origin_country": [
+  "US"
+ ],
+ "original_language": "en",
+ "original_name": "Dark Matter",
+ "overview": "Jason Dessent elrabolják élete egy alternatív változatába. Hogy visszatérhessen igazi családjához, gyötrelmes utazásra indul, hogy megmentse őket a lehető legfélelmetesebb ellenségtől: saját magától.",
+ "popularity": 88.5843,
+ "poster_path": "/iAB58dmYzISRinHiw3nEQ7XTjHh.jpg",
+ "production_countries": [
+  {
+   "iso_3166_1": "US",
+   "name": "United States of America"
+  }
+ ],
+ "seasons": [
+  {
+   "season_number": 1,
+   "episode_count": 9,
+   "name": "1. évad",
+   "air_date": "2024-05-07"
+  },
+  {
+   "season_number": 2,
+   "episode_count": 10,
+   "name": "2. évad",
+   "air_date": "2026-08-27"
+  }
+ ],
+ "softcore": false,
+ "status": "Returning Series",
+ "tagline": "Sok világ van, de legjobb otthon.",
+ "type": "Scripted",
+ "vote_average": 7.801,
+ "vote_count": 833,
+ "credits": {
+  "cast": [
+   {
+    "name": "Joel Edgerton",
+    "character": "Jason Dessen / Jason2",
+    "order": 0
+   },
+   {
+    "name": "Jennifer Connelly",
+    "character": "Daniela Dessen",
+    "order": 1
+   },
+   {
+    "name": "Alice Braga",
+    "character": "Dr. Amanda Lucas",
+    "order": 2
+   },
+   {
+    "name": "Jimmi Simpson",
+    "character": "Ryan Holder",
+    "order": 3
+   },
+   {
+    "name": "Dayo Okeniyi",
+    "character": "Oluko / Leighton Vance",
+    "order": 5
+   },
+   {
+    "name": "Oakes Fegley",
+    "character": "Charlie Dessen",
+    "order": 6
+   }
+  ],
+  "crew": []
+ },
+ "external_ids": {
+  "imdb_id": "tt19231492",
+  "freebase_mid": null,
+  "freebase_id": null,
+  "tvdb_id": 393159,
+  "tvrage_id": null,
+  "wikidata_id": "Q114554430",
+  "facebook_id": null,
+  "instagram_id": null,
+  "twitter_id": null
+ },
+ "translations": {
+  "translations": [
+   {
+    "iso_3166_1": "US",
+    "iso_639_1": "en",
+    "name": "English",
+    "english_name": "English",
+    "data": {
+     "name": "",
+     "overview": "Jason Dessen is abducted into an alternate version of his life. To get back to his real family, he embarks on a harrowing journey to save them from the most terrifying foe imaginable: himself.",
+     "homepage": "",
+     "tagline": "There's no world like home."
+    }
+   },
+   {
+    "iso_3166_1": "DE",
+    "iso_639_1": "de",
+    "name": "Deutsch",
+    "english_name": "German",
+    "data": {
+     "name": "Dark Matter – Der Zeitenläufer",
+     "overview": "Jason Dessen wird in eine alternative Version seines Lebens entführt. Um zu seiner echten Familie zurückzukehren, begibt er sich auf eine beklemmende Reise, um sie vor dem furchterregendsten Feind überhaupt zu retten: Sich selbst.",
+     "homepage": "",
+     "tagline": "Unendliche Welten. Nur ein Zuhause."
+    }
+   },
+   {
+    "iso_3166_1": "HU",
+    "iso_639_1": "hu",
+    "name": "Magyar",
+    "english_name": "Hungarian",
+    "data": {
+     "name": "Sötét anyag",
+     "overview": "Jason Dessent elrabolják élete egy alternatív változatába. Hogy visszatérhessen igazi családjához, gyötrelmes utazásra indul, hogy megmentse őket a lehető legfélelmetesebb ellenségtől: saját magától.",
+     "homepage": "",
+     "tagline": "Sok világ van, de legjobb otthon."
+    }
+   },
+   {
+    "iso_3166_1": "AT",
+    "iso_639_1": "de",
+    "name": "Deutsch",
+    "english_name": "German",
+    "data": {
+     "name": "Dark Matter – Der Zeitenläufer",
+     "overview": "",
+     "homepage": "",
+     "tagline": ""
+    }
+   }
+  ]
+ }
+}

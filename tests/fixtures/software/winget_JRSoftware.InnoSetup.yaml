@@ -1,0 +1,46 @@
+AppsAndFeaturesEntries:
+- DisplayName: Inno Setup version 6.7.3
+  ProductCode: Inno Setup 6_is1
+Author: Jordan Russell and Martijn Laan
+Copyright: 'Copyright (C) 1997-2026 Jordan Russell. All rights reserved.
+
+  Portions Copyright (C) 2000-2026 Martijn Laan. All rights reserved.'
+FileExtensions:
+- iss
+InstallerType: inno
+Installers:
+- Architecture: x86
+  InstallerSha256: 9c73c3bae7ed48d44112a0f48e66742c00090bdb5bef71d9d3c056c66e97b732
+  InstallerSwitches:
+    Custom: /ALLUSERS
+  InstallerUrl: https://github.com/jrsoftware/issrc/releases/download/is-6_7_3/innosetup-6.7.3.exe
+  Scope: machine
+- Architecture: x86
+  InstallerSha256: 9c73c3bae7ed48d44112a0f48e66742c00090bdb5bef71d9d3c056c66e97b732
+  InstallerSwitches:
+    Custom: /CURRENTUSER
+  InstallerUrl: https://github.com/jrsoftware/issrc/releases/download/is-6_7_3/innosetup-6.7.3.exe
+  Scope: user
+License: Inno Setup License
+LicenseUrl: https://jrsoftware.org/files/is/license.txt
+ManifestType: merged
+ManifestVersion: 1.12.0
+MinimumOSVersion: 6.1.0.0
+PackageIdentifier: JRSoftware.InnoSetup
+PackageLocale: en-US
+PackageName: Inno Setup 6
+PackageUrl: https://jrsoftware.org/isinfo.php
+PackageVersion: 6.7.3
+PrivacyUrl: https://jrsoftware.org/isorder-privacy.php
+Publisher: jrsoftware.org
+PurchaseUrl: https://jrsoftware.org/isorder.php
+ReleaseNotesUrl: https://jrsoftware.org/files/is6-whatsnew.htm#:~:text=6.7.3
+RepairBehavior: installer
+ShortDescription: 'Inno Setup is an open-source installation builder for Windows applications.
+  Since its introduction in 1997, Inno Setup has been trusted by developers and organizations
+  of all sizes to reliably deploy software to millions of PCs worldwide.
+
+  '
+Tags:
+- inno
+- setup

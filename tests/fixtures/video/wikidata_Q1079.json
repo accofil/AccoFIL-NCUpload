@@ -1,0 +1,79 @@
+{
+ "entities": {
+  "Q1079": {
+   "id": "Q1079",
+   "type": "item",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "Breaking Bad"
+    },
+    "hu": {
+     "language": "hu",
+     "value": "Totál szívás"
+    }
+   },
+   "descriptions": {
+    "en": {
+     "language": "en",
+     "value": "American crime drama television series (2008–2013)"
+    },
+    "hu": {
+     "language": "hu",
+     "value": "amerikai televíziós sorozat"
+    }
+   },
+   "sitelinks": {
+    "huwiki": {
+     "site": "huwiki",
+     "title": "Breaking Bad – Totál szívás"
+    },
+    "enwiki": {
+     "site": "enwiki",
+     "title": "Breaking Bad"
+    }
+   },
+   "claims": {
+    "P345": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P345",
+       "datavalue": {
+        "value": "tt0903747",
+        "type": "string"
+       }
+      },
+      "rank": "normal"
+     }
+    ],
+    "P905": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P905",
+       "datavalue": {
+        "value": "107826",
+        "type": "string"
+       }
+      },
+      "rank": "normal"
+     }
+    ],
+    "P4983": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P4983",
+       "datavalue": {
+        "value": "1396",
+        "type": "string"
+       }
+      },
+      "rank": "normal"
+     }
+    ]
+   }
+  }
+ }
+}

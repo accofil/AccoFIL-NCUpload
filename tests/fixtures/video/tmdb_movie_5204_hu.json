@@ -1,0 +1,141 @@
+{
+ "adult": false,
+ "backdrop_path": "/x1i0wTxKqT86n1M71GBnc13mxLX.jpg",
+ "budget": 500000,
+ "genres": [
+  {
+   "id": 35,
+   "name": "Vígjáték"
+  },
+  {
+   "id": 80,
+   "name": "Bűnügyi"
+  },
+  {
+   "id": 18,
+   "name": "Dráma"
+  },
+  {
+   "id": 53,
+   "name": "Thriller"
+  }
+ ],
+ "homepage": "https://www.kontrollfilm.hu",
+ "id": 5204,
+ "imdb_id": "tt0373981",
+ "origin_country": [
+  "HU"
+ ],
+ "original_language": "hu",
+ "original_title": "Kontroll",
+ "overview": "Ki ne érezte volna már úgy egy adott pillanatban, rövid vagy hosszabb élete során, hogy ki kell lépnie megszokott környezetéből. El kell bújnia a világ elől. Menekülni a múlt elől, saját maga elől és a jelenből egyaránt. \"Eltűnni a föld színéről\". Bulcsú (20 év körül) életében is elérkezett ez a pillanat.A film a mese és a valóság speciális keveréke. Történet egy furcsa fiatalemberről, Bulcsúról, az ellenőr társakról egy rivális ellenőr csapatról, és mindarról, ami körülöttük van. Az utazók és a jegyellenőrök -jól ismert- drámai, de legtöbbször komikus viszonyáról. Egy kegyetlen gyilkológépről, aki utasokat lök a metró elé, és a metróvezetőség embereiről, akik számára csak egyetlen fontos szempont létezik az utasok metróba vetett hite.",
+ "popularity": 3.2022,
+ "poster_path": "/wtK8xY4gxSw9Sm85sNjinknQjRq.jpg",
+ "production_countries": [
+  {
+   "iso_3166_1": "HU",
+   "name": "Hungary"
+  }
+ ],
+ "release_date": "2003-11-20",
+ "revenue": 1277800,
+ "runtime": 105,
+ "softcore": false,
+ "status": "Released",
+ "tagline": "Van jegyed?",
+ "title": "Kontroll",
+ "video": false,
+ "vote_average": 7.2,
+ "vote_count": 316,
+ "credits": {
+  "cast": [
+   {
+    "name": "Csányi Sándor",
+    "character": "Bulcsú",
+    "order": 0
+   },
+   {
+    "name": "Mucsi Zoltán",
+    "character": "Professzor",
+    "order": 1
+   },
+   {
+    "name": "Pindroch Csaba",
+    "character": "Muki",
+    "order": 2
+   },
+   {
+    "name": "Badár Sándor",
+    "character": "Lecsó",
+    "order": 3
+   },
+   {
+    "name": "Nagy Zsolt",
+    "character": "Tibi",
+    "order": 4
+   },
+   {
+    "name": "Balla Eszter",
+    "character": "Szofi",
+    "order": 5
+   }
+  ],
+  "crew": [
+   {
+    "name": "Antal Nimród",
+    "job": "Director",
+    "department": "Directing"
+   }
+  ]
+ },
+ "external_ids": {
+  "imdb_id": "tt0373981",
+  "wikidata_id": "Q1073297",
+  "facebook_id": null,
+  "instagram_id": null,
+  "twitter_id": null
+ },
+ "translations": {
+  "translations": [
+   {
+    "iso_3166_1": "US",
+    "iso_639_1": "en",
+    "name": "English",
+    "english_name": "English",
+    "data": {
+     "homepage": "",
+     "overview": "A subway enforcement officer working in the oppressively gray Budapest metro gets a chance at love — but first he needs to find out why passengers are jumping — or being pushed — to their deaths onto the tracks.",
+     "runtime": 107,
+     "tagline": "There's no such thing as a free ride.",
+     "title": ""
+    }
+   },
+   {
+    "iso_3166_1": "HU",
+    "iso_639_1": "hu",
+    "name": "Magyar",
+    "english_name": "Hungarian",
+    "data": {
+     "homepage": "https://www.kontrollfilm.hu",
+     "overview": "Ki ne érezte volna már úgy egy adott pillanatban, rövid vagy hosszabb élete során, hogy ki kell lépnie megszokott környezetéből. El kell bújnia a világ elől. Menekülni a múlt elől, saját maga elől és a jelenből egyaránt. \"Eltűnni a föld színéről\". Bulcsú (20 év körül) életében is elérkezett ez a pillanat.A film a mese és a valóság speciális keveréke. Történet egy furcsa fiatalemberről, Bulcsúról, az ellenőr társakról egy rivális ellenőr csapatról, és mindarról, ami körülöttük van. Az utazók és a jegyellenőrök -jól ismert- drámai, de legtöbbször komikus viszonyáról. Egy kegyetlen gyilkológépről, aki utasokat lök a metró elé, és a metróvezetőség embereiről, akik számára csak egyetlen fontos szempont létezik az utasok metróba vetett hite.",
+     "runtime": 105,
+     "tagline": "Van jegyed?",
+     "title": ""
+    }
+   },
+   {
+    "iso_3166_1": "DE",
+    "iso_639_1": "de",
+    "name": "Deutsch",
+    "english_name": "German",
+    "data": {
+     "homepage": "",
+     "overview": "Bulcsú lebt in der Budapester U-Bahn. Immer. Seit Jahren hat der Fahrkartenkontrolleur das Tageslicht nicht mehr gesehen, nicht mehr am normalen Leben teilgenommen. Auf Streife mit seinen Kollegen begegnet ihm täglich der menschgewordene Irrsinn, als Bär verkleidete Traumfrauen, pöbelnde Fahrgäste, gemeingefährliche Schwarzfahrer. Die ewige Rivalität mit den anderen Kontrolltrupps entlädt sich in lebensgefährlichen Mutproben. Da lassen immer mehr Fahrgäste durch die Hand eines geheimnisvollen Kapuzenträgers ihr Leben.",
+     "runtime": 106,
+     "tagline": "Jeder muss bezahlen!",
+     "title": ""
+    }
+   }
+  ]
+ }
+}

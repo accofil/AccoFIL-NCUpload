@@ -1,0 +1,178 @@
+{
+ "adult": false,
+ "backdrop_path": "/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg",
+ "created_by": [
+  {
+   "id": 66633,
+   "name": "Vince Gilligan"
+  }
+ ],
+ "episode_run_time": [],
+ "first_air_date": "2008-01-20",
+ "genres": [
+  {
+   "id": 18,
+   "name": "Dráma"
+  },
+  {
+   "id": 80,
+   "name": "Bűnügyi"
+  }
+ ],
+ "homepage": "https://www.sonypictures.com/tv/breakingbad",
+ "id": 1396,
+ "in_production": false,
+ "languages": [
+  "en",
+  "de",
+  "es"
+ ],
+ "last_air_date": "2013-09-29",
+ "name": "Totál szívás",
+ "number_of_episodes": 62,
+ "number_of_seasons": 5,
+ "origin_country": [
+  "US"
+ ],
+ "original_language": "en",
+ "original_name": "Breaking Bad",
+ "overview": "Egy középiskolai kémiatanárnál rákot állapítanak meg. Családja jövőjének biztosítása érdekében összefog volt diákjával, hogy metamfetamint állítsanak elő és adjanak el.",
+ "popularity": 254.631,
+ "poster_path": "/rB2zuh010Qh7LS1qgqG319kTx0H.jpg",
+ "production_countries": [
+  {
+   "iso_3166_1": "US",
+   "name": "United States of America"
+  }
+ ],
+ "seasons": [
+  {
+   "season_number": 0,
+   "episode_count": 9,
+   "name": "Speciális epizódok",
+   "air_date": "2009-02-17"
+  },
+  {
+   "season_number": 1,
+   "episode_count": 7,
+   "name": "1. évad",
+   "air_date": "2008-01-20"
+  },
+  {
+   "season_number": 2,
+   "episode_count": 13,
+   "name": "2. évad",
+   "air_date": "2009-03-08"
+  },
+  {
+   "season_number": 3,
+   "episode_count": 13,
+   "name": "3. évad",
+   "air_date": "2010-03-21"
+  },
+  {
+   "season_number": 4,
+   "episode_count": 13,
+   "name": "4. évad",
+   "air_date": "2011-07-17"
+  },
+  {
+   "season_number": 5,
+   "episode_count": 16,
+   "name": "5. évad",
+   "air_date": "2012-07-15"
+  }
+ ],
+ "softcore": false,
+ "status": "Ended",
+ "tagline": "",
+ "type": "Scripted",
+ "vote_average": 9.0,
+ "vote_count": 18857,
+ "credits": {
+  "cast": [
+   {
+    "name": "Bryan Cranston",
+    "character": "Walter White",
+    "order": 0
+   },
+   {
+    "name": "Aaron Paul",
+    "character": "Jesse Pinkman",
+    "order": 1
+   },
+   {
+    "name": "Anna Gunn",
+    "character": "Skyler White",
+    "order": 2
+   },
+   {
+    "name": "RJ Mitte",
+    "character": "Walter White Jr.",
+    "order": 3
+   },
+   {
+    "name": "Dean Norris",
+    "character": "Hank Schrader",
+    "order": 4
+   },
+   {
+    "name": "Betsy Brandt",
+    "character": "Marie Schrader",
+    "order": 5
+   }
+  ],
+  "crew": []
+ },
+ "external_ids": {
+  "imdb_id": "tt0903747",
+  "freebase_mid": "/m/03d34x8",
+  "freebase_id": "/en/breaking_bad",
+  "tvdb_id": 81189,
+  "tvrage_id": 18164,
+  "wikidata_id": "Q1079",
+  "facebook_id": "BreakingBad",
+  "instagram_id": "breakingbad",
+  "twitter_id": "BreakingBad"
+ },
+ "translations": {
+  "translations": [
+   {
+    "iso_3166_1": "US",
+    "iso_639_1": "en",
+    "name": "English",
+    "english_name": "English",
+    "data": {
+     "name": "",
+     "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family's financial future at any cost as he enters the dangerous world of drugs and crime.",
+     "homepage": "",
+     "tagline": "Change the equation."
+    }
+   },
+   {
+    "iso_3166_1": "DE",
+    "iso_639_1": "de",
+    "name": "Deutsch",
+    "english_name": "German",
+    "data": {
+     "name": "",
+     "overview": "Ein krebskranker Chemielehrer tut sich mit einem ehemaligen Schüler zusammen, um die Zukunft seiner Familie durch die Herstellung und den Verkauf von Meth zu sichern.",
+     "homepage": "",
+     "tagline": ""
+    }
+   },
+   {
+    "iso_3166_1": "HU",
+    "iso_639_1": "hu",
+    "name": "Magyar",
+    "english_name": "Hungarian",
+    "data": {
+     "name": "Totál szívás",
+     "overview": "Egy középiskolai kémiatanárnál rákot állapítanak meg. Családja jövőjének biztosítása érdekében összefog volt diákjával, hogy metamfetamint állítsanak elő és adjanak el.",
+     "homepage": "",
+     "tagline": ""
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,157 @@
+{
+ "repo": {
+  "name": {
+   "en-US": "F-Droid"
+  },
+  "timestamp": 1792087301235,
+  "address": "https://f-droid.org/repo"
+ },
+ "packages": {
+  "aaa.dummy.first": {
+   "metadata": {
+    "name": {
+     "en-US": "Dummy"
+    }
+   },
+   "versions": {}
+  },
+  "org.fdroid.fdroid": {
+   "metadata": {
+    "added": 1295222400000,
+    "categories": [
+     "App Store & Updater",
+     "System"
+    ],
+    "license": "GPL-3.0-or-later",
+    "sourceCode": "https://gitlab.com/fdroid/fdroidclient",
+    "webSite": "https://f-droid.org",
+    "authorName": "F-Droid",
+    "lastUpdated": 1791814260868,
+    "name": {
+     "en-US": "F-Droid",
+     "hu": "F-Droid",
+     "de": "F-Droid"
+    },
+    "summary": {
+     "en-US": "The app store that respects freedom and privacy",
+     "hu": "Az alkalmazásbolt, amely tiszteletben tartja a szabadságot és az adatvédelmet",
+     "de": "Der App-Store, der Freiheit und Privatsphäre respektiert"
+    },
+    "description": {
+     "en-US": "F-Droid is an installable catalogue of libre software apps for Android. The F-Droid client app makes it easy to browse, install, and keep track of updates on your device.\n\nIt connects to any F-Droid compatible repositories. The default repo is hosted at f-droid.org, which contains only bona fide libre software.\n\nAndroid itself is open in the sense that you are free to install APKs from anywhere you wish, but there are many good reasons for using F-Droid as your libre software app manager:\n\n* Get",
+     "hu": "Az F-Droid telepíthető szabad szoftveres alkalmazások katalógusa. Az F-Droid kliensalkalmazás könnyűvé teszi az alkalmazások tallózását, telepítését és azok frissen tartását az eszközén.\n\nBármely F-Droiddal kompatibilis tárolóhoz képes kapcsolódni. Az alapértelmezett tároló az f-droid.org-on található, és csak valóban szabad szoftvereket tartalmaz.\n\nMaga az Android abban az értelemben nyílt, hogy szabadon telepíthet APK-kat, ahonnan csak szeretne, de számos oka van annak, hogy az F-Droidot haszn",
+     "de": "F-Droid ist ein installierbarer Katalog mit Libre-Software-Apps für Android. Die F-Droid-App vereinfacht die Suche nach Apps, deren Installation und sorgt dafür, dass du auf dem neuesten Stand bleibst.\n\nSie verbindet sich mit jeder mit F-Droid kompatiblen Paketquelle. Die Standardquelle wird auf f-droid.org gehostet, die ausschließlich echte Freie Software enthält.\n\nAndroid selbst ist dahingehend offen, dass jeder die Wahl hat, woher er APKs installieren möchte. Es gibt aber viele gute Gründe, F"
+    },
+    "icon": {
+     "en-US": {
+      "name": "/org.fdroid.fdroid/en-US/icon_0slNR8J9edqDZDoyWABFZrqQONU9EyiNVwM6B3Jui_Q=.png",
+      "sha256": "d2c94d47c27d79da83643a3258004566ba9038d53d13288d57033a07726e8bf4",
+      "size": 9649
+     }
+    },
+    "screenshots": {
+     "phone": {
+      "en-US": [
+       {
+        "name": "/org.fdroid.fdroid/en-US/phoneScreenshots/01-latest.png",
+        "sha256": "69c19763d936a62c4cb68735fc094df2717f4c20a6895cf1409a1034839196cd",
+        "size": 264846
+       },
+       {
+        "name": "/org.fdroid.fdroid/en-US/phoneScreenshots/02-categories.png",
+        "sha256": "fa6252a8376d4f96add1f055b7bbb85a23a5354155b32659f41ec932ee1ec68d",
+        "size": 348582
+       }
+      ],
+      "hu": [
+       {
+        "name": "/org.fdroid.fdroid/hu/phoneScreenshots/1_Discover.png",
+        "sha256": "c541def51b937d22ea8d1f829d1e3a887277bf2a2064b4c1ab76dbeb864061f3",
+        "size": 111847
+       },
+       {
+        "name": "/org.fdroid.fdroid/hu/phoneScreenshots/2_Search.png",
+        "sha256": "b08d7ea6ec9abcfc55ff9303da4dc308c724272bf64311f74c63d4668443f344",
+        "size": 86262
+       }
+      ]
+     }
+    }
+   },
+   "versions": {
+    "19d51fad482239f6df6a99120e34513667e9a86d136dafdc4a211a68c3327b52": {
+     "added": 1791814260868,
+     "file": {
+      "name": "/org.fdroid.fdroid_2000052.apk",
+      "sha256": "19d51fad482239f6df6a99120e34513667e9a86d136dafdc4a211a68c3327b52",
+      "size": 12569951,
+      "ipfsCIDv1": "bafybeie6jgl5ihuodxvtgu7ne6v6iyegmppxe4rcv6oheg57bvzhiynk3y"
+     },
+     "src": {
+      "name": "/org.fdroid.fdroid_2000052_src.tar.gz",
+      "sha256": "3c83979dfed4d5051ea85daf68994c067fec77f1e0ce393e12bfbf8ec8ce7e7f",
+      "size": 25533262
+     },
+     "manifest": {
+      "versionName": "2.0.2",
+      "versionCode": 2000052,
+      "usesSdk": {
+       "minSdkVersion": 24,
+       "targetSdkVersion": 37
+      },
+      "signer": {
+       "sha256": [
+        "43238d512c1e5eb2d6569f4a3afbf5523418b82e0a3ed1552770abb9a9c9ccab"
+       ]
+      },
+      "nativecode": [
+       "arm64-v8a",
+       "armeabi-v7a",
+       "x86",
+       "x86_64"
+      ]
+     },
+     "releaseChannels": [
+      "Beta"
+     ]
+    },
+    "83d3fe522281c3cb89fce3bc05038f81b3c3b32c108536941f184c5f9bb53778": {
+     "added": 1790715170525,
+     "file": {
+      "name": "/org.fdroid.fdroid_2000051.apk",
+      "sha256": "83d3fe522281c3cb89fce3bc05038f81b3c3b32c108536941f184c5f9bb53778",
+      "size": 12537183,
+      "ipfsCIDv1": "bafybeidij2urmoug2umfj7ipabqegjije3yxpdf7dj6dq55uyodevy7oui"
+     },
+     "src": {
+      "name": "/org.fdroid.fdroid_2000051_src.tar.gz",
+      "sha256": "098592bf9f46d33e8fc916866fbee9db20c100a3a265d4f1ba1a233eb30eeadb",
+      "size": 25521050
+     },
+     "manifest": {
+      "versionName": "2.0.1",
+      "versionCode": 2000051,
+      "usesSdk": {
+       "minSdkVersion": 24,
+       "targetSdkVersion": 37
+      },
+      "signer": {
+       "sha256": [
+        "43238d512c1e5eb2d6569f4a3afbf5523418b82e0a3ed1552770abb9a9c9ccab"
+       ]
+      },
+      "nativecode": [
+       "arm64-v8a",
+       "armeabi-v7a",
+       "x86",
+       "x86_64"
+      ]
+     },
+     "releaseChannels": [
+      "Beta"
+     ]
+    }
+   }
+  }
+ }
+}

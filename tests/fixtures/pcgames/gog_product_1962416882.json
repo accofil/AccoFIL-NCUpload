@@ -1,0 +1,90 @@
+{
+ "id": 1962416882,
+ "title": "Tank Squad",
+ "slug": "tank_squad",
+ "languages": {
+  "br": "Português do Brasil",
+  "cn": "中文",
+  "de": "Deutsch",
+  "en": "English",
+  "es": "español",
+  "fr": "français",
+  "hu": "magyar",
+  "it": "italiano",
+  "jp": "日本語",
+  "pl": "polski",
+  "pt": "português",
+  "ru": "русский",
+  "tr": "Türkçe"
+ },
+ "links": {
+  "purchase_link": "https://www.gog.com/en/checkout/manual/tank_squad",
+  "product_card": "https://www.gog.com/game/tank_squad",
+  "support": "https://www.gog.com/support/tank_squad",
+  "forum": "https://www.gog.com/forum/tank_squad"
+ },
+ "game_type": "game",
+ "release_date": "2026-10-13T13:00:00+0200",
+ "dlcs": {
+  "products": [
+   {
+    "id": 1094620999,
+    "link": "https://api.gog.com/products/1094620999",
+    "expanded_link": "https://api.gog.com/products/1094620999?expand=description,downloads"
+   }
+  ],
+  "all_products_url": "https://api.gog.com/products?ids=1094620999",
+  "expanded_all_products_url": "https://api.gog.com/products?ids=1094620999&expand=description,downloads"
+ },
+ "description": {
+  "lead": "\n<p>\nTank Squad is a tactical-combat action game, where you take command of your tank squad and lead it during tank battles of World War II. Take part in historical battles, set in linear campaigns, alone or with up to three friends.&nbsp;\n</p>\n\n<p>\n&nbsp;\n</p>\n\n<p>\nEach player can control his own tank or be a part of your tank crew.\n</p>\n\n<p>\nEach battle is a separate mission in the campaign, with separate objectives that you need to achieve to win the battle. Plan ahead of your strategy and tactics, use infantry, artillery and air support when it is available. Minimize your losses, to be prepared properly for the final battle of the campaign.\n</p>\n<h4><strong>MANAGE &amp; REPAIR</strong></h4>\n<p>\n&nbsp;\n</p>\n\n<p>\n<video muted loop preload=\"auto\" autoplay=\"autoplay\" style=\"margin: auto;display:block;width:100%\"><source src=\"https://items.gog.com/tank_squad/TS_STORE_1_v2-de940-f9c77.webm\" type=\"video/webm\"></video>\n</p>\n\n<p>\n&nbsp;\n</p>\n\n<p>\nWhile playing the campaign missions, tanks can be damaged or lost during the battles. Try to pull as many tanks as possible back to the repair station, whether they are your own or your enemies. While the tanks are being repaired, work together to get them back into action faster.\n</p>\n<ul>\n\t<li>Repair damages taken during battle</li>\n\t<li>Replenish tank ammo (main gun and machine guns)</li>\n\t<li>Refuel vehicles</li>\n</ul><h4><strong>CUSTOM FORCE POOL</strong></h4>\n<p>\n&nbsp;\n</p>\n\n<p>\n<video muted loop preload=\"auto\" autoplay=\"autoplay\" ",
+  "full": "\n<p>\nTank Squad is a tactical-combat action game, where you take command of your tank squad and lead it during tank battles of World War II. Take part in historical battles, set in linear campaigns, alone or with up to three friends.&nbsp;\n</p>\n\n<p>\n&nbsp;\n</p>\n\n<p>\nEach player can control his own tank or be a part of your tank crew.\n</p>\n\n<p>\nEach battle is a separate mission in the campaign, with separate objectives that you need to achieve to win the battle. Plan ahead of your strategy and tactics, use infantry, artillery and air support when it is available. Minimize your losses, to be prepared properly for the final battle of the campaign.\n</p>\n<h4><strong>MANAGE &amp; REPAIR</strong></h4>\n<p>\n&nbsp;\n</p>\n\n<p>\n<video muted loop preload=\"auto\" autoplay=\"autoplay\" style=\"margin: auto;display:block;width:100%\"><source src=\"https://items.gog.com/tank_squad/TS_STORE_1_v2-de940-f9c77.webm\" type=\"video/webm\"></video>\n</p>\n\n<p>\n&nbsp;\n</p>\n\n<p>\nWhile playing the campaign missions, tanks can be damaged or lost during the battles. Try to pull as many tanks as possible back to the repair station, whether they are your own or your enemies. While the tanks are being repaired, work together to get them back into action faster.\n</p>\n<ul>\n\t<li>Repair damages taken during battle</li>\n\t<li>Replenish tank ammo (main gun and machine guns)</li>\n\t<li>Refuel vehicles</li>\n</ul><h4><strong>CUSTOM FORCE POOL</strong></h4>\n<p>\n&nbsp;\n</p>\n\n<p>\n<video muted loop preload=\"auto\" autoplay=\"autoplay\" style=\"margin: auto;display:block;width:100%\"><source src=\"https://items.gog.com/tank_squad/TS_STORE_2_v2-892c0-a60cf.webm\" type=\"video/webm\"></video>\n</p>\n\n<p>\n&nbsp;\n</p>\n\n<p>\nManage your squads. Replace the deceased or destroyed units in squads. Create new squads and assign any units from the pool automatically or manually.\n</p>\n\n<p>\n&nbsp;\n</p>\n<h4><strong>COOPERATIVE GAME MODES</strong></h4>\n<p>\n&nbsp;\n</p>\n\n<p>\n<video muted loop preload=\"auto\" autoplay=\"autoplay\" style=\"margin: auto;display:block;width:100%\"><source src=\"https://items.gog.com/tank_squad/TS_STORE_3_v2-39ed4-01c0d.webm\" type=\"video/webm\"></video>\n</p>\n\n<p>\n&nbsp;\n</p>\n\n<p>\nPlay skirmish or procedural missions with up to 3 friends, use tank radio to communicate and give out orders to coordinate your squad.\n</p>\n<h4><strong>MULTI-CREW OPTIONS</strong></h4>\n<p>\n&nbsp;\n</p>\n\n<p>\n<video muted loop preload=\"auto\" autoplay=\"autoplay\" style=\"margin: auto;display:block;width:100%\"><source src=\"https://items.gog.com/tank_squ"
+ },
+ "downloads": {
+  "installers": [
+   {
+    "id": "installer_windows_en",
+    "name": "Tank Squad",
+    "os": "windows",
+    "language": "en",
+    "language_full": "English",
+    "version": "1.3.10 16733",
+    "total_size": 12135170048,
+    "files": [
+     {
+      "id": "en1installer0",
+      "size": 2097152
+     },
+     {
+      "id": "en1installer1",
+      "size": 4291821568
+     },
+     {
+      "id": "en1installer2",
+      "size": 4293918720
+     },
+     {
+      "id": "en1installer3",
+      "size": 3547332608
+     }
+    ]
+   }
+  ],
+  "patches": [
+   {
+    "id": "en1patch0",
+    "name": "Patch (1.3.10 v5 staging to 1.3.10 16733)",
+    "os": "windows",
+    "language": "en",
+    "version": "1.3.10 16733",
+    "total_size": 119537664,
+    "files": [
+     {
+      "id": "en1patch0",
+      "size": 119537664
+     }
+    ]
+   }
+  ]
+ }
+}

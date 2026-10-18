@@ -1,0 +1,35 @@
+{
+ "productCount": 1,
+ "products": [
+  {
+   "id": "1407750955",
+   "slug": "tomb_raider_i_to_iii_remastered",
+   "title": "Tomb Raider I-III Remastered Starring Lara Croft",
+   "productType": "game",
+   "releaseDate": "2024.02.14",
+   "developers": [
+    "Aspyr",
+    "Crystal Dynamics"
+   ],
+   "publishers": [
+    "Aspyr"
+   ],
+   "genres": [
+    {
+     "name": "Action",
+     "slug": "action"
+    },
+    {
+     "name": "Adventure",
+     "slug": "adventure"
+    },
+    {
+     "name": "Exploration",
+     "slug": "exploration"
+    }
+   ],
+   "coverVertical": "https://images.gog-statics.com/33b6e2288c8c52a457c7f6e4c6b9a90047ee26d1cd92ab6c453606efb3467aa5.jpg",
+   "storeLink": "https://www.gog.com/en/game/tomb_raider_i_to_iii_remastered"
+  }
+ ]
+}

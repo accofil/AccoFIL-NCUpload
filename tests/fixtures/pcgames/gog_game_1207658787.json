@@ -1,0 +1,196 @@
+{
+ "isUsingDosBox": false,
+ "description": "<video muted preload=\"auto\" loop autoplay=\"autoplay\" style=\"margin: auto;display:block;width:100%\">\n  <source src=\"https://items.gog.com/heroes_of_might_and_magic_3_complete_edition/mp4/homm3_map2.mp4\" type=\"video/mp4\"></video>\n<br>\n<b>Includes Heroes of Might & Magic III and its expansions: Armageddon's Blade and The Shadow of Death</b>\n<br><br>\nMurder, treachery, resurrection, savage battles and ultimately-freedom!<br><br>When Erathia's King Gryphonheart is murdered by traitors he is resurrected as an undead warlord who leads a ruthless invasion of his former Kingdom. Little resistance is met until his daughter Catherine, Queen of Enroth, returns to her homeland commanding an army of elite Enrothian warriors. Meanwhile the Necromancers raise large hordes of undead and advance towards the Erathian capitol. Queen Catherine receives the aid of her father's survived generals and embarks on a crusade to reclaim her lost land.<br><br>You control the greatest heroes and fiercest creatures in a conflict of epic proportions, as Cathereine fights to restore her family's rightful reign, uncover her father's killers and free him from the dark prison of his undead body! <br><br>This is a must have for every Might and Magic series fan! ",
+ "_links": {
+  "self": {
+   "href": "https://api.gog.com/v2/games/1207658787?locale=en-US"
+  },
+  "store": {
+   "href": "https://www.gog.com/en/game/heroes_of_might_and_magic_3_complete_edition"
+  },
+  "boxArtImage": {
+   "href": "https://images.gog-statics.com/869b56a1048405d97f48358ea537af2c08c9d8cd508f8e4a82883bf8eafad361.jpg"
+  }
+ },
+ "_embedded": {
+  "productType": "GAME",
+  "localizations": [
+   {
+    "_embedded": {
+     "language": {
+      "code": "en",
+      "name": "English"
+     },
+     "localizationScope": {
+      "type": "audio"
+     }
+    }
+   },
+   {
+    "_embedded": {
+     "language": {
+      "code": "en",
+      "name": "English"
+     },
+     "localizationScope": {
+      "type": "text"
+     }
+    }
+   },
+   {
+    "_embedded": {
+     "language": {
+      "code": "fr",
+      "name": "French"
+     },
+     "localizationScope": {
+      "type": "audio"
+     }
+    }
+   },
+   {
+    "_embedded": {
+     "language": {
+      "code": "fr",
+      "name": "French"
+     },
+     "localizationScope": {
+      "type": "text"
+     }
+    }
+   },
+   {
+    "_embedded": {
+     "language": {
+      "code": "pl",
+      "name": "Polish"
+     },
+     "localizationScope": {
+      "type": "audio"
+     }
+    }
+   },
+   {
+    "_embedded": {
+     "language": {
+      "code": "pl",
+      "name": "Polish"
+     },
+     "localizationScope": {
+      "type": "text"
+     }
+    }
+   },
+   {
+    "_embedded": {
+     "language": {
+      "code": "ru",
+      "name": "Russian"
+     },
+     "localizationScope": {
+      "type": "audio"
+     }
+    }
+   },
+   {
+    "_embedded": {
+     "language": {
+      "code": "ru",
+      "name": "Russian"
+     },
+     "localizationScope": {
+      "type": "text"
+     }
+    }
+   }
+  ],
+  "publisher": {
+   "name": "Ubisoft",
+   "searchIndex": "ubisoft"
+  },
+  "publishers": [
+   {
+    "name": "Ubisoft",
+    "searchIndex": "ubisoft"
+   }
+  ],
+  "developers": [
+   {
+    "name": "New World Computing, Inc.",
+    "searchIndex": "new-world-computing-inc"
+   }
+  ],
+  "supportedOperatingSystems": [
+   {
+    "operatingSystem": {
+     "name": "windows",
+     "versions": "Windows"
+    },
+    "systemRequirements": [
+     {
+      "type": "minimum",
+      "description": "Windows XP or Windows Vista, 1 GHz Processor (1.4 GHz recommended), 256MB RAM (512 recommended), 3D graphics card compatible with DirectX 7 (compatible with DirectX 9 recommended), Mouse, Keyboard",
+      "requirements": [
+       {
+        "id": "system",
+        "name": "System:",
+        "description": "Windows (10, 11)"
+       },
+       {
+        "id": "processor",
+        "name": "Processor:",
+        "description": "1.8 GHz"
+       },
+       {
+        "id": "memory",
+        "name": "Memory:",
+        "description": "2 GB RAM"
+       },
+       {
+        "id": "graphics",
+        "name": "Graphics:",
+        "description": "3D graphics card compatible with DirectX 9.0c"
+       },
+       {
+        "id": "directx",
+        "name": "DirectX:",
+        "description": "DirectX 9.0c"
+       },
+       {
+        "id": "other",
+        "name": "Other:",
+        "description": "Multi LAN and Hotseat only"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "tags": [
+   {
+    "id": 56,
+    "name": "Strategy",
+    "level": 1,
+    "slug": "strategy"
+   },
+   {
+    "id": 63,
+    "name": "Turn-based",
+    "level": 2,
+    "slug": "turnbased"
+   },
+   {
+    "id": 71,
+    "name": "Fantasy",
+    "level": 3,
+    "slug": "fantasy"
+   }
+  ],
+  "product": {
+   "id": 1207658787,
+   "title": "Heroes of Might and Magic® 3: Complete",
+   "globalReleaseDate": "1999-06-01T00:00:00+02:00",
+   "category": "GAME"
+  }
+ }
+}

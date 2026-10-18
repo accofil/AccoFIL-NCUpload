@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Synthetic sample in the GameTDB 3dstdb.xml layout (hand-written for the parser tests; no text copied from GameTDB). -->
+<datafile xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="3dstdb.xsd">
+	<TDB3DS version="20261016000000" filter="EN" games="1"/>
+	<game name="Super Mario 3D Land (Europe) (EN,FR,DE,ES,IT,NL,PT,RU)">
+		<id>AREP</id>
+		<type>3DS</type>
+		<region>PAL</region>
+		<languages>EN,FR,DE,ES,IT,NL,PT,RU</languages>
+		<locale lang="EN">
+			<title>Super Mario 3D Land</title>
+			<synopsis>A short synthetic synopsis of a 3D platformer, written for this test.</synopsis>
+		</locale>
+		<locale lang="DE">
+			<title>Super Mario 3D Land</title>
+			<synopsis/>
+		</locale>
+		<developer>Nintendo EAD</developer>
+		<publisher>Nintendo</publisher>
+		<date year="2011" month="11" day="18"/>
+		<genre>action,adventure,platformer</genre>
+		<rating type="PEGI" value="3"/>
+	</game>
+</datafile>

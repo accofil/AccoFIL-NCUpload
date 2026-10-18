@@ -1,0 +1,121 @@
+{
+ "productCount": 4,
+ "products": [
+  {
+   "id": "2142732028",
+   "slug": "mechwarrior_5_mercenaries_jumpship_edition",
+   "title": "MechWarrior 5: Mercenaries - JumpShip Edition",
+   "productType": "pack",
+   "releaseDate": "2021.09.23",
+   "developers": [
+    "Piranha Games Inc."
+   ],
+   "publishers": [
+    "Piranha Games Inc."
+   ],
+   "genres": [
+    {
+     "name": "Simulation",
+     "slug": "simulation"
+    },
+    {
+     "name": "Action",
+     "slug": "action"
+    },
+    {
+     "name": "Sci-fi",
+     "slug": "scifi"
+    }
+   ],
+   "coverVertical": "https://images.gog-statics.com/f2fa301006ada2dde9c91894d1ceb6d7c47c9b2b56bc5c31eb0bb1df9b1086b8.jpg",
+   "storeLink": "https://www.gog.com/en/game/mechwarrior_5_mercenaries_jumpship_edition"
+  },
+  {
+   "id": "2147483045",
+   "slug": "mechwarrior_5_mercenaries",
+   "title": "MechWarrior 5: Mercenaries",
+   "productType": "game",
+   "releaseDate": "2021.05.27",
+   "developers": [
+    "Piranha Games Inc."
+   ],
+   "publishers": [
+    "Piranha Games Inc."
+   ],
+   "genres": [
+    {
+     "name": "Simulation",
+     "slug": "simulation"
+    },
+    {
+     "name": "Action",
+     "slug": "action"
+    },
+    {
+     "name": "Sci-fi",
+     "slug": "scifi"
+    }
+   ],
+   "coverVertical": "https://images.gog-statics.com/c74ad8b469b83308af1e9e557a57613f3e5352485c73cd1878cb2ad377dc2838.jpg",
+   "storeLink": "https://www.gog.com/en/game/mechwarrior_5_mercenaries"
+  },
+  {
+   "id": "1296881380",
+   "slug": "mechwarrior_5_mercenaries_succession_wars_edition",
+   "title": "MechWarrior 5: Mercenaries - Succession Wars Edition",
+   "productType": "pack",
+   "releaseDate": "2024.04.15",
+   "developers": [
+    "Piranha Games Inc."
+   ],
+   "publishers": [
+    "Piranha Games Inc."
+   ],
+   "genres": [
+    {
+     "name": "Simulation",
+     "slug": "simulation"
+    },
+    {
+     "name": "Action",
+     "slug": "action"
+    },
+    {
+     "name": "Sci-fi",
+     "slug": "scifi"
+    }
+   ],
+   "coverVertical": "https://images.gog-statics.com/a27423d9eb46bb640721c514ceec7a1e29f5a9abbbcb6493847c498f68315a77.jpg",
+   "storeLink": "https://www.gog.com/en/game/mechwarrior_5_mercenaries_succession_wars_edition"
+  },
+  {
+   "id": "2029921225",
+   "slug": "mechwarrior_5_mercenaries_dlc_upgrade_bundle",
+   "title": "MechWarrior 5: Mercenaries DLC Upgrade Bundle",
+   "productType": "pack",
+   "releaseDate": "2024.05.31",
+   "developers": [
+    "Piranha Games Inc."
+   ],
+   "publishers": [
+    "Piranha Games Inc."
+   ],
+   "genres": [
+    {
+     "name": "Simulation",
+     "slug": "simulation"
+    },
+    {
+     "name": "Action",
+     "slug": "action"
+    },
+    {
+     "name": "Sci-fi",
+     "slug": "scifi"
+    }
+   ],
+   "coverVertical": "https://images.gog-statics.com/eb5daa7a6bc2f2bb865e5eb3fcb2903b33301fa4b02793d7b77e86d224b2252e.jpg",
+   "storeLink": "https://www.gog.com/en/game/mechwarrior_5_mercenaries_dlc_upgrade_bundle"
+  }
+ ]
+}

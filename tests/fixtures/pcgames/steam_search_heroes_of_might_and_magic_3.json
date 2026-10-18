@@ -1,0 +1,25 @@
+{
+ "total": 4,
+ "items": [
+  {
+   "type": "app",
+   "name": "Heroes Of Might And Magic III",
+   "id": 4921760
+  },
+  {
+   "type": "app",
+   "name": "Heroes of Might and Magic III Remake",
+   "id": 3809850
+  },
+  {
+   "type": "app",
+   "name": "Heroes® of Might & Magic® III - HD Edition",
+   "id": 297000
+  },
+  {
+   "type": "app",
+   "name": "Heroes of Might and Magic III: Horn of the Abyss",
+   "id": 5061200
+  }
+ ]
+}

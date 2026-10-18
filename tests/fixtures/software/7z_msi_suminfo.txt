@@ -1,0 +1,13 @@
+Title: Installation Database
+Subject: 7-Zip (x64 edition) Package
+Author: Igor Pavlov
+Keywords: Installer
+Comments: 7-Zip (x64 edition) Package
+Template: x64;1033
+Revision number (UUID): {23170F69-40C1-2702-2604-000002000000}
+Created: Mon Oct  5 21:44:47 2026
+Last saved: Mon Oct  5 21:44:47 2026
+Version: 200 (c8)
+Source: 2 (2)
+Application: Windows Installer XML v2.0.3719.0 (candle/light)
+Security: 2 (2)

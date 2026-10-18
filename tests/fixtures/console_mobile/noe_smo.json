@@ -1,0 +1,49 @@
+{
+ "responseHeader": {
+  "status": 0,
+  "QTime": 1,
+  "params": {
+   "q": "super mario odyssey",
+   "fq": "type:GAME AND system_type:nintendoswitch*",
+   "rows": "2",
+   "wt": "json"
+  }
+ },
+ "response": {
+  "numFound": 330,
+  "start": 0,
+  "numFoundExact": true,
+  "docs": [
+   {
+    "title": "Super Mario Odyssey",
+    "url": "/en-gb/Games/Nintendo-Switch-games/Super-Mario-Odyssey-1173332.html",
+    "nsuid_txt": [
+     "70010000000127"
+    ],
+    "product_code_txt": [
+     "HACPAAACA"
+    ],
+    "publisher": "Nintendo",
+    "excerpt": "Join Mario on a massive, globe-trotting 3D adventure and use his incredible new abilities to rescue Princess Peach from Bowser’s wedding plans!",
+    "image_url": "https://www.nintendo.com/eu/media/images/05_packshots/games_13/nintendo_switch_8/PS_NSwitch_SuperMarioOdyssey_PEGI_image500w.jpg",
+    "dates_released_dts": [
+     "2017-10-27T00:00:00Z"
+    ],
+    "pretty_game_categories_txt": [
+     "Action",
+     "Adventure",
+     "Platformer"
+    ],
+    "language_availability": [
+     "japanese, english, spanish, french, german, italian, dutch, russian"
+    ],
+    "age_rating_value": "7",
+    "system_type": [
+     "nintendoswitch_digitaldistribution,nintendoswitch_gamecard"
+    ],
+    "fs_id": "1173332",
+    "type": "GAME"
+   }
+  ]
+ }
+}

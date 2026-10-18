@@ -1,0 +1,34 @@
+{
+ "productCount": 1,
+ "products": [
+  {
+   "id": "1207658787",
+   "slug": "heroes_of_might_and_magic_3_complete_edition",
+   "title": "Heroes of Might and Magic® 3: Complete",
+   "productType": "game",
+   "releaseDate": "1999.06.01",
+   "developers": [
+    "New World Computing, Inc."
+   ],
+   "publishers": [
+    "Ubisoft"
+   ],
+   "genres": [
+    {
+     "name": "Strategy",
+     "slug": "strategy"
+    },
+    {
+     "name": "Turn-based",
+     "slug": "turnbased"
+    },
+    {
+     "name": "Fantasy",
+     "slug": "fantasy"
+    }
+   ],
+   "coverVertical": "https://images.gog-statics.com/869b56a1048405d97f48358ea537af2c08c9d8cd508f8e4a82883bf8eafad361.jpg",
+   "storeLink": "https://www.gog.com/en/game/heroes_of_might_and_magic_3_complete_edition"
+  }
+ ]
+}

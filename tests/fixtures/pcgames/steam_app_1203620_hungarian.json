@@ -1,0 +1,47 @@
+{
+ "1203620": {
+  "success": true,
+  "data": {
+   "type": "game",
+   "name": "Enshrouded",
+   "steam_appid": 1203620,
+   "short_description": "Enshrouded is a solo and co-op survival action RPG where your freedom and creativity come first. Conquer the Shroud, a corrupting fog devouring the kingdom of Embervale: explore a handcrafted world full of secrets, forge your hero your way, and build anything, anywhere in a fully terraformable land.",
+   "about_the_game": "<p class=\"bb_paragraph\" ><strong>RISE AS A FLAMEBORN</strong></p><p class=\"bb_paragraph\" >You awaken as the last hope of a fallen kingdom. Forge your hero through a deep skill tree - armored juggernaut, deadly ranger, devastating battlemage - or blend them into a playstyle entirely your own.<br><br><span class=\"bb_img_ctn\"><video class=\"bb_img\" autoplay muted loop playsinline poster=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203620/extras/f6027a9d2efe7341ee68b2c0e875a8f1.poster.avif?t=1792078032\" width=780 height=300 ><source src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203620/extras/f6027a9d2efe7341ee68b2c0e875a8f1.webm?t=1792078032\" type=\"video/webm; codecs=vp9\"><source src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203620/extras/f6027a9d2efe7341ee68b2c0e875a8f1.mp4?t=1792078032\" type=\"video/mp4\"></video></span></p><p class=\"bb_paragraph\" ><strong>EXPLORE A VAST WORLD OF WILD BEAUTY</strong></p><p class=\"bb_paragraph\" >Discover breathtaking landscapes and the secrets of a fallen civilization. Journey through lush forests, sun-scorched dunes, snow-capped peaks, and ruins swallowed by the Shroud. Swing across chasms with your grappling hook, glide from dizzying heights, and dive beneath the waters to reach places no road will ever lead to.<br><br><span class=\"bb_img_ctn\"><video class=\"bb_img\" autoplay muted loop playsinline poster=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203620/extras/003d8714fdc57b2601f120f26be476f4.poster.avif?t=1792078032\" width=780 height=300 ><source src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203620/extras/003d8714fdc57b2601f120f26be476f4.webm?t=1792078032\" type=\"video/webm; codecs=vp9\"><source src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203620/extras/003d8714fdc57b2601f120f26be476f4.mp4?t=1792078032\" type=\"video/mp4\"></video></span></p><p class=\"bb_paragraph\" ><strong>SURVIVE AND GROW</strong></p><p class=\"bb_paragraph\" >Live off the land - hunt, farm, fish, and scavenge rare materials. Rescue survivors from the Shroud, and your lonely hut grows into a bustling settlement of craftspeople and townsfolk, unlocking new recipes and gear. Survival here rewards preparation and creativity.<br><br><span class=\"bb_img_ctn\"><video class=\"bb_img\" autoplay muted loop playsinline poster=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203620/extras/e79b67669887c1",
+   "supported_languages": "Angol, Francia, Olasz, Német, Spanyolországi spanyol, Japán, Koreai, Lengyel, Brazíliai portugál, Orosz, Egyszerűsített kínai, Hagyományos kínai, Török, Ukrán, Thai",
+   "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203620/98ca939f51b39bdd41e0e9198a9ccf8421148770/header_alt_assets_2.jpg?t=1792078032",
+   "website": "https://www.enshrouded.com",
+   "pc_requirements": {
+    "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"><li>64 bites processzor és operációs rendszer szükséges<br></li><li><strong>Op. rendszer:</strong> Windows 10<br></li><li><strong>Processzor:</strong> Intel Core i5-6400 (2.7 GHz 4 Core) / AMD Ryzen 5 1500X (3.5 GHz 4 Core) or equivalent<br></li><li><strong>Memória:</strong> 16 GB RAM<br></li><li><strong>Grafika:</strong> NVIDIA GeForce GTX 1060 (req. 6GB VRAM) / AMD Radeon RX 580 (req. 6GB VRAM) / Intel ARC A380<br></li><li><strong>Hálózat:</strong> Széles sávú internetkapcsolat<br></li><li><strong>Tárhely:</strong> 60 GB szabad hely<br></li><li><strong>Hangkártya:</strong> on board</li></ul>",
+    "recommended": "<strong>Ajánlott:</strong><br><ul class=\"bb_ul\"><li>64 bites processzor és operációs rendszer szükséges<br></li><li><strong>Op. rendszer:</strong> Windows 10<br></li><li><strong>Processzor:</strong> Intel i7-8700 (3.7 GHz 6 Core) / AMD Ryzen 7 2700X (3.7 GHz 8 Core) or equivalent<br></li><li><strong>Memória:</strong> 16 GB RAM<br></li><li><strong>Grafika:</strong> NVIDIA RTX 2070 Super (req. 6GB VRAM) / AMD Radeon RX 6700 XT (req. 6GB VRAM) / Intel ARC A770<br></li><li><strong>Hálózat:</strong> Széles sávú internetkapcsolat<br></li><li><strong>Tárhely:</strong> 60 GB szabad hely<br></li><li><strong>Hangkártya:</strong> on board<br></li><li><strong>Egyéb megjegyzések:</strong> SSD recommended.</li></ul>"
+   },
+   "developers": [
+    "Keen Games GmbH"
+   ],
+   "publishers": [
+    "Keen Games GmbH"
+   ],
+   "genres": [
+    {
+     "id": "1",
+     "description": "Akció"
+    },
+    {
+     "id": "25",
+     "description": "Kaland"
+    },
+    {
+     "id": "23",
+     "description": "Indie"
+    },
+    {
+     "id": "3",
+     "description": "Szerepjáték"
+    }
+   ],
+   "release_date": {
+    "coming_soon": false,
+    "date": "2026. okt. 15."
+   }
+  }
+ }
+}

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "path": "/adat/Film.2026.1080p-GROUP",
+      "label": "Eredeti filmrelease",
+      "original": true
+    },
+    {
+      "path": "/zene/Artist-Album-FLAC-2026-GROUP",
+      "label": "Album saját feltöltésként",
+      "original": false,
+      "category": "lossless"
+    },
+    {
+      "path": "/adat/Series.S01E03.mkv",
+      "answers": "adatlapok/epizod.json",
+      "enabled": false
+    }
+  ]
+}

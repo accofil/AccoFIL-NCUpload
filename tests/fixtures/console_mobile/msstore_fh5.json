@@ -1,0 +1,139 @@
+{
+ "Products": [
+  {
+   "ProductId": "9NKX70BBCDRN",
+   "LocalizedProperties": [
+    {
+     "DeveloperName": "Playground Games",
+     "PublisherName": "Xbox Game Studios",
+     "PublisherAddress": null,
+     "PublisherWebsiteUri": "",
+     "SupportUri": "Aka.ms/ForzaSupport",
+     "SupportPhone": null,
+     "Images": [
+      {
+       "FileId": "3009031359891635421",
+       "EISListingIdentifier": {
+        "ListingId": "3000000000000000104",
+        "AssetId": "1152922700006864386"
+       },
+       "BackgroundColor": "#FFFFFF",
+       "Caption": "",
+       "FileSizeInBytes": 7698315,
+       "ForegroundColor": "#FFFFFF",
+       "Height": 2160,
+       "ImagePositionInfo": "",
+       "ImagePurpose": "BoxArt",
+       "UnscaledImageSHA256Hash": "H0rcZJ7bhJTFG8bnryWwsBL0tqQfNLMqldGpOimP9bA=",
+       "Uri": "//store-images.s-microsoft.com/image/apps.18975.13718773309227929.bebdcc0e-1ed5-4778-8732-f4ef65a2f445.125d6b3b-492f-4e5f-8037-7ade230c8224",
+       "Width": 2160
+      },
+      {
+       "FileId": "3035358509901344469",
+       "EISListingIdentifier": {
+        "ListingId": "3000000000000000104",
+        "AssetId": "1152922700006864385"
+       },
+       "BackgroundColor": "#FFFFFF",
+       "Caption": "",
+       "FileSizeInBytes": 4252935,
+       "ForegroundColor": "#FFFFFF",
+       "Height": 2160,
+       "ImagePositionInfo": "",
+       "ImagePurpose": "Poster",
+       "UnscaledImageSHA256Hash": "iMKWS5iAeMuEZVfdPhQX2vgaU5+1XvnL0XWHNKbCIzo=",
+       "Uri": "//store-images.s-microsoft.com/image/apps.49800.13718773309227929.bebdcc0e-1ed5-4778-8732-f4ef65a2f445.9ac09d39-064d-466c-81ca-2f1b6f0b95c5",
+       "Width": 1440
+      },
+      {
+       "FileId": "3004737059122876041",
+       "EISListingIdentifier": {
+        "ListingId": "3000000000000000104",
+        "AssetId": "1152922700006864384"
+       },
+       "BackgroundColor": "#FFFFFF",
+       "Caption": "Comparison chart showing the content included in Standard, Deluxe, Premium, and Premium Add-Ons editions, with the list of contents including Base Game, Car Pass, Welcome Pack, VIP Membership, Hot Wheels, and Rally Adventure.",
+       "FileSizeInBytes": 3769541,
+       "ForegroundColor": "#FFFFFF",
+       "Height": 2160,
+       "ImagePositionInfo": "Desktop/1",
+       "ImagePurpose": "Screenshot",
+       "UnscaledImageSHA256Hash": "E3V8Can3OizNm7ID4giXa4P7d4BHuZwywpYu0V+pweo=",
+       "Uri": "//store-images.s-microsoft.com/image/apps.29971.13718773309227929.e92d2024-5958-497f-9607-075d33c4b45c.2b8d91dd-072e-42ab-865e-c2697e2a2b27",
+       "Width": 3840
+      },
+      {
+       "FileId": "3037628361603514635",
+       "EISListingIdentifier": {
+        "ListingId": "3000000000000000104",
+        "AssetId": "1152922700007092974"
+       },
+       "BackgroundColor": "#FFFFFF",
+       "Caption": "Comparison chart showing the content included in Standard, Deluxe, Premium, and Premium Add-Ons editions, with the list of contents including Base Game, Car Pass, Welcome Pack, VIP Membership, Hot Wheels, and Rally Adventure.",
+       "FileSizeInBytes": 3769541,
+       "ForegroundColor": "#FFFFFF",
+       "Height": 2160,
+       "ImagePositionInfo": "Xbox/1",
+       "ImagePurpose": "Screenshot",
+       "UnscaledImageSHA256Hash": "E3V8Can3OizNm7ID4giXa4P7d4BHuZwywpYu0V+pweo=",
+       "Uri": "//store-images.s-microsoft.com/image/apps.29971.13718773309227929.e92d2024-5958-497f-9607-075d33c4b45c.2b8d91dd-072e-42ab-865e-c2697e2a2b27",
+       "Width": 3840
+      },
+      {
+       "FileId": "3043391770132046145",
+       "EISListingIdentifier": {
+        "ListingId": "3000000000000000104",
+        "AssetId": "1152922700007092975"
+       },
+       "BackgroundColor": "#FFFFFF",
+       "Caption": "Off-road vehicles racing down a rocky hillside toward a scenic Mexican coastline landscape.",
+       "FileSizeInBytes": 18631961,
+       "ForegroundColor": "#FFFFFF",
+       "Height": 2160,
+       "ImagePositionInfo": "Xbox/2",
+       "ImagePurpose": "Screenshot",
+       "UnscaledImageSHA256Hash": "CjA56mDEcKzCoR11P/PAlQNJ0MVzwz4SVAd5g0mbd/E=",
+       "Uri": "//store-images.s-microsoft.com/image/apps.12298.13718773309227929.a9ed3a56-4096-4b23-aca9-a9d49ff8b774.f8ebc9ec-feca-4dc3-b81a-1d5a4df00111",
+       "Width": 3840
+      }
+     ],
+     "ProductDescription": "A legizgalmasabb Horizon kaland csak rád vár! Fedezd fel Mexikó élettel teli, nyílt tájait, és közben korlátok nélküli, szórakoztató vezetési élményben lehet részed több száz nagyszerű autóban. ",
+     "ProductTitle": "Forza Horizon 5 Standard kiadás",
+     "ShortTitle": "Forza Horizon 5 Standard kiadás",
+     "SortTitle": "Forza Horizon 5 Standard kiadás",
+     "FriendlyTitle": null,
+     "ShortDescription": "Korlátok nélküli, szórakoztató vezetési élmény egy folyton változó nyílt világban. ",
+     "VoiceTitle": "Forza Horizon 5 Standard kiadás",
+     "RenderGroupDetails": null,
+     "InteractiveModelConfig": null,
+     "Interactive3DEnabled": false,
+     "Language": "hu"
+    }
+   ],
+   "Properties": {
+    "Category": "Racing & flying",
+    "Categories": null,
+    "XboxConsoleGenCompatible": [
+     "ConsoleGen8",
+     "ConsoleGen9"
+    ],
+    "PublisherId": "10101150"
+   },
+   "MarketProperties": [
+    {
+     "OriginalReleaseDate": "2021-11-08T23:00:00.0000000Z",
+     "MinimumUserAge": 0
+    }
+   ],
+   "AlternateIds": [
+    {
+     "IdType": "LegacyXboxProductId",
+     "Value": "584b4e39-3037-3042-c042-4344524e3c00"
+    }
+   ],
+   "ProductFamily": "Games",
+   "ProductKind": "Game",
+   "ProductType": "Game"
+  }
+ ]
+}

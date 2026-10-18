@@ -1,0 +1,83 @@
+{
+ "id": 1407750955,
+ "title": "Tomb Raider I-III Remastered Starring Lara Croft",
+ "slug": "tomb_raider_i_to_iii_remastered",
+ "languages": {
+  "br": "Português do Brasil",
+  "cn": "中文",
+  "cz": "český",
+  "da": "Dansk",
+  "de": "Deutsch",
+  "en": "English",
+  "es": "español",
+  "fi": "suomi",
+  "fr": "français",
+  "gk": "Ελληνικά",
+  "hu": "magyar",
+  "it": "italiano",
+  "jp": "日本語",
+  "nl": "nederlands",
+  "pl": "polski",
+  "ru": "русский",
+  "sk": "slovenský",
+  "sv": "svenska",
+  "tr": "Türkçe",
+  "uk": "yкраїнська"
+ },
+ "links": {
+  "purchase_link": "https://www.gog.com/en/checkout/manual/tomb_raider_i_to_iii_remastered",
+  "product_card": "https://www.gog.com/game/tomb_raider_i_to_iii_remastered",
+  "support": "https://www.gog.com/support/tomb_raider_i_to_iii_remastered",
+  "forum": "https://www.gog.com/forum/tomb_raider_series"
+ },
+ "game_type": "game",
+ "release_date": "2024-02-14T06:55:00+0100",
+ "dlcs": [],
+ "description": {
+  "lead": "<hr><p>&nbsp;</p><p><img src=\"https://images.gog.com/8cabc13b54f74cf04d9bf85333acac507c0b3a99bd8cdef7e5f2f45bd4ca6555.jpg\"></p><h4>Discover Lara Croft’s Original Adventures, Lovingly Restored – Now with New Challenge Mode</h4><p>Play the Original Three Tomb Raider Adventures: For the first time ever, play the complete experience with all expansions and secret levels on modern platforms in this definitive collection. Now with more bonus content in the FREE Challenge Mode patch.</p><h4>Included Game Titles</h4><p>&nbsp;</p><ul class=\"bb_ul\"><li>Tomb Raider I + The Unfinished Business Expansion</li><li>Tomb Raider II + The Gold Mask Expansion</li><li>Tomb Raider III + The Lost Artifact Expansion</li></ul><h4>Key Features</h4><p>&nbsp;</p><p><strong>NEW Challenge Mode</strong>: Replay levels with customized modifiers and complete achievements to unlock 10 New Outfits that enhance Lara’s abilities.</p><p>&nbsp;</p><p><strong>Solve Ancient Mysteries</strong>: Uncover treasures of the ancient world by solving puzzles and unraveling mysteries lost to the ravages of time.&nbsp;<br><br><strong>Globe-trotting Adventure</strong>: Follow Lara Croft around the world and face off against deadly foes and dangerous myths.&nbsp;<br><br><strong>Lovingly Restored</strong>: Experience the classics boasting upgraded graphics, with the option to switch to the original polygon look at any time.</p><p>&nbsp;</p><p><strong>Photo Mode</strong>: Capture Lara with any weapon and unlocked outfit in 21 pos",
+  "full": "<hr><p>&nbsp;</p><p><img src=\"https://images.gog.com/8cabc13b54f74cf04d9bf85333acac507c0b3a99bd8cdef7e5f2f45bd4ca6555.jpg\"></p><h4>Discover Lara Croft’s Original Adventures, Lovingly Restored – Now with New Challenge Mode</h4><p>Play the Original Three Tomb Raider Adventures: For the first time ever, play the complete experience with all expansions and secret levels on modern platforms in this definitive collection. Now with more bonus content in the FREE Challenge Mode patch.</p><h4>Included Game Titles</h4><p>&nbsp;</p><ul class=\"bb_ul\"><li>Tomb Raider I + The Unfinished Business Expansion</li><li>Tomb Raider II + The Gold Mask Expansion</li><li>Tomb Raider III + The Lost Artifact Expansion</li></ul><h4>Key Features</h4><p>&nbsp;</p><p><strong>NEW Challenge Mode</strong>: Replay levels with customized modifiers and complete achievements to unlock 10 New Outfits that enhance Lara’s abilities.</p><p>&nbsp;</p><p><strong>Solve Ancient Mysteries</strong>: Uncover treasures of the ancient world by solving puzzles and unraveling mysteries lost to the ravages of time.&nbsp;<br><br><strong>Globe-trotting Adventure</strong>: Follow Lara Croft around the world and face off against deadly foes and dangerous myths.&nbsp;<br><br><strong>Lovingly Restored</strong>: Experience the classics boasting upgraded graphics, with the option to switch to the original polygon look at any time.</p><p>&nbsp;</p><p><strong>Photo Mode</strong>: Capture Lara with any weapon and unlocked outfit in 21 poses, or look around the level for hidden items and secrets.</p>\n<br>\n<ul><li>product_feature_1407750955</li></ul>"
+ },
+ "downloads": {
+  "installers": [
+   {
+    "id": "installer_windows_en",
+    "name": "Tomb Raider I-III Remastered Starring Lara Croft",
+    "os": "windows",
+    "language": "en",
+    "language_full": "English",
+    "version": "Day 90",
+    "total_size": 4538236928,
+    "files": [
+     {
+      "id": "en1installer0",
+      "size": 2097152
+     },
+     {
+      "id": "en1installer1",
+      "size": 4291821568
+     },
+     {
+      "id": "en1installer2",
+      "size": 244318208
+     }
+    ]
+   }
+  ],
+  "patches": [
+   {
+    "id": "en1patch0",
+    "name": "Patch (1.0 to 1.01)",
+    "os": "windows",
+    "language": "en",
+    "version": "1.01",
+    "total_size": 39845888,
+    "files": [
+     {
+      "id": "en1patch0",
+      "size": 39845888
+     }
+    ]
+   }
+  ]
+ }
+}

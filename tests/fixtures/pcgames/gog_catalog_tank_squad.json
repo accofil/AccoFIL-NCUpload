@@ -1,0 +1,92 @@
+{
+ "productCount": 3,
+ "products": [
+  {
+   "id": "1962416882",
+   "slug": "tank_squad",
+   "title": "Tank Squad",
+   "productType": "game",
+   "releaseDate": "2025.05.08",
+   "developers": [
+    "DeGenerals"
+   ],
+   "publishers": [
+    "DeGenerals"
+   ],
+   "genres": [
+    {
+     "name": "Action",
+     "slug": "action"
+    },
+    {
+     "name": "Simulation",
+     "slug": "simulation"
+    },
+    {
+     "name": "Tactical",
+     "slug": "tactical"
+    }
+   ],
+   "coverVertical": "https://images.gog-statics.com/d9b9da64edfaf105f02041d2cae395e451133f37ef5d1b149906cee5fa0ccf99.jpg",
+   "storeLink": "https://www.gog.com/en/game/tank_squad"
+  },
+  {
+   "id": "1428579671",
+   "slug": "men_of_war_assault_squad_goty_edition",
+   "title": "Men of War: Assault Squad GOTY Edition",
+   "productType": "pack",
+   "releaseDate": "2011.02.24",
+   "developers": [
+    "DigitalMindSoft"
+   ],
+   "publishers": [
+    "Fulqrum Publishing"
+   ],
+   "genres": [
+    {
+     "name": "Strategy",
+     "slug": "strategy"
+    },
+    {
+     "name": "Real-time",
+     "slug": "realtime"
+    },
+    {
+     "name": "Historical",
+     "slug": "historical"
+    }
+   ],
+   "coverVertical": "https://images.gog-statics.com/1d0450177850fec0701d56fcbdff1d725e877541457d12cef2ae6d7b13e707aa.jpg",
+   "storeLink": "https://www.gog.com/en/game/men_of_war_assault_squad_goty_edition"
+  },
+  {
+   "id": "1428580803",
+   "slug": "men_of_war_assault_squad",
+   "title": "Men of War: Assault Squad",
+   "productType": "game",
+   "releaseDate": "2011.02.24",
+   "developers": [
+    "DigitalMindSoft"
+   ],
+   "publishers": [
+    "Fulqrum Publishing"
+   ],
+   "genres": [
+    {
+     "name": "Strategy",
+     "slug": "strategy"
+    },
+    {
+     "name": "Real-time",
+     "slug": "realtime"
+    },
+    {
+     "name": "Historical",
+     "slug": "historical"
+    }
+   ],
+   "coverVertical": "https://images.gog-statics.com/828e7e7de9723c4c8a4c19d1f4f94dbb809e94996b31d2d02ffd9d57aa2006f2.jpg",
+   "storeLink": "https://www.gog.com/en/game/men_of_war_assault_squad"
+  }
+ ]
+}

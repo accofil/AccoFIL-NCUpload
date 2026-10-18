@@ -1,0 +1,88 @@
+{
+ "numFound": 2,
+ "start": 0,
+ "numFoundExact": true,
+ "num_found": 2,
+ "documentation_url": "https://openlibrary.org/dev/docs/api/search",
+ "q": "",
+ "offset": null,
+ "docs": [
+  {
+   "author_name": [
+    "Martha Wells"
+   ],
+   "cover_i": 9426689,
+   "edition_key": [
+    "OL28044727M",
+    "OL32050491M",
+    "OL29831122M",
+    "OL28230272M",
+    "OL61034480M"
+   ],
+   "first_publish_year": 2020,
+   "isbn": [
+    "1980021716",
+    "1664475915",
+    "9781980021711",
+    "1250229847",
+    "9781250229854",
+    "1250229863",
+    "9781250229861",
+    "9781664475915",
+    "1250229855",
+    "9781250229847"
+   ],
+   "key": "/works/OL20735675W",
+   "language": [
+    "eng"
+   ],
+   "publisher": [
+    "Tor",
+    "Recorded Books, Inc. and Blackstone Publishing",
+    "Tor.com",
+    "Recorded Books"
+   ],
+   "title": "Network Effect",
+   "subject": [
+    "franchise:The Murderbot Diaries",
+    "series:The Murderbot Diaries",
+    "form:novel",
+    "genre:science fiction",
+    "nyt:combined-print-and-e-book-fiction=2020-05-24",
+    "New York Times bestseller",
+    "award:nebula_award=novel",
+    "award:hugo_award=2021",
+    "award:hugo_award=novel",
+    "Life on other planets",
+    "Artificial intelligence",
+    "Interplanetary voyages",
+    "Androids",
+    "Robots",
+    "Human-computer interaction"
+   ]
+  },
+  {
+   "author_name": [
+    "Martha Wells"
+   ],
+   "edition_key": [
+    "OL57767963M"
+   ],
+   "first_publish_year": 2023,
+   "isbn": [
+    "9798897225712"
+   ],
+   "key": "/works/OL42556524W",
+   "language": [
+    "eng"
+   ],
+   "publisher": [
+    "Generic"
+   ],
+   "title": "Murderbot Diaries Collection 7 Hardcover Book Set (All Systems Red, Artificial Condition, Rogue Protocol, Exit Strategy,Network Effect, Fugitive Telemetry)",
+   "subject": [
+    "Fiction, general"
+   ]
+  }
+ ]
+}

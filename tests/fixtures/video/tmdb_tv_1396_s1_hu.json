@@ -1,0 +1,82 @@
+{
+ "id": 3572,
+ "_id": "52542272760ee313280005f8",
+ "air_date": "2008-01-20",
+ "episodes": [
+  {
+   "air_date": "2008-01-20",
+   "episode_number": 1,
+   "name": "A lúzer",
+   "overview": "Miután végzetes tüdőrákkal diagnosztizálják, a középiskolai kémiatanár metamfetamint kezd el készíteni és árulni, hogy biztosítsa családja megélhetését.",
+   "runtime": 59,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62085
+  },
+  {
+   "air_date": "2008-01-27",
+   "episode_number": 2,
+   "name": "Minden kezdet nehéz",
+   "overview": "Első sikertelen drogüzletük után Walt és Jesse kénytelen megszabadulni két hullától. Eközben Skyler gyanakodni kezd a férjére.",
+   "runtime": 49,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62086
+  },
+  {
+   "air_date": "2008-02-10",
+   "episode_number": 3,
+   "name": "A felfedezés",
+   "overview": "Miközben Walt megpróbálja feltakarítani az első drogüzlete utáni mocskot, Skyler veszélyesen közel kerül az igazsághoz férje kettős életét illetően.",
+   "runtime": 49,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62087
+  },
+  {
+   "air_date": "2008-02-17",
+   "episode_number": 4,
+   "name": "A drogbáró",
+   "overview": "Walt kényszerűen felfedi az igazságot a betegségéről, ám nagy dilemmába kerül, amikor belegondol, hogyan fizeti majd ki a rákkezelés költséges beavatkozásait.",
+   "runtime": 49,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62088
+  },
+  {
+   "air_date": "2008-02-24",
+   "episode_number": 5,
+   "name": "Büszkeség",
+   "overview": "Skyler próbálja meggyőzni Waltot, hogy fogadja el a korábbi kutatópartnere nagylelkű ajánlatát, és hagyja, hogy kifizesse a kezelés díját.",
+   "runtime": 49,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62089
+  },
+  {
+   "air_date": "2008-03-02",
+   "episode_number": 6,
+   "name": "Segíts magadon!",
+   "overview": "A fokozódó mellékhatások és a kezelés növekvő költségei miatt Walt Jesse-től várja, hogy találjon egy kereskedőt, aki megveszi tőlük az anyagot – ám emiatt bajba kerül.",
+   "runtime": 49,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62090
+  },
+  {
+   "air_date": "2008-03-09",
+   "episode_number": 7,
+   "name": "Csak semmi erőszak",
+   "overview": "Jessie halálközeli élménye után Walt belemegy, hogy növelje a termelést a kegyetlen Tuco számára. Eközben Skyler arra gyanakszik, hogy a húga bolti tolvaj lett.",
+   "runtime": 48,
+   "season_number": 1,
+   "show_id": 1396,
+   "id": 62091
+  }
+ ],
+ "name": "1. évad",
+ "overview": "Vajon összejön már végre egy normális drogüzlet ennek a két lúzernek? És vajon jót tesz a biznisznek, ha az ember üzlettársa ritkán van magánál?",
+ "poster_path": "/mLPHZocLjPmzACcnvJVaOiM4Sf4.jpg",
+ "season_number": 1,
+ "vote_average": 8.4
+}

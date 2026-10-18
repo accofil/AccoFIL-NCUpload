@@ -1,0 +1,134 @@
+{
+ "ISBN:9781250229861": {
+  "url": "http://openlibrary.org/books/OL28044727M/Network_Effect",
+  "key": "/books/OL28044727M",
+  "title": "Network Effect",
+  "authors": [
+   {
+    "url": "http://openlibrary.org/authors/OL221294A/Martha_Wells",
+    "name": "Martha Wells"
+   }
+  ],
+  "number_of_pages": 350,
+  "identifiers": {
+   "isbn_13": [
+    "9781250229861"
+   ],
+   "oclc": [
+    "1152527909"
+   ],
+   "openlibrary": [
+    "OL28044727M"
+   ]
+  },
+  "classifications": {
+   "lc_classifications": [
+    "PS3573.E4932 N48 2020"
+   ]
+  },
+  "publishers": [
+   {
+    "name": "Tor"
+   }
+  ],
+  "publish_places": [
+   {
+    "name": "New York, New York, USA"
+   }
+  ],
+  "publish_date": "2020",
+  "subjects": [
+   {
+    "name": "franchise:The Murderbot Diaries",
+    "url": "https://openlibrary.org/subjects/franchise:the_murderbot_diaries"
+   },
+   {
+    "name": "series:The Murderbot Diaries",
+    "url": "https://openlibrary.org/subjects/series:the_murderbot_diaries"
+   },
+   {
+    "name": "form:novel",
+    "url": "https://openlibrary.org/subjects/form:novel"
+   },
+   {
+    "name": "genre:science fiction",
+    "url": "https://openlibrary.org/subjects/genre:science_fiction"
+   },
+   {
+    "name": "nyt:combined-print-and-e-book-fiction=2020-05-24",
+    "url": "https://openlibrary.org/subjects/nyt:combined-print-and-e-book-fiction=2020-05-24"
+   },
+   {
+    "name": "New York Times bestseller",
+    "url": "https://openlibrary.org/subjects/new_york_times_bestseller"
+   },
+   {
+    "name": "award:nebula_award=novel",
+    "url": "https://openlibrary.org/subjects/award:nebula_award=novel"
+   },
+   {
+    "name": "award:hugo_award=2021",
+    "url": "https://openlibrary.org/subjects/award:hugo_award=2021"
+   },
+   {
+    "name": "award:hugo_award=novel",
+    "url": "https://openlibrary.org/subjects/award:hugo_award=novel"
+   },
+   {
+    "name": "Life on other planets",
+    "url": "https://openlibrary.org/subjects/life_on_other_planets"
+   },
+   {
+    "name": "Artificial intelligence",
+    "url": "https://openlibrary.org/subjects/artificial_intelligence"
+   },
+   {
+    "name": "Interplanetary voyages",
+    "url": "https://openlibrary.org/subjects/interplanetary_voyages"
+   },
+   {
+    "name": "Androids",
+    "url": "https://openlibrary.org/subjects/androids"
+   },
+   {
+    "name": "Robots",
+    "url": "https://openlibrary.org/subjects/robots"
+   },
+   {
+    "name": "Human-computer interaction",
+    "url": "https://openlibrary.org/subjects/human-computer_interaction"
+   }
+  ],
+  "subject_people": [
+   {
+    "name": "Murderbot",
+    "url": "https://openlibrary.org/subjects/person:murderbot"
+   },
+   {
+    "name": "Dr Ayda Mensah",
+    "url": "https://openlibrary.org/subjects/person:dr_ayda_mensah"
+   },
+   {
+    "name": "Amena",
+    "url": "https://openlibrary.org/subjects/person:amena"
+   },
+   {
+    "name": "Dr Ratthi",
+    "url": "https://openlibrary.org/subjects/person:dr_ratthi"
+   },
+   {
+    "name": "Overse",
+    "url": "https://openlibrary.org/subjects/person:overse"
+   },
+   {
+    "name": "Dr Arada",
+    "url": "https://openlibrary.org/subjects/person:dr_arada"
+   }
+  ],
+  "cover": {
+   "small": "https://covers.openlibrary.org/b/id/9426689-S.jpg",
+   "medium": "https://covers.openlibrary.org/b/id/9426689-M.jpg",
+   "large": "https://covers.openlibrary.org/b/id/9426689-L.jpg"
+  }
+ }
+}

@@ -1,0 +1,59 @@
+{
+    "chapters": [
+        {
+            "id": 0,
+            "time_base": "1/1000",
+            "start": 0,
+            "start_time": "0.000000",
+            "end": 60000,
+            "end_time": "60.000000",
+            "tags": {
+                "title": "1. rész: Hol terem a magyar vitéz?"
+            }
+        },
+        {
+            "id": 1,
+            "time_base": "1/1000",
+            "start": 60000,
+            "start_time": "60.000000",
+            "end": 120000,
+            "end_time": "120.000000",
+            "tags": {
+                "title": "2. rész: Oda Buda!"
+            }
+        },
+        {
+            "id": 2,
+            "time_base": "1/1000",
+            "start": 120000,
+            "start_time": "120.000000",
+            "end": 180000,
+            "end_time": "180.000000",
+            "tags": {
+                "title": "3. rész: A rab oroszlán"
+            }
+        },
+        {
+            "id": 3,
+            "time_base": "1/1000",
+            "start": 180000,
+            "start_time": "180.000000",
+            "end": 240000,
+            "end_time": "240.000000",
+            "tags": {
+                "title": "4. rész: Eger veszedelme"
+            }
+        },
+        {
+            "id": 4,
+            "time_base": "1/1000",
+            "start": 240000,
+            "start_time": "240.000000",
+            "end": 300000,
+            "end_time": "300.000000",
+            "tags": {
+                "title": "5. rész: Egri nők"
+            }
+        }
+    ]
+}

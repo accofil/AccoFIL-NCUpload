@@ -1,0 +1,60 @@
+{
+ "_note": "Constructed after the documented Books API v1 'volumes' response (no key available to capture a live one).",
+ "kind": "books#volumes",
+ "totalItems": 2,
+ "items": [
+  {
+   "kind": "books#volume",
+   "id": "XDdJEAAAQBAJ",
+   "etag": "abc",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/XDdJEAAAQBAJ",
+   "volumeInfo": {
+    "title": "Network Effect",
+    "subtitle": "A Murderbot Novel",
+    "authors": ["Martha Wells"],
+    "publisher": "Tom Doherty Associates",
+    "publishedDate": "2020-05-05",
+    "description": "<p><b>Murderbot returns</b> in its highly-anticipated, first, full-length standalone novel.</p><p>You know that feeling when you're at work, and you've had enough of people?<br>Congratulations, you're Murderbot.</p>",
+    "industryIdentifiers": [
+     {"type": "ISBN_13", "identifier": "9781250229861"},
+     {"type": "ISBN_10", "identifier": "1250229863"}
+    ],
+    "readingModes": {"text": true, "image": false},
+    "pageCount": 352,
+    "printType": "BOOK",
+    "categories": ["Fiction / Science Fiction / Space Opera"],
+    "maturityRating": "NOT_MATURE",
+    "language": "en",
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=XDdJEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=XDdJEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "previewLink": "http://books.google.com/books?id=XDdJEAAAQBAJ&printsec=frontcover&dq=isbn:9781250229861&hl=&cd=1&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=XDdJEAAAQBAJ&source=gbs_api",
+    "canonicalVolumeLink": "https://play.google.com/store/books/details?id=XDdJEAAAQBAJ"
+   },
+   "saleInfo": {"country": "HU", "saleability": "FOR_SALE", "isEbook": true},
+   "accessInfo": {"country": "HU", "epub": {"isAvailable": true}},
+   "searchInfo": {"textSnippet": "Murderbot returns in its highly-anticipated ..."}
+  },
+  {
+   "kind": "books#volume",
+   "id": "q2bnDwAAQBAJ",
+   "volumeInfo": {
+    "title": "Az ajtó",
+    "authors": ["Szabó Magda"],
+    "publisher": "Jaffa Kiadó",
+    "publishedDate": "2025",
+    "description": "Álmában nem, de életében egyszer kinyílik az ajtó az írónő előtt. Szeredás Emerenc ajtaja, amely mások számára örökre zárva marad.",
+    "industryIdentifiers": [{"type": "ISBN_13", "identifier": "9786155715433"}],
+    "pageCount": 282,
+    "printType": "BOOK",
+    "categories": ["Fiction"],
+    "language": "hu",
+    "imageLinks": {"thumbnail": "http://books.google.com/books/content?id=q2bnDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"},
+    "infoLink": "http://books.google.hu/books?id=q2bnDwAAQBAJ&dq=intitle:ajt%C3%B3&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Az_ajt%C3%B3.html?hl=&id=q2bnDwAAQBAJ"
+   }
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "2208350": {
+  "success": true,
+  "data": {
+   "type": "game",
+   "name": "Total Chaos",
+   "steam_appid": 2208350,
+   "short_description": "Fort Oasis is no paradise—it's a decaying nightmare where reality crumbles. The creator of Turbo Overkill unleashes survival-horror stacked with mysteries and monstrosities. Scavenge to craft weapons, while a voice on your walkie-talkie guides you into the island's depths.",
+   "about_the_game": "<p class=\"bb_paragraph\" ><span class=\"bb_img_ctn\"><video class=\"bb_img\" autoplay muted loop playsinline poster=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2208350/extras/0149cf2835ea4308dfab74f30dc5f919.poster.avif?t=1784890778\" width=610 height=160 ><source src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2208350/extras/0149cf2835ea4308dfab74f30dc5f919.webm?t=1784890778\" type=\"video/webm; codecs=vp9\"><source src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2208350/extras/0149cf2835ea4308dfab74f30dc5f919.mp4?t=1784890778\" type=\"video/mp4\"></video></span></p><p class=\"bb_paragraph\" ><strong>Descend into <i>Total Chaos</i>, a gripping survival horror experience that darkens the fragile space between truth and madness.</strong></p><p class=\"bb_paragraph\" ><strong>Setting: </strong>The once thriving Fort Oasis feels like a long ago memory; deserted, decayed and too dark for comfort. You’ve wrecked upon its island shore by a sudden storm–its distant past still seems eerily present, but venture inward you must, compelled by cryptic radio transmissions from someone who seems like a friend.</p><p class=\"bb_paragraph\" >But as you delve deeper into Fort Oasis reality itself becomes twisted and uncertain as you realize your very existence is at stake.</p><p class=\"bb_paragraph\" ><span class=\"bb_img_ctn\"><video class=\"bb_img\" autoplay muted loop playsinline poster=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2208350/extras/1d332c43401e30a190606be61f631967.poster.avif?t=1784890778\" width=610 height=344 ><source src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2208350/extras/1d332c43401e30a190606be61f631967.webm?t=1784890778\" type=\"video/webm; codecs=vp9\"><source src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2208350/extras/1d332c43401e30a190606be61f631967.mp4?t=1784890778\" type=\"video/mp4\"></video></span></p><p class=\"bb_paragraph\" ><strong>Gameplay:</strong> Scavenge for scraps and craft makeshift weapons to defend yourself against the many horrors. Unearth fragments of forgotten lives scattered across the island and piece together the chilling mystery of Fort Oasis’s fate. Each discovery brings you closer to a truth that threatens to shatter your sanity.</p><p class=\"bb_paragraph\" ><span class=\"bb_img_ctn\"><video class=\"bb_img\" autoplay muted loop playsinline poster=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/",
+   "supported_languages": "Angol<strong>*</strong>, Német, Japán, Koreai, Lengyel, Portugáliai portugál, Orosz, Egyszerűsített kínai, Hagyományos kínai, Török, Latin-amerikai spanyol, Francia, Olasz<br><strong>*</strong>nyelvek teljes hangtámogatással",
+   "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2208350/f2086b3eef4ec934190e5faec66b0a21ae734a1a/header.jpg?t=1784890778",
+   "website": "http://www.totalchaosgame.com",
+   "pc_requirements": {
+    "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"><li><strong>Op. rendszer:</strong> Windows 10<br></li><li><strong>Processzor:</strong> CPU with 2+ GHz, 4 cores<br></li><li><strong>Memória:</strong> 16 GB RAM<br></li><li><strong>Grafika:</strong> GeForce GTX 970 or R9 390X<br></li><li><strong>DirectX:</strong> Verzió: 10<br></li><li><strong>Tárhely:</strong> 30 GB szabad hely<br></li><li><strong>Egyéb megjegyzések:</strong> Specs are not yet finalized</li></ul>",
+    "recommended": "<strong>Ajánlott:</strong><br><ul class=\"bb_ul\"><li><strong>Op. rendszer:</strong> Windows 10<br></li><li><strong>Processzor:</strong> CPU with 3+ GHz, 8 cores<br></li><li><strong>Memória:</strong> 32 GB RAM<br></li><li><strong>Grafika:</strong> GeForce RTX 3050 or Radeon RX 6500 XT<br></li><li><strong>DirectX:</strong> Verzió: 10<br></li><li><strong>Tárhely:</strong> 20 GB szabad hely<br></li><li><strong>Egyéb megjegyzések:</strong> Specs are not yet finalized</li></ul>"
+   },
+   "developers": [
+    "Trigger Happy Interactive"
+   ],
+   "publishers": [
+    "Apogee Entertainment"
+   ],
+   "genres": [
+    {
+     "id": "1",
+     "description": "Akció"
+    },
+    {
+     "id": "25",
+     "description": "Kaland"
+    },
+    {
+     "id": "23",
+     "description": "Indie"
+    }
+   ],
+   "release_date": {
+    "coming_soon": false,
+    "date": "2025. nov. 20."
+   }
+  }
+ }
+}

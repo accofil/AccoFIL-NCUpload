@@ -1,0 +1,97 @@
+{
+ "70010000000023": {
+  "bannerUrl": "https://img-eshop.cdn.nintendo.net/i/0daadd2dfaa8faa9ceb91460a3b5a2ed8a3c1a5b688d8e679bf0d57491132a40.jpg",
+  "category": [
+   "Action",
+   "Adventure"
+  ],
+  "description": "Step into a world of adventure\n\nForget everything you know about The Legend of Zelda games. Step into a world of discovery, exploration and adventure in The Legend of Zelda: Breath of the Wild, a boundary-breaking new game in the acclaimed series. Travel across fields, through forests and to mountain peaks as you discover what has become of the ruined kingdom of Hyrule in this stunning open-air adventure.\n\nVisit amiibo.nintendo.eu for compatible amiibo™ and the latest information.",
+  "developer": null,
+  "frontBoxArt": null,
+  "iconUrl": "https://img-eshop.cdn.nintendo.net/i/16259342084f704aa52da956cf1b1a9c2ad1f88b3de6c3e263c350813e7ccd1f.jpg",
+  "id": "01007EF00011E000",
+  "intro": "No kingdom. No memories.\nAfter a 100-year slumber, all he had left...was hope. ",
+  "isDemo": false,
+  "key": null,
+  "languages": [
+   "ja",
+   "en",
+   "es",
+   "fr",
+   "de",
+   "it",
+   "nl",
+   "ru",
+   "ko",
+   "zh",
+   "zh"
+  ],
+  "name": "The Legend of Zelda™: Breath of the Wild",
+  "nsuId": 70010000000023,
+  "numberOfPlayers": 1,
+  "publisher": "Nintendo",
+  "rating": 12,
+  "ratingContent": [
+   "Violence"
+  ],
+  "region": null,
+  "releaseDate": 20170303,
+  "rightsId": "01007EF00011E0000000000000000000",
+  "screenshots": [
+   "https://img-eshop.cdn.nintendo.net/i/44b2e287590e7d4eb0f37276957b301c528bd2d5672e37e848397f38ff74b2d5.jpg",
+   "https://img-eshop.cdn.nintendo.net/i/61484f00ca97642ef2d53317423f091969dd4e6063827053c8e2278796d0eadc.jpg",
+   "https://img-eshop.cdn.nintendo.net/i/4fae6c8b937eba525ee9db1ca47ba23ea20b086d9690573b2f3c4f7af2b85361.jpg"
+  ],
+  "size": 15483273216,
+  "version": null
+ },
+ "70010000000127": {
+  "bannerUrl": "https://img-eshop.cdn.nintendo.net/i/c42553b4fd0312c31e70ec7468c6c9bccd739f340152925b9600631f2d29f8b5.jpg",
+  "category": [
+   "Platformer"
+  ],
+  "description": "Join Mario on a massive, globe-trotting 3D adventure and use his incredible new abilities to collect Moons so you can power up your airship, the Odyssey, and rescue Princess Peach from Bowser’s wedding plans!\n\nThis sandbox-style 3D Mario adventure – the first since 1997’s beloved Super Mario 64 and 2002’s Nintendo GameCube classic Super Mario Sunshine – is packed with secrets and surprises, and with Mario’s new moves like cap throw, cap jump, and capture, you’ll have fun and exciting gameplay experiences unlike anything you’ve enjoyed in a Mario game before. Get ready to be whisked away to str",
+  "developer": null,
+  "frontBoxArt": null,
+  "iconUrl": "https://img-eshop.cdn.nintendo.net/i/ad4d31f664a1ce704f0219da2805f8459595bc3c01c3f04df2e32ba34a05b8c6.jpg",
+  "id": "0100000000010000",
+  "intro": "Mario jumps out of the Mushroom Kingdom \nand embarks on a journey in Super Mario \nOdyssey, only on Nintendo Switch!",
+  "isDemo": false,
+  "key": null,
+  "languages": [
+   "ja",
+   "en",
+   "es",
+   "fr",
+   "de",
+   "it",
+   "nl",
+   "ru"
+  ],
+  "name": "Super Mario Odyssey™",
+  "nsuId": 70010000000127,
+  "numberOfPlayers": 2,
+  "publisher": "Nintendo",
+  "rating": 7,
+  "ratingContent": [
+   "Fear",
+   "Violence"
+  ],
+  "region": null,
+  "releaseDate": 20171027,
+  "rightsId": "01000000000100000000000000000003",
+  "screenshots": [
+   "https://img-eshop.cdn.nintendo.net/i/7db70ecd883f94d935f65b9f4454b8151b6f8be7c4be95543e87488e48e5a6b9.jpg",
+   "https://img-eshop.cdn.nintendo.net/i/1839d571921e3fb19ef48da64c145cb8ce573b07d7390c6350f15291b3905048.jpg",
+   "https://img-eshop.cdn.nintendo.net/i/d0510e4804381287c64dc3ab374ae9273419e263e9a732e72af3b39cd70f2b5f.jpg"
+  ],
+  "size": 6025117696,
+  "version": null
+ },
+ "70010000000173": {
+  "id": null,
+  "name": "Skylanders Imaginators",
+  "nsuId": 70010000000173,
+  "bannerUrl": "https://img-eshop.cdn.nintendo.net/i/ec6ee0d7a314f18a1dd55f23710aa0eb9120387e20676bcac212656fefc09266.jpg"
+ }
+}

@@ -1,0 +1,21 @@
+.audit/
+__pycache__/
+*.pyc
+.venv/
+build/
+dist/
+*.egg-info/
+cookies*.txt
+*.env
+*.sqlite*
+logs/
+
+# Private configuration, backups and generated upload files
+*.env.*
+!config.env.example
+*.previous
+*.torrent
+*.pem
+*.key
+NCUP/
+.ncore-up/

@@ -1,0 +1,76 @@
+{
+ "subjects": [
+  "franchise:The Murderbot Diaries",
+  "series:The Murderbot Diaries",
+  "form:novel",
+  "genre:science fiction",
+  "nyt:combined-print-and-e-book-fiction=2020-05-24",
+  "New York Times bestseller",
+  "award:nebula_award=novel",
+  "award:hugo_award=2021",
+  "award:hugo_award=novel",
+  "Life on other planets",
+  "Artificial intelligence",
+  "Interplanetary voyages",
+  "Androids",
+  "Robots",
+  "Human-computer interaction"
+ ],
+ "key": "/works/OL20735675W",
+ "title": "Network Effect",
+ "authors": [
+  {
+   "author": {
+    "key": "/authors/OL221294A"
+   },
+   "type": {
+    "key": "/type/author_role"
+   }
+  }
+ ],
+ "type": {
+  "key": "/type/work"
+ },
+ "covers": [
+  9426689
+ ],
+ "description": "**Murderbot returns in its highly-anticipated, first, full-length standalone novel.**\r\n\r\nYou know that feeling when you’re at work, and you’ve had enough of people, and then the boss walks in with yet another job that needs to be done right this second or the world will end, but all you want to do is go home and binge your favorite shows? And you're a sentient murder machine programmed for destruction? Congratulations, you're Murderbot.\r\n\r\nCome for the pew-pew space battles, stay for the most relatable A.I. you’ll read this century.",
+ "subject_people": [
+  "Murderbot",
+  "Dr Ayda Mensah",
+  "Amena",
+  "Dr Ratthi",
+  "Overse",
+  "Dr Arada"
+ ],
+ "identifiers": {
+  "wikidata": [
+   "Q100540380"
+  ],
+  "isfdb": [
+   "2717735"
+  ],
+  "librarything": [
+   "22627423"
+  ],
+  "goodreads": [
+   "63614271"
+  ],
+  "bookbrainz": [
+   "cae9c645-1be7-41e8-ba95-7e54b63ed8c6"
+  ],
+  "musicbrainz": [
+   "a502f286-9a6c-4c4b-818e-2033b571f3b7"
+  ]
+ },
+ "latest_revision": 13,
+ "revision": 13,
+ "created": {
+  "type": "/type/datetime",
+  "value": "2020-05-14T16:35:48.992131"
+ },
+ "last_modified": {
+  "type": "/type/datetime",
+  "value": "2025-12-30T23:13:20.409792"
+ }
+}

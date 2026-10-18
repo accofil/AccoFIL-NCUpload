@@ -1,0 +1,33 @@
+{
+ "numFound": 1,
+ "start": 0,
+ "numFoundExact": true,
+ "num_found": 1,
+ "documentation_url": "https://openlibrary.org/dev/docs/api/search",
+ "q": "",
+ "offset": null,
+ "docs": [
+  {
+   "author_name": [
+    "Magda Szabó"
+   ],
+   "cover_i": 13181538,
+   "edition_key": [
+    "OL2083421M"
+   ],
+   "first_publish_year": 1987,
+   "isbn": [
+    "9789631411546",
+    "9631411540"
+   ],
+   "key": "/works/OL940070W",
+   "language": [
+    "hun"
+   ],
+   "publisher": [
+    "Magvető"
+   ],
+   "title": "Az ajtó"
+  }
+ ]
+}

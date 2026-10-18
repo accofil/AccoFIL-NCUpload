@@ -1,0 +1,87 @@
+{
+ "total_hits": 549,
+ "page": 1,
+ "per_page": 5,
+ "results": [
+  {
+   "record": {
+    "series_id": 66804182011,
+    "title": "Nichijou",
+    "url": "https://www.mangaupdates.com/series/uothgqj/nichijou",
+    "description": "While the title suggests a story of simple, everyday school life, the contents are more the opposite. The setting is a strange school where you may see the principal wrestle a deer or a robot's arm hide a rollcake. However there are still normal stories, like making a card castle or taking a test you didn't study for. The art style is cute but mixes with extreme expressions and action sequences for surprising comedy bits.",
+    "image": {
+     "url": {
+      "original": "https://cdn.mangaupdates.com/image/i505251.jpg",
+      "thumb": "https://cdn.mangaupdates.com/image/thumb/i505251.jpg"
+     },
+     "height": 400,
+     "width": 281
+    },
+    "type": "Manga",
+    "year": "2007",
+    "bayesian_rating": 8.04,
+    "rating_votes": 203,
+    "genres": [
+     {
+      "genre": "Comedy"
+     },
+     {
+      "genre": "School Life"
+     },
+     {
+      "genre": "Shounen"
+     },
+     {
+      "genre": "Slice of Life"
+     }
+    ],
+    "last_updated": {
+     "timestamp": 1760991390,
+     "as_rfc3339": "2025-10-20T13:16:30-07:00",
+     "as_string": "October 20th, 2025 1:16pm PDT"
+    }
+   },
+   "hit_title": "Nichijou"
+  },
+  {
+   "record": {
+    "series_id": 49310298792,
+    "title": "Nichijou dj - Hinichijou",
+    "url": "https://www.mangaupdates.com/series/mni2u20/nichijou-dj-hinichijou",
+    "description": "Nano received another \"Part\" from the professor, Food Item included!",
+    "image": {
+     "url": {
+      "original": "https://cdn.mangaupdates.com/image/i116866.jpg",
+      "thumb": "https://cdn.mangaupdates.com/image/thumb/i116866.jpg"
+     },
+     "height": 225,
+     "width": 160
+    },
+    "type": "Doujinshi",
+    "year": "2011",
+    "bayesian_rating": 6.23,
+    "rating_votes": 10,
+    "genres": [
+     {
+      "genre": "Adult"
+     },
+     {
+      "genre": "Doujinshi"
+     },
+     {
+      "genre": "Hentai"
+     },
+     {
+      "genre": "School Life"
+     }
+    ],
+    "last_updated": {
+     "timestamp": 1455654490,
+     "as_rfc3339": "2016-02-16T12:28:10-08:00",
+     "as_string": "February 16th, 2016 12:28pm PST"
+    }
+   },
+   "hit_title": "Nichijou dj - Hinichijou"
+  }
+ ]
+}

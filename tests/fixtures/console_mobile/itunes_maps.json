@@ -1,0 +1,111 @@
+{
+ "resultCount": 1,
+ "results": [
+  {
+   "isGameCenterEnabled": false,
+   "features": [
+    "iosUniversal"
+   ],
+   "supportedDevices": [
+    "iPhone5s-iPhone5s",
+    "iPadAir-iPadAir",
+    "iPadAirCellular-iPadAirCellular"
+   ],
+   "advisories": [],
+   "kind": "software",
+   "screenshotUrls": [
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d1/44/c9/d144c902-9bdd-769a-a211-12336a7d3887/APP_IPHONE_65-0.png/320x480bb.jpg",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d5/80/d5/d580d5fa-a6d3-668b-d00f-b84859605ac6/APP_IPHONE_65-1.png/320x480bb.jpg"
+   ],
+   "artistViewUrl": "https://apps.apple.com/hu/developer/google/id281956209?l=hu&uo=4",
+   "artworkUrl60": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7d/6c/55/7d6c55bb-1cb9-2bea-c823-3c35e3d8a9d2/maps_2025-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-85-220.png/60x60bb.jpg",
+   "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7d/6c/55/7d6c55bb-1cb9-2bea-c823-3c35e3d8a9d2/maps_2025-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-85-220.png/100x100bb.jpg",
+   "appletvScreenshotUrls": [],
+   "artworkUrl512": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7d/6c/55/7d6c55bb-1cb9-2bea-c823-3c35e3d8a9d2/maps_2025-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-85-220.png/512x512bb.jpg",
+   "ipadScreenshotUrls": [
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/83/fd/03/83fd0381-e240-aaf0-7973-ece27eb7ecd5/APP_IPAD_PRO_3GEN_129-0.png/360x480bb.jpg"
+   ],
+   "minimumOsVersion": "16.0",
+   "releaseNotes": "Köszönjük, hogy a Google Térképet használja! Ez a kiadás olyan programhiba-javításokat tartalmaz, amelyek még jobbá teszik termékünket, hogy Ön zavartalanul fedezhessen fel új helyeket, és navigálhasson oda, ahova szeretne.",
+   "artistId": 281956209,
+   "artistName": "Google",
+   "genres": [
+    "Navigáció",
+    "Ételek és italok"
+   ],
+   "price": 0.0,
+   "bundleId": "com.google.Maps",
+   "releaseDate": "2012-12-13T04:21:00Z",
+   "genreIds": [
+    "6010",
+    "6023"
+   ],
+   "primaryGenreName": "Navigation",
+   "primaryGenreId": 6010,
+   "sellerName": "Google LLC",
+   "isVppDeviceBasedLicensingEnabled": true,
+   "trackId": 585027354,
+   "trackName": "Google Térkép",
+   "currentVersionReleaseDate": "2026-10-16T19:19:55Z",
+   "version": "26.42.0",
+   "wrapperType": "software",
+   "currency": "HUF",
+   "description": "A Google Térkép segítségével magabiztosan tájékozódhat, miközben felfedezi a világot. Keresse meg a legjobb útvonalakat az élő forgalmi adatok és a valós idejű GPS-navigáció segítségével, amely rendelkezésre áll autózáshoz, gyalogláshoz, kerékpározáshoz és tömegközlekedéshez. Felfedezhet több mint 250 millió vállalkozást és helyet – az éttermektől és a boltoktól kezdve a mindennapi szükségletekig – a térképen feltüntetett fotók, vélemények és hasznos információk segítségével.\n\nTájékozódjon a világban, ahogy csak szeretne:\n• Üzemanyag-takarékos útvonalakat is kiválaszthat, hogy minél takarékosabban jusson el az úti céljához\n• A valós idejű, részletes hangalapú és képernyőn megjelenő navigációval megtalálhatja a legjobb útvonalat\n• Az élő forgalmi adatokon, fennakadásokon és útlezárásokon al",
+   "averageUserRatingForCurrentVersion": 4.70681,
+   "averageUserRating": 4.70681,
+   "trackCensoredName": "Google Térkép",
+   "trackViewUrl": "https://apps.apple.com/hu/app/google-t%C3%A9rk%C3%A9p/id585027354?l=hu&uo=4",
+   "contentAdvisoryRating": "4+",
+   "sellerUrl": "http://maps.google.com/about",
+   "languageCodesISO2A": [
+    "SQ",
+    "AR",
+    "HY",
+    "AZ",
+    "MY",
+    "CA",
+    "HR",
+    "CS",
+    "DA",
+    "NL",
+    "EN",
+    "FI",
+    "FR",
+    "KA",
+    "DE",
+    "EL",
+    "HE",
+    "HI",
+    "HU",
+    "ID",
+    "IT",
+    "JA",
+    "KO",
+    "LT",
+    "MS",
+    "NB",
+    "PL",
+    "PT",
+    "RO",
+    "RU",
+    "SR",
+    "ZH",
+    "SK",
+    "ES",
+    "SW",
+    "SV",
+    "TH",
+    "ZH",
+    "TR",
+    "UK",
+    "UZ",
+    "VI"
+   ],
+   "fileSizeBytes": "488426496",
+   "formattedPrice": "Ingyenes",
+   "userRatingCountForCurrentVersion": 78768,
+   "trackContentRating": "4+",
+   "userRatingCount": 78768
+  }
+ ]
+}

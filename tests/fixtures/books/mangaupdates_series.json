@@ -1,0 +1,88 @@
+{
+ "series_id": 66804182011,
+ "title": "Nichijou",
+ "url": "https://www.mangaupdates.com/series/uothgqj/nichijou",
+ "associated": [
+  {
+   "title": "Arki (Finnish)"
+  },
+  {
+   "title": "Everyday Life"
+  },
+  {
+   "title": "Nichijou: My Ordinary Life"
+  },
+  {
+   "title": "日常"
+  },
+  {
+   "title": "일상"
+  }
+ ],
+ "description": "While the title suggests a story of simple, everyday school life, the contents are more the opposite. The setting is a strange school where you may see the principal wrestle a deer or a robot's arm hide a rollcake. However there are still normal stories, like making a card castle or taking a test you didn't study for. The art style is cute but mixes with extreme expressions and action sequences for surprising comedy bits.",
+ "image": {
+  "url": {
+   "original": "https://cdn.mangaupdates.com/image/i505251.jpg",
+   "thumb": "https://cdn.mangaupdates.com/image/thumb/i505251.jpg"
+  },
+  "height": 400,
+  "width": 281
+ },
+ "type": "Manga",
+ "year": "2007",
+ "bayesian_rating": 8.04,
+ "rating_votes": 203,
+ "genres": [
+  {
+   "genre": "Comedy"
+  },
+  {
+   "genre": "School Life"
+  },
+  {
+   "genre": "Shounen"
+  },
+  {
+   "genre": "Slice of Life"
+  }
+ ],
+ "latest_chapter": 234,
+ "status": "12 Volumes (Ongoing)",
+ "licensed": true,
+ "completed": false,
+ "authors": [
+  {
+   "name": "ARAWI Keiichi",
+   "author_id": 59746082498,
+   "url": "https://www.mangaupdates.com/author/rg39waq/arawi-keiichi",
+   "type": "Author"
+  },
+  {
+   "name": "ARAWI Keiichi",
+   "author_id": 59746082498,
+   "url": "https://www.mangaupdates.com/author/rg39waq/arawi-keiichi",
+   "type": "Artist"
+  }
+ ],
+ "publishers": [
+  {
+   "publisher_name": "Kadokawa Shoten",
+   "publisher_id": 74035444770,
+   "url": "https://www.mangaupdates.com/publisher/y0esisi/kadokawa-shoten",
+   "type": "Original",
+   "notes": ""
+  },
+  {
+   "publisher_name": "Vertical",
+   "publisher_id": 40177150989,
+   "url": "https://www.mangaupdates.com/publisher/iggfs3x/vertical",
+   "type": "English",
+   "notes": "12 Volumes - Ongoing"
+  }
+ ],
+ "last_updated": {
+  "timestamp": 1760991390,
+  "as_rfc3339": "2025-10-20T13:16:30-07:00",
+  "as_string": "October 20th, 2025 1:16pm PDT"
+ }
+}

@@ -1,0 +1,99 @@
+
+7-Zip [64] 26.02 : Copyright (c) 1999-2026 Igor Pavlov : 2026-06-25
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,12 CPUs Intel(R) Xeon(R) E-2286G CPU @ 4.00GHz (906EA)  (LP))
+
+Scanning the drive for archives:
+1 file, 283 bytes (1 KiB)
+
+Listing archive: sample.7z
+
+--
+Path = sample.7z
+Type = 7z
+Physical Size = 283
+Headers Size = 269
+Method = LZMA2:12
+Solid = +
+Blocks = 1
+
+----------
+Path = TENOKE
+Size = 0
+Packed Size = 0
+Modified = 2026-10-16 21:49:56.3302669
+Attributes = D drwxr-xr-x
+CRC = 
+Encrypted = -
+Method = 
+Block = 
+
+Path = _CommonRedist
+Size = 0
+Packed Size = 0
+Modified = 2026-10-16 21:49:56.3262669
+Attributes = D drwxr-xr-x
+CRC = 
+Encrypted = -
+Method = 
+Block = 
+
+Path = _CommonRedist/DirectX
+Size = 0
+Packed Size = 0
+Modified = 2026-10-16 21:49:56.3302669
+Attributes = D drwxr-xr-x
+CRC = 
+Encrypted = -
+Method = 
+Block = 
+
+Path = TENOKE/steam_api64.dll
+Size = 2
+Packed Size = 14
+Modified = 2026-10-16 21:49:56.3302669
+Attributes = A -rw-r--r--
+CRC = 46EA081F
+Encrypted = -
+Method = LZMA2:12
+Block = 0
+
+Path = _CommonRedist/DirectX/DXSETUP.exe
+Size = 2
+Packed Size = 
+Modified = 2026-10-16 21:49:56.3302669
+Attributes = A -rw-r--r--
+CRC = 46EA081F
+Encrypted = -
+Method = LZMA2:12
+Block = 0
+
+Path = autorun.inf
+Size = 2
+Packed Size = 
+Modified = 2026-10-16 21:49:56.3302669
+Attributes = A -rw-r--r--
+CRC = 46EA081F
+Encrypted = -
+Method = LZMA2:12
+Block = 0
+
+Path = setup-1.bin
+Size = 2
+Packed Size = 
+Modified = 2026-10-16 21:49:56.3302669
+Attributes = A -rw-r--r--
+CRC = 46EA081F
+Encrypted = -
+Method = LZMA2:12
+Block = 0
+
+Path = setup.exe
+Size = 2
+Packed Size = 
+Modified = 2026-10-16 21:49:56.3302669
+Attributes = A -rw-r--r--
+CRC = 46EA081F
+Encrypted = -
+Method = LZMA2:12
+Block = 0
+

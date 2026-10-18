@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Synthetic sample in the GameTDB wiitdb.xml layout (hand-written for the parser tests; no text copied from GameTDB). -->
+<datafile xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="wiitdb.xsd">
+	<WiiTDB version="20261016000000" filter="EN_wiiware_gamecube" games="2"/>
+	<game name="Mario Kart Wii (Europe) (EN,FR,DE,ES,IT)">
+		<id>RMCP01</id>
+		<type/>
+		<region>PAL</region>
+		<languages>EN,FR,DE,ES,IT</languages>
+		<locale lang="FR">
+			<title>Mario Kart Wii</title>
+			<synopsis/>
+		</locale>
+		<locale lang="EN">
+			<title>Mario Kart Wii</title>
+			<synopsis>Start your engines: a short synthetic synopsis about kart racing with friends, written for this test.</synopsis>
+		</locale>
+		<locale lang="KO">
+			<title>마리오 카트 Wii</title>
+			<synopsis/>
+		</locale>
+		<developer>Nintendo EAD</developer>
+		<publisher>Nintendo</publisher>
+		<date year="2008" month="4" day="11"/>
+		<genre>racing,party,kart racing</genre>
+		<rating type="PEGI" value="3">
+			<descriptor>online</descriptor>
+		</rating>
+		<input players="4">
+			<control type="wiimote" required="true"/>
+		</input>
+		<rom version="0" name="Mario Kart Wii (Europe) (EN,FR,DE,ES,IT).iso" size="4699979776"/>
+	</game>
+	<game name="Super Smash Bros. Melee (USA) (EN)">
+		<id>GALE01</id>
+		<type>GameCube</type>
+		<region>NTSC-U</region>
+		<languages>EN</languages>
+		<locale lang="EN">
+			<title>Super Smash Bros. Melee</title>
+			<synopsis>A synthetic one-line synopsis of a GameCube fighting game.</synopsis>
+		</locale>
+		<developer>HAL Laboratory</developer>
+		<publisher>Nintendo</publisher>
+		<date year="2001" month="12" day="2"/>
+		<genre>fighting</genre>
+		<rating type="ESRB" value="T"/>
+	</game>
+</datafile>

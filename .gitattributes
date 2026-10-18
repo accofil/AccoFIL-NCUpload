@@ -1,0 +1,10 @@
+*.py text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+*.service text eol=lf
+*.timer text eol=lf
+tests/fixtures/banlist/*.html text eol=lf
+
+config.env.example text eol=lf
