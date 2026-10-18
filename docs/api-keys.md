@@ -22,9 +22,12 @@ A következő táblázat mind a 17 támogatott API-mezőt felsorolja.
 | `IGDB_CLIENT_SECRET` | IGDB/Twitch alkalmazás hitelesítése. | Ugyanott New Secret; [IGDB hivatalos kezdőlépések](https://api-docs.igdb.com/#getting-started). |
 | `GOOGLE_BOOKS_KEY` | Könyvadatok ISBN/cím alapján. | [Google Cloud Console](https://console.cloud.google.com/): projekt → APIs & Services → Library → Books API engedélyezése → Credentials → Create credentials → API key. |
 | `COMICVINE_KEY` | Angol képregényadatok. | [Comic Vine API](https://comicvine.gamespot.com/api/), bejelentkezés után API key. |
-| `TVDB_KEY` | Sorozat- és epizódadatok. | [TheTVDB API information](https://thetvdb.com/api-information): a fiókhoz engedélyezett API-hozzáférés kulcsa. |
-| `FANART_KEY` | Kiegészítő borító-/képadatok. | [fanart.tv API key](https://fanart.tv/get-an-api-key/), személyes projektkulcs. |
+| `TVDB_KEY` | Fenntartott mező; ebben a verzióban még nincs aktív TheTVDB-adapter. | [TheTVDB API information](https://thetvdb.com/api-information): a fiókhoz engedélyezett API-hozzáférés kulcsa. |
+| `FANART_KEY` | Fenntartott mező; ebben a verzióban még nincs aktív fanart.tv-adapter. | [fanart.tv API key](https://fanart.tv/get-an-api-key/), személyes projektkulcs. |
 | `GITHUB_TOKEN` | Szoftveradatbázisok olvasása nagyobb GitHub-kvótával. | GitHub Settings → Developer settings → Personal access tokens. Ehhez nyilvános adatok olvasására alkalmas minimális jogosultságú token elég; repóírás nem kell. |
+
+A `TVDB_KEY` és `FANART_KEY` a korábbi konfigurációból megőrzött, fenntartott mező.
+Ezekhez most nem szükséges kulcsot beszerezned; a varázslóban hagyd őket üresen.
 
 ## Fontos különbségek
 
