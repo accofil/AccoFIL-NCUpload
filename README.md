@@ -17,10 +17,10 @@ teljes techinfo, szabályos NCUP-előkészítés, soros batch és qBittorrent se
 ## Gyors indulás
 
 Linux, Python 3.10+, működő nCore-fiók és qBittorrent WebUI szükséges.
-A repo privát hozzáféréséhez előbb `gh auth login` kell a szerveren.
+A nyilvános repó letöltéséhez nem kell GitHub-fiók vagy GitHub-belépés.
 
 ```bash
-gh repo clone accofil/AccoFIL-NCUpload
+git clone https://github.com/accofil/AccoFIL-NCUpload.git
 cd AccoFIL-NCUpload
 bash install.sh
 ```

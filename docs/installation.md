@@ -38,22 +38,15 @@ A teljes telepítőt **normál felhasználóként**, lehetőleg a qBittorrent fe
 
 ## 4. Töltsd le a repót
 
-Privát repónál a szerveren is GitHub-belépés kell:
-
-```bash
-gh auth login --hostname github.com --git-protocol https --web
-```
-
-Kövesd a kiírt webes belépést a saját böngésződben. Utána:
+A repó nyilvános: letöltéséhez nem kell GitHub-fiók vagy GitHub-bejelentkezés.
 
 ```bash
 mkdir -p ~/src
 cd ~/src
-gh repo clone accofil/AccoFIL-NCUpload
+git clone https://github.com/accofil/AccoFIL-NCUpload.git
 cd AccoFIL-NCUpload
 ```
 
-Nyilvános repó esetén a `git clone https://github.com/accofil/AccoFIL-NCUpload.git` is használható.
 Alternatíva: GitHub **Code → Download ZIP**, kicsomagolás, majd a teljes mappa másolása
 WinSCP-vel a szerverre. A `ncore_up`, `docs`, `pyproject.toml` és `install.sh` együtt maradjon.
 
