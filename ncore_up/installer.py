@@ -231,11 +231,20 @@ def system_packages() -> None:
         raise SetupError("Az automatikus csomagtelepítés apt-get-et igényel (Debian/Ubuntu).")
     prefix = [] if os.geteuid() == 0 else ["sudo"]
     subprocess.run(prefix + ["apt-get", "update"], check=True)
-    available, missing = [], []
+    available, missing, installed = [], [], []
+    env = {**os.environ, "LC_ALL": "C"}
     for name in APT_PACKAGES:
-        result = subprocess.run(["apt-cache", "show", name], capture_output=True)
-        (available if result.returncode == 0 and b"Package:" in result.stdout else missing).append(name)
-    subprocess.run(prefix + ["apt-get", "install", "-y", *available], check=True)
+        state = subprocess.run(["dpkg-query", "-W", "-f=${Status}", name], capture_output=True, env=env)
+        if state.returncode == 0 and state.stdout.strip().endswith(b"ok installed"):
+            installed.append(name)
+            continue
+        result = subprocess.run(["apt-cache", "policy", name], capture_output=True, env=env)
+        candidate = re.search(rb"^\s*Candidate:\s*(\S+)", result.stdout, re.MULTILINE)
+        (available if result.returncode == 0 and candidate and candidate[1] != b"(none)" else missing).append(name)
+    if installed:
+        print("Már telepített csomagok megtartva: " + ", ".join(installed))
+    if available:
+        subprocess.run(prefix + ["apt-get", "install", "--no-remove", "-y", *available], check=True)
     if missing:
         print("A tárolókban nem található: " + ", ".join(missing) + ". Lásd docs/troubleshooting.md.")
 

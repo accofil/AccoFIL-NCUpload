@@ -21,6 +21,7 @@
 | A pip nem éri el a csomagforrást | Ellenőrizd DNS/internet/proxy és a `ca-certificates` csomagot; a telepítést indítsd újra. |
 | `ncupload: command not found` | `export PATH="$HOME/.local/bin:$PATH"`, vagy a kiírt abszolút indítóútvonal. |
 | Rendszercsomag nem található | `sudo apt-get update`. Az unrarhoz szükség lehet Debian non-free tárolóra. Az adott rendszer támogatott tárolóját használd. A telepítő kihagyja a nem elérhető opcionális csomagokat és felsorolja őket. |
+| `has no installation candidate`, miközben az eszköz már telepítve van | Használd a 0.7.1 vagy újabb telepítőt. Ez megtartja a már telepített csomagokat, és tiszteletben tartja a szerver APT-rögzítéseit. Ellenőrzés: `apt-cache policy CSOMAGNÉV`; a rögzítéseket ne töröld a telepítés kedvéért. |
 | mkbrr letöltési/checksum hiba | Ne használd a hibás binárist. A [hivatalos kiadásokból](https://github.com/autobrr/mkbrr/releases) válassz Linux és megfelelő CPU-architektúrát, ellenőrizd a checksumot, majd `--configure`. |
 | `bad interpreter` / `^M` | Unix LF sorvégek szükségesek; Gitből klónozva a repó beállítja. |
 | Titkos bevitelnél nincs kurzormozgás | Normális: a jelszó/kulcs rejtett. Írd be, majd Enter. |

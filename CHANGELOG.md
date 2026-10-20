@@ -1,5 +1,11 @@
 # AccoFIL NCUpload – változások
 
+## 0.7.1
+
+- A telepítő megtartja a már telepített rendszercsomagokat, a szerver csomagrögzítéseivel együtt.
+- Az új függőségeknél az APT tényleges telepítési jelöltjét ellenőrzi; a nem elérhető csomagokat felsorolja.
+- Az APT-telepítés nem távolíthat el meglévő csomagokat.
+
 ## 0.7.0
 
 - AccoFIL NCUpload márkanév, rövid `ncupload` indító, kompatibilis `ncore-up` parancs.

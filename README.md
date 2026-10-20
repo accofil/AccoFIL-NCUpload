@@ -66,7 +66,7 @@ A sütiket/kulcsokat ne tedd a repóba.
 
 ## Verzió és fejlesztés
 
-Verzió: **0.7.0**. [Változások](CHANGELOG.md).
+Verzió: **0.7.1**. [Változások](CHANGELOG.md).
 A forrás és a meglévő tesztek a repóban vannak. Az új telepítő szintaktikai és csomagolási
 ellenőrzést kapott; ehhez a kiadáshoz teljes alkalmazásteszt-futtatás nem történt.
 
