@@ -136,8 +136,10 @@ class FormAndTorrentTests(unittest.TestCase):
         self.assertEqual(forms.missing(series, {"techinfo_fajl": 1}), ["3 kép kell"])
         film = forms.build("t", forms.UploadData(category="dvd_hun", name="Nyerő páros", original=False, menu=True, audio="magyar 5.1", infobar=forms.Infobar(imdb_id="tt1", title_hu="Nyerő páros")))
         self.assertEqual((film["menu"], film["film_hangsav"]), ("van", "magyar 5.1"))
-        album = forms.build("t", forms.UploadData(category="mp3_hun", name="X - Y", original=False, artist="X", album="Y", description="Előadó: X\n"))
-        self.assertIn("zene: a tracklistát a leírásba kötelező beírni", forms.missing(album, {"techinfo_fajl": 1}))
+        album = forms.build("t", forms.UploadData(category="mp3_hun", name="Előadó - Album", original=False, artist="X", album="Y", description="Előadó: X\n"))
+        # The planner derives tracks from tags/techinfo; missing text is a warning,
+        # rather than requiring the user to enter the tracklist by hand.
+        self.assertEqual(forms.missing(album, {"techinfo_fajl": 1}), [])
         self.assertNotIn("3 kép kell", forms.missing(album, {"techinfo_fajl": 1}))
 
     def test_info_hash(self):

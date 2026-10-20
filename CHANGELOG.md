@@ -2,9 +2,11 @@
 
 ## 0.7.1
 
+- MIT-licenc a forráskódhoz és a Python-csomaghoz.
 - A telepítő megtartja a már telepített rendszercsomagokat, a szerver csomagrögzítéseivel együtt.
 - Az új függőségeknél az APT tényleges telepítési jelöltjét ellenőrzi; a nem elérhető csomagokat felsorolja.
 - Az APT-telepítés nem távolíthat el meglévő csomagokat.
+- Regressziós tesztek a csomagrögzítésekhez; elavult kézi tracklista-elvárás javítása a tesztben.
 
 ## 0.7.0
 
