@@ -6,9 +6,10 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest import mock
 
-from ncore_up import categories as cats, media, payload, plan as plans, release as rel, safeio
+from ncore_up import categories as cats, duplicates, media, payload, plan as plans, release as rel, safeio
 
 DISC = "Show.Disc{n}.2013.Bluray.1080p-GRP/"
 
@@ -51,6 +52,22 @@ class BluRayPackTests(unittest.TestCase):
         release = pack(discs=1)
         for item in release.files:
             self.assertEqual(payload.decision(release, item, cats.CATEGORIES["hdser"], False)[0], "KEEP", item.relpath)
+
+    def test_full_disc_has_its_own_dupe_slot(self):
+        plan = SimpleNamespace(category=cats.CATEGORIES["hdser"], release=pack(),
+                               data=SimpleNamespace(name="A Biblia S01 BD50", original=False, book_format=""))
+        found = {d.torrent_id: d.status for d in duplicates.decide(plan, [
+            {"torrent_id": 1, "release_name": "A Biblia S01", "category": "xvidser_hun"},
+            {"torrent_id": 2, "release_name": "The.Bible.S01.BDRIP.x264-Krissz", "category": "xvidser"},
+            {"torrent_id": 3, "release_name": "A biblia S01 720p", "category": "hdser_hun"},
+            {"torrent_id": 4, "release_name": "A Biblia S01 BD25", "category": "hdser"},
+            {"torrent_id": 5, "release_name": "A Biblia S01 BD50", "category": "hdser_hun"},
+            {"torrent_id": 6, "release_name": "The.Bible.S01.COMPLETE.BLURAY-GRP", "category": "hdser"},
+        ])}
+        self.assertEqual(found, {"1": "ALLOW", "2": "ALLOW", "3": "ALLOW", "4": "ALLOW", "5": "REVIEW", "6": "REVIEW"})
+        plan.release = rel.Release(path=Path("/x"), name="x", files=[], nfo=None, has_bdmv=False, has_video_ts=False)
+        self.assertEqual(duplicates.decide(plan, [{"torrent_id": 3, "release_name": "A biblia S01 720p", "category": "hdser_hun"}])[0].status,
+                         "REVIEW")
 
     def test_bdinfo_runs_without_rlimits(self):
         calls = []

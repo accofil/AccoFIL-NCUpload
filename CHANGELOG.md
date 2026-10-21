@@ -1,5 +1,12 @@
 # AccoFIL NCUpload – változások
 
+## 0.7.4
+
+- Dupe: a teljes BluRay lemez külön dupe-osztály (wiki 374: „BD25/BD50 maximum 1 darab”), így a fent lévő
+  SD/720p/1080p encode nem akadályozza; csak az azonos méretű lemez (vagy a méret nélküli teljes BluRay) kér döntést.
+- Ha döntés vagy adat hiányzik, a futás a végén felsorolja, mi hiányzik, a dupe-gyanús torrenteket az indokkal,
+  és kiírja a kitöltendő adatlap-részletet a pontos fájlútvonallal (eddig csak a review.json helyét).
+
 ## 0.7.3
 
 - Többlemezes Blu-ray csomag (Disc1..DiscN mappák, pl. sorozat-évadok) saját feltöltésként: lemezenként fut a

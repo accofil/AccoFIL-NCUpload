@@ -12,6 +12,7 @@ import argparse
 import json
 import mimetypes
 import os
+import re
 import shlex
 import subprocess
 import sys
@@ -352,7 +353,7 @@ def _prepared(args, config: Config, client, release, plan, run_dir: Path, job_ke
     unresolved = plan.doubts or any(r.status == "UNKNOWN" for r in plan.requirements)
     if unresolved and not args.dry_run:
         _set_aside(run_dir, plan)
-        say(f"\nKötelező döntés/ellenőrzés hiányzik: {run_dir / 'review.json'}")
+        _explain_stop(plan, run_dir)
         return 10
     if args.auto and not plan.auto_ok and not args.dry_run:
         _set_aside(run_dir, plan)
@@ -614,6 +615,30 @@ def check_sources() -> None:
         used = translate.usage()
         if used:
             say(f"DeepL keret: {used[0]} / {used[1]} karakter")
+
+
+def _explain_stop(plan: plans.Plan, run_dir: Path) -> None:
+    """Say what is missing and how to answer it, instead of pointing at review.json only."""
+
+    say("\nNEM TÖLTÖTTEM FEL: döntés kell tőled az alábbiakról.")
+    dupes = [d for d in plan.doubts if d.startswith("dupe #")]
+    for doubt in plan.doubts:
+        if doubt not in dupes:
+            say(f"  - {doubt}")
+    for item in plan.requirements:
+        if item.status == "UNKNOWN":
+            say(f"  - {item.message}")
+    if dupes:
+        say("  - lehetséges dupe, nézd meg a dupe-szabályzat (wiki 374) szerint:")
+        for doubt in dupes:
+            say(f"      {doubt}")
+        ids = [m[1] for d in dupes for m in [re.match(r"dupe #(\d+)", d)] if m]
+        path = workflow.answers_path(plan.source_release.path if plan.source_release else plan.release.path)
+        sheet = {"dupe_decisions": {i: {"action": "allow", "reason": ""} for i in ids}}
+        say(f"    Ha szerinted nem dupe: írd ezt a fájlba ({path}), a reason-be a konkrét indokot")
+        say("    (legalább 12 karakter, üresen nem érvényes), majd futtasd újra ugyanazt a parancsot:")
+        say("    " + json.dumps(sheet, ensure_ascii=False, indent=1).replace("\n", "\n    "))
+    say(f"Részletek: {run_dir / 'atnezesre.txt'}")
 
 
 def _set_aside(run_dir: Path, plan: plans.Plan) -> None:

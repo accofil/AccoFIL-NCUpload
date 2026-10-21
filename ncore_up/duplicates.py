@@ -65,6 +65,32 @@ def _disjoint_episodes(plan, name: str, code: str) -> bool:
     return own[1][1] < other[1][0] or other[1][1] < own[1][0]
 
 
+DISC_LABEL_RE = re.compile(r"(?i)(?<![a-z0-9])(BD(?:25|50|66|100)|UHD[ ._-]?BD)(?![a-z0-9])")
+DISC_NAME_RE = re.compile(r"(?i)(?<![a-z0-9])(?:COMPLETE[ ._-]+(?:UHD[ ._-]+)?BLU-?RAY|BDMV|AVC[ ._-]+REMUX[ ._-]+DISC|DISC\d)(?![a-z0-9])")
+
+
+def _disc_label(name: str) -> str:
+    found = DISC_LABEL_RE.search(name)
+    return re.sub(r"[ ._-]", "", found[1]).upper() if found else ""
+
+
+def _disc_class(plan, name: str, code: str):
+    """Wiki 374 keeps full Blu-ray discs in their own slot ("BD25 / BD50 maximum 1 darab"): an encode of any
+    resolution never takes it, and a disc of another size neither. None when this rule does not decide."""
+
+    if plan.category.group != "video" or not plan.release.has_bdmv or plan.data.original:
+        return None
+    own = _disc_label(plan.data.name)
+    if not own or code.startswith("dvd"):
+        return None
+    other = _disc_label(name)
+    if not other and not DISC_NAME_RE.search(name):
+        return "ALLOW", f"eltérő dupe-osztály: teljes BluRay lemez ({own}) – a fent lévő encode nem lemez (wiki 374)"
+    if other and other != own:
+        return "ALLOW", f"eltérő lemezosztály: {own} ↔ {other} (wiki 374: lemezméretenként max. 1)"
+    return "REVIEW", f"ugyanilyen lemez már fent van ({other or 'teljes BluRay'}; wiki 374: max. 1, HUN előnyben)"
+
+
 def decide(plan, candidates: list[dict], answers: dict | None = None) -> list[Decision]:
     answers = answers or {}
     result = []
@@ -82,6 +108,8 @@ def decide(plan, candidates: list[dict], answers: dict | None = None) -> list[De
             status, reason = "BLOCK", "ugyanaz az eredeti release ugyanabban a kategóriában"
         elif _disjoint_episodes(plan, name, code):
             status, reason = "ALLOW", "eltérő évad/epizód: a nevek alapján nincs közös epizód"
+        elif _disc_class(plan, name, code):
+            status, reason = _disc_class(plan, name, code)
         elif plan.category.group == "ebook" and code == plan.category.code:
             own = book_family(plan.data.book_format)
             other = book_family(item.get("format", "") or item.get("type", ""))
