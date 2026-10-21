@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ncore-up"
-version = "0.7.4"
+version = "0.7.5"
 description = "AccoFIL NCUpload – automated nCore upload preparation, batch uploads and seeding (excluding XXX)"
 readme = "README.md"
 license = {file = "LICENSE"}

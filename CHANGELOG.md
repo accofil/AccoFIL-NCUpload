@@ -1,5 +1,11 @@
 # AccoFIL NCUpload – változások
 
+## 0.7.5
+
+- A nCore-torrent hash-e már a qBittorrentbe adás és a (nagy csomagnál hosszú) hash-ellenőrzés előtt mentődik;
+  a `--seed-audit` a mentett `ncore-<id>.torrent` fájlból is kiszámolja, ha egy megszakadt futás nem rögzítette.
+  Eddig ilyenkor a ténylegesen seedelő torrentet „nincs a qBittorrentben” hibának jelezte.
+
 ## 0.7.4
 
 - Dupe: a teljes BluRay lemez külön dupe-osztály (wiki 374: „BD25/BD50 maximum 1 darab”), így a fent lévő

@@ -513,6 +513,9 @@ def _seed(state: dict, config: Config, client) -> int:
         site_hash = torrent.info_hash(site)
         site_path.write_bytes(site)
         site_path.chmod(0o600)
+        # Recorded before the (long) hash-check wait: an interrupted run must not leave the seed unfindable.
+        state.update(site_hash=site_hash)
+        _save_state(state, config)
         # Category + tag mark the torrent as an NCUpload seed, so moves and cleanup scripts can tell it apart. A large
         # payload's hash check takes minutes: wait up to 20 minutes (nCore wants seeding within 30).
         status = qbit.add_torrent(config.qb_url, config.qb_user, config.qb_pass, site, str(content.parent),
@@ -555,7 +558,14 @@ def seed_audit(config: Config) -> int:
             bad += 1
             continue
         tid, name = state.get("torrent_id", "?"), state.get("name", "")
-        item = items.get(str(state.get("site_hash", "")).lower())
+        site_hash = str(state.get("site_hash", ""))
+        site_path = Path(run_dir) / f"ncore-{tid}.torrent"
+        if not site_hash and site_path.exists():  # a run stopped during the seed wait
+            try:
+                site_hash = torrent.info_hash(site_path.read_bytes())
+            except (OSError, ValueError):
+                site_hash = ""
+        item = items.get(site_hash.lower())
         content = Path(state.get("content_path", ""))
         if item is None:
             problem = "nincs a qBittorrentben"
