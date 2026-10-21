@@ -105,6 +105,7 @@ class CliCase(unittest.TestCase):
             (ebookmeta, "proof_pages", mock.Mock(side_effect=self._pages)),
             (torrent, "create", self.create),
             (qbit, "add_torrent", self.add_torrent),
+            (qbit, "incomplete_at", mock.Mock(return_value=[])),
             (cli, "input", self.input),
         ):
             patcher = mock.patch.object(target, name, value, create=name == "input")
@@ -339,7 +340,11 @@ class UploadTests(CliCase):
         code, client = self.run_cli(root, "-c", "ebook_hun", "--auto", meta=self.book_meta(root))
         self.assertEqual(code, 0)
         self.input.assert_not_called()
-        self.create.assert_called_once_with("mkbrr", root.resolve(), self.run_dir() / "local.torrent")
+        self.create.assert_called_once()
+        mkbrr, content, target = self.create.call_args.args
+        # the torrent is made from the own hardlinked NCUP copy, which carries the release's own name
+        self.assertEqual((mkbrr, content.name, target), ("mkbrr", root.name, self.run_dir() / "local.torrent"))
+        self.assertTrue(content.is_relative_to(self.config.ncup_dir))
         run_dir = self.run_dir()
         (form, files), = client.uploads
         saved = json.loads((run_dir / "form.json").read_text(encoding="utf-8"))
@@ -352,8 +357,11 @@ class UploadTests(CliCase):
                          "torrent_id=4242\nurl=https://ncore.pro/torrents.php?action=details&id=4242\n")
         self.assertEqual((run_dir / "ncore-4242.torrent").read_bytes(), SITE_TORRENT)
         self.assertEqual(client.downloads, [4242])
-        self.add_torrent.assert_called_once_with("http://127.0.0.1:8080", "u", "p", SITE_TORRENT, str(root.resolve().parent),
-                                                 skip_checking=False, category="ncore", info_hash=torrent.info_hash(SITE_TORRENT), wait=30)
+        content = self.create.call_args.args[1]
+        self.assertTrue(content.exists())  # the uploaded job is kept: it is what qBittorrent seeds
+        self.add_torrent.assert_called_once_with("http://127.0.0.1:8080", "u", "p", SITE_TORRENT, str(content.parent),
+                                                 skip_checking=False, category="ncore", tags="ncupload",
+                                                 info_hash=torrent.info_hash(SITE_TORRENT), wait=1200.0)
         self.assertIn("Feltöltve: https://ncore.pro/torrents.php?action=details&id=4242", self.output())
 
     def test_original_film_upload_files(self):

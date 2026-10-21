@@ -801,6 +801,24 @@ def _apply_tracks(meta: Meta, local: Local, candidate: Candidate | None, confide
         meta.warnings.append(f"{mismatches} szám címe eltér az adatbázistól — a fájlok tagjeit hagytam meg, ellenőrizd a kiadást")
 
 
+def _catno_key(value: str) -> str:
+    return re.sub(r"[^0-9a-z]", "", (value or "").casefold())
+
+
+def _edition_mismatch(local: Local, candidate: Candidate) -> list[str]:
+    """Label / catalogue number of the files that contradict the matched release (another edition of the album)."""
+
+    data = candidate.data if candidate else {}
+    found = []
+    remote_catno = str(data.get("catno") or "")
+    if local.catno and remote_catno and _catno_key(local.catno) and _catno_key(remote_catno) and _catno_key(local.catno) != _catno_key(remote_catno):
+        found.append(f"katalógusszám: fájl {local.catno} / adatbázis {remote_catno}")
+    remote_label = str(data.get("label") or "")
+    if local.label and remote_label and similarity(local.label, remote_label) < 0.6:
+        found.append(f"kiadó: fájl {local.label} / adatbázis {remote_label}")
+    return found
+
+
 def _label_and_ids(meta: Meta, local: Local, candidate: Candidate | None, discogs_data: dict) -> None:
     data = candidate.data if candidate else {}
     if candidate and candidate.source == "spotify":
@@ -1086,6 +1104,13 @@ def resolve(release: rel.Release, code: str, *, original: bool, hints: dict) -> 
             if not original:
                 meta.extra.setdefault("review_reasons", []).append("a helyi és az igazoló adatbázis számlistája eltér: a teljes kiadást ellenőrizni kell")
 
+    edition_mismatch = _edition_mismatch(local, candidate) if candidate and confidence >= 0.5 else []
+    if edition_mismatch:
+        # Same album, other edition (label/catalogue number): the description must not borrow that edition's data,
+        # and an unattended upload must not rely on it.
+        meta.extra.setdefault("review_reasons", []).append("a talált kiadás más edíció, mint a fájloké: " + "; ".join(edition_mismatch))
+        meta.confidence = min(meta.confidence, 0.6)
+
     # titles and people: the hints, then a confident match, then the local tags
     info = candidate_info(candidate) if match else {}
     if confident and not code.endswith("_hun") and info.get("country") == "HU":
@@ -1106,6 +1131,10 @@ def resolve(release: rel.Release, code: str, *, original: bool, hints: dict) -> 
     if local.discs > 1:
         meta.extra["discs"] = str(local.discs)
     _label_and_ids(meta, local, candidate if confident else None, discogs_data if confident else {})
+    if edition_mismatch:
+        meta.publisher = local.label or meta.publisher
+        if local.catno:
+            meta.extra["catno"] = local.catno
 
     # style tags
     lastfm_tags: list = []

@@ -98,7 +98,8 @@ class Plan:
         return self.content
 
 
-SCENE_NAME_RE = re.compile(r"^[\w.()&'+,!-]+-[A-Za-z0-9]{2,}$")
+# Scene/P2P names end in "-GROUP"; music scene groups often add an "_iNT"/"_INT" suffix ("…-AUDiAL_iNT").
+SCENE_NAME_RE = re.compile(r"^[\w.()&'+,!-]+-[A-Za-z0-9]{2,}(?:_[A-Za-z0-9]{2,})?$")
 
 
 def looks_original(release: rel.Release) -> bool:
@@ -106,11 +107,22 @@ def looks_original(release: rel.Release) -> bool:
 
 
 def build(release: rel.Release, options: Options, client, work_dir: Path) -> Plan:
-    source_release = release
     # Library callers may use the run-local NCUP; the CLI always supplies the
     # installation's mandatory absolute NCORE_NCUP_DIR setting.
     options.ncup_dir = options.ncup_dir or work_dir.resolve() / "NCUP"
-    workspace = preparation.Workspace(source_release, options.ncup_dir)
+    workspace = preparation.Workspace(release, options.ncup_dir)
+    try:
+        return _build(release, options, client, work_dir, workspace)
+    except media.MediaError as exc:
+        workspace.discard()
+        raise ValueError(f"média feldolgozása: {exc}") from exc
+    except BaseException:
+        workspace.discard()  # no plan comes back, so nothing can ever seed from this job
+        raise
+
+
+def _build(release: rel.Release, options: Options, client, work_dir: Path, workspace: preparation.Workspace) -> Plan:
+    source_release = release
     guessed = cats.detect(release.name, [f.ext for f in release.files], release.has_bdmv, release.has_video_ts, release.hungarian_audio).code
     if (options.category or guessed or "").startswith("xxx"):
         raise ValueError("XXX kategóriákat ez a program nem tölt fel")
@@ -118,7 +130,7 @@ def build(release: rel.Release, options: Options, client, work_dir: Path) -> Pla
     try:
         release = workspace.expand(release, options.category or guessed, initial_original)
     except (OSError, ValueError, subprocess.SubprocessError) as exc:
-        workspace.receipt("failed")
+        workspace.discard()
         raise ValueError(f"NCUP előkészítés: {exc}") from exc
     detection = cats.detect(release.name, [f.ext for f in release.files], release.has_bdmv, release.has_video_ts, release.hungarian_audio)
     code = options.category or _local_category(release, detection.code, options.hints)
@@ -135,7 +147,7 @@ def build(release: rel.Release, options: Options, client, work_dir: Path) -> Pla
     try:
         release, preparation_errors = workspace.assemble(release, category, original)
     except (OSError, ValueError, subprocess.SubprocessError) as exc:
-        workspace.receipt("failed")
+        workspace.discard()
         raise ValueError(f"NCUP összeállítás: {exc}") from exc
     plan = Plan(release, category, forms.UploadData(category=code, name=options.name or release.name, original=original))
     plan.options = options
@@ -171,6 +183,12 @@ def build(release: rel.Release, options: Options, client, work_dir: Path) -> Pla
         raise ValueError(f"ismeretlen kategóriacsoport: {group}")
     builder(plan, options, client, work_dir)
     _common(plan, options, work_dir)
+    if plan.content is None:
+        # Always seed from an own hardlinked NCUP copy, originals included (see Workspace._root_for_source).
+        try:
+            plan.stage_dir()
+        except (OSError, ValueError) as exc:
+            plan.errors.append(f"NCUP összeállítás: {exc}")
     if forms.needs_techinfo(plan.category.code, plan.data.original):
         from . import techinfo
         try:
@@ -273,7 +291,12 @@ def _cover(plan: Plan, options: Options, meta: Meta | None, work_dir: Path) -> N
 
     if options.cover or meta is None:
         return
-    image = meta.cover or (net.get_bytes(meta.cover_url) if meta.cover_url else b"")
+    image = meta.cover
+    if not image and meta.cover_url:
+        if net.robots_allowed(meta.cover_url):
+            image = net.get_bytes(meta.cover_url)
+        else:
+            plan.warnings.append(f"a borító helyének robots.txt-je tiltja a letöltést, kihagytam: {meta.cover_url}")
     if not image:
         return
     try:

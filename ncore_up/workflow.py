@@ -44,9 +44,31 @@ def fingerprint(release) -> str:
     return hashlib.sha256(json.dumps(value, ensure_ascii=False).encode()).hexdigest()
 
 
+ANSWERS_DIR = Path.home() / ".config" / "ncore-up" / "answers"
+# Files an answers sheet may never point at: they would end up in a public description or as an attachment.
+SECRET_DIRS = (Path.home() / ".config" / "ncore-up", Path.home() / ".ssh", Path.home() / ".local" / "share" / "ncore-up",
+               Path.home() / ".cache" / "ncore-up", Path.home() / "logs" / "ncore-up", Path.home() / ".config" / "qBittorrent")
+
+
+def answers_path(source: Path) -> Path:
+    """Where the answers sheet of a release lives: the user's own config folder, never next to downloaded content
+    (a downloaded pack could otherwise bring its own sheet)."""
+
+    return ANSWERS_DIR / (source.name + ".ncore.json")
+
+
+def _safe_reference(path: Path) -> Path:
+    resolved = path.resolve()
+    name = resolved.name.casefold()
+    if any(resolved.is_relative_to(folder.resolve()) and resolved != ANSWERS_DIR.resolve() and not resolved.is_relative_to(ANSWERS_DIR.resolve())
+           for folder in SECRET_DIRS) or name.startswith("cookies") or name.endswith((".env", ".pem", ".key", ".sqlite3", ".torrent")):
+        raise ValueError(f"az adatlap nem hivatkozhat erre a fájlra: {resolved}")
+    return resolved
+
+
 def load_answers(args) -> dict:
     source = Path(args.path).resolve()
-    path = Path(args.answers).resolve() if args.answers else source.with_name(source.name + ".ncore.json")
+    path = Path(args.answers).resolve() if args.answers else answers_path(source)
     if not path.exists() and not args.answers:
         return {}
     data = json.loads(path.read_text(encoding="utf-8"))
@@ -72,9 +94,9 @@ def load_answers(args) -> dict:
         raise ValueError("menu: van/nincs kell")
     for key in ("description", "install_guide", "cover"):
         if data.get(key):
-            data[key] = str((path.parent / data[key]).resolve())
+            data[key] = str(_safe_reference(path.parent / data[key]))
     if data.get("images"):
-        data["images"] = [str((path.parent / x).resolve()) for x in data["images"]]
+        data["images"] = [str(_safe_reference(path.parent / x)) for x in data["images"]]
     for key, value in data.items():
         if key in {"hints", "dupe_decisions"}:
             continue

@@ -199,7 +199,7 @@ def _details(item: dict, child, code: int) -> None:
 def execute(args, config, client, runner, say) -> int:
     """The same single-item runner enforces bans, duplicate checks, daily limits and seeding."""
     if args.answers:
-        raise ValueError("batch mellett tételenként adj meg answers fájlt vagy PATH.ncore.json adatlapot")
+        raise ValueError("batch mellett tételenként adj meg answers fájlt vagy ~/.config/ncore-up/answers/<név>.ncore.json adatlapot")
     if args.resume_batch:
         target = Path(args.resume_batch).resolve()
         state = read_state(target)

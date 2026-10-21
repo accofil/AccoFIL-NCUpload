@@ -27,7 +27,7 @@ from . import categories as cats, torrent as torrents
 from . import __version__
 
 BASE = "https://ncore.pro"
-UA = f"AccoFIL-NCUpload/{__version__} (+https://github.com/accofil/AccoFIL-NCUpload)"
+UA = f"NCUpload/{__version__}"  # honest tool name; no repository link that would tie the account to the GitHub project
 INPUT_TAG_RE = re.compile(r"<input\b[^>]*>", re.I | re.S)
 ATTR_RE = re.compile(r"""([a-zA-Z_:][-\w:.]*)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+)))?""")
 UPLOAD_FORM_RE = re.compile(r"""<form\b[^>]*\bid=["']feltoltes["'][^>]*>(.*?)</form>""", re.I | re.S)
@@ -40,6 +40,14 @@ META_REFRESH_RE = re.compile(r"""<meta\b[^>]*http-equiv=["']?refresh["']?[^>]*co
 
 class NcoreError(Exception):
     pass
+
+
+class SearchTruncated(NcoreError):
+    """More hits than the paged JSON search returns; ``results`` holds the pages that were read."""
+
+    def __init__(self, message: str, results: list[dict]):
+        super().__init__(message)
+        self.results = results
 
 
 class SessionExpired(NcoreError):
@@ -284,7 +292,7 @@ class NcoreClient:
             if not items or not total or len(results) >= total or len(items) < per_page:
                 break
         if 'total' in locals() and total > len(results):
-            raise NcoreError("a dupe-keresés több találatot adott, mint amennyi ellenőrizhető; pontosítsd a keresést")
+            raise SearchTruncated("a dupe-keresés több találatot adott, mint amennyi ellenőrizhető; pontosítsd a keresést", results)
         return results
 
     def duplicate_facts(self, torrent_id: int) -> dict[str, str]:

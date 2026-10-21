@@ -17,4 +17,8 @@ def redact(text: str) -> str:
     value = re.sub(r'(?i)((?:Authorization|Proxy-Authorization|Cookie|Set-Cookie)\s*:\s*)[^\r\n<]+', r'\1' + REDACTED, value)
     # Tracker announce URLs also put passkeys in a path instead of a query.
     value = re.sub(r'(?i)(https?://[^/\s<>\"\x27]+/)([0-9a-f]{32,64})(?=/announce(?:\.php)?(?:[/?\s\"\x27<]|$))', r'\1' + REDACTED, value)
+    # Netscape cookies.txt lines (domain, flag, path, secure, expiry, name, value): the value is a session secret.
+    value = re.sub(r'(?m)^(#HttpOnly_)?([^\t\r\n]+\t(?:TRUE|FALSE)\t[^\t\r\n]*\t(?:TRUE|FALSE)\t\d+\t[^\t\r\n]+\t)[^\r\n]+', r'\1\2' + REDACTED, value)
+    # nCore's own login cookies (nick/pass) as name=value pairs.
+    value = re.sub(r'(?i)\b(pass|nick)=([^\s;\"\x27<>&]+)', r'\1=' + REDACTED, value)
     return value

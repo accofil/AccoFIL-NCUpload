@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ncore-up"
-version = "0.7.1"
+version = "0.7.2"
 description = "AccoFIL NCUpload – automated nCore upload preparation, batch uploads and seeding (excluding XXX)"
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -17,12 +17,9 @@ dependencies = [
   "mutagen>=1.45",
   "PyYAML>=6",
   "beautifulsoup4>=4.11",
-  "lxml>=4.9",
   "langdetect>=1.0.9",
   "rapidfuzz>=3",
   "Unidecode>=1.3",
-  "isbnlib>=3.10",
-  "EbookLib>=0.18",
   "pefile>=2023.2.7",
 ]
 

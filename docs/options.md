@@ -44,7 +44,7 @@ Ez a lista közvetlenül a program argumentumdefinícióiból készült. A kapcs
 | `--language` | tartalom nyelve (hu/en/de) |
 | `--kind` | tartalomfajta (audiobook, book, comic, manga, magazine) |
 | `--auto` | felügyelet nélkül: csak hibátlan és biztos azonosítású tervet tölt fel, a többit félreteszi |
-| `--answers` | kiegészítő JSON adatlap; alapból PATH.ncore.json |
+| `--answers` | kiegészítő JSON adatlap; alapból ~/.config/ncore-up/answers/<név>.ncore.json |
 | `--proof-link` | igazoló link, ismételhető |
 | `--install-guide` | magyar telepítési útmutató UTF-8 fájlja |
 | `--batch` | PATH közvetlen almappáinak/fájljainak soros feldolgozása |
@@ -67,6 +67,7 @@ Ez a lista közvetlenül a program argumentumdefinícióiból készült. A kapcs
 | `--doctor` | adatforrások és kulcsok állapota (alapból hálózati hívás nélkül) |
 | `--doctor-live` | --doctor mellett kisméretű, élő adatforrás-próbák, feltöltés nélkül |
 | `--json` | --doctor jelentés JSON formátumban |
+| `--seed-audit` | a feltöltött torrentek seedelésének ellenőrzése (qBittorrent + fájlok), csak olvas |
 | `--version` | show program's version number and exit |
 
 ## Kombinációk és elsőbbség
@@ -86,7 +87,7 @@ Ez a lista közvetlenül a program argumentumdefinícióiból készült. A kapcs
 - `--description` a generált leírást cseréli, ezért a kötelező tartalmakat is tartalmaznia kell.
 - `--source` a videó és hang tényleges eredete; ismeretlen eredetet ne találj ki.
 - `--images` pontosan 3 fájlt vár; `--proof-link` többször is megadható.
-- Az automatikusan betöltött `PATH.ncore.json` adatlaphoz képest a kifejezett parancssori pontosítás elsőbbséget kap.
+- Az automatikusan betöltött `~/.config/ncore-up/answers/<név>.ncore.json` adatlaphoz képest a kifejezett parancssori pontosítás elsőbbséget kap.
 - `--configure` külön beállító művelet: ne kombináld feltöltési kapcsolókkal.
 
 ## A telepítő összes kapcsolója

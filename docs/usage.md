@@ -123,8 +123,10 @@ szöveget, így a kötelező tartalmakat is tartalmaznia kell.
 
 ## 7. Adatlap a beállítások megjegyzéséhez
 
-A `/adat/Film.mkv` bemenethez automatikusan keresi a `/adat/Film.mkv.ncore.json` fájlt.
-Mappánál a mappa neve után kerül a `.ncore.json`. Példa UTF-8 JSON:
+A `/adat/Film.mkv` bemenethez automatikusan a `~/.config/ncore-up/answers/Film.mkv.ncore.json` fájlt keresi
+(mappánál a mappa neve után kerül a `.ncore.json`), vagy a `--answers FÁJL` kapcsolóval megadottat. A letöltött
+anyag mellé tett adatlapot biztonsági okból nem tölti be (egy letöltött csomag így nem hozhatja a sajátját), és az
+adatlap nem hivatkozhat a beállítások, naplók, sütik vagy kulcsok fájljaira. Példa UTF-8 JSON:
 
 ```json
 {

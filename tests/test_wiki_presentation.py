@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import os
 import unittest
 from unittest import mock
 
@@ -90,7 +91,9 @@ class PayloadTests(PlanCase):
     def test_original_music_keeps_its_nfo_and_folder(self):
         release = self.release("Artist-Album-FLAC-2026-GRP", {"01.flac":b"A", "info.nfo":b"Artist: Artist\n"})
         plan, _ = self.build(release, "music", self.album_meta(), original=True)
-        self.assertEqual(plan.content_path, release.path)
+        # an own hardlinked NCUP copy with the original folder name and every original file (NFO included)
+        self.assertEqual(plan.content_path.name, release.path.name)
+        self.assertTrue(os.path.samefile(plan.content_path / "info.nfo", release.path / "info.nfo"))
         self.assertIn("nfo_fajl", plan.attachments)
         self.assertFalse(plan.excluded_files)
 

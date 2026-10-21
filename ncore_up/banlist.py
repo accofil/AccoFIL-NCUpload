@@ -20,7 +20,7 @@ from .local import nfo
 from .requirements import Requirement
 
 URL = "https://ncore.pro/wiki.php?action=read&id=41"
-MAX_AGE = 7 * 24 * 3600
+MAX_AGE = 9 * 24 * 3600  # weekly refresh + slack for a missed or late run (the timer is Persistent)
 SECTIONS = {
     "Tiltott játékok:": "game", "Tiltott programok:": "program",
     "Tiltott zenék/zenekarok/előadók/albumok:": "music", "Tiltott könyvek:": "ebook",
@@ -242,6 +242,8 @@ def evaluate(snapshot: dict, plan) -> list[Requirement]:
             # Use release/source technical suffixes, not the film's synopsis or a CAM title alone.
             technical = []
             for value in release_names + [source or ""]:
+                # Standard disc structure names (VIDEO_TS, VTS_01_1.VOB, BDMV ...) are not quality markers ("TS").
+                value = re.sub(r"(?i)\b(?:VIDEO_TS|AUDIO_TS|BDMV|CERTIFICATE)\b|\bVTS_\d+_\d+\b|\bVIDEO_TS\.(?:IFO|BUP|VOB)\b", " ", value)
                 match = re.search(r"(?i)(?:19|20)\d{2}|(?:480|576|720|1080|2160)[pi]", value)
                 if match:
                     technical.append(value[match.end():])

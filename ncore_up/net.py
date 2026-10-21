@@ -135,7 +135,9 @@ def _cached(method: str, url: str, params, headers, data, json_body) -> bool:
         return False
     try:
         prepared = current.prepare_request(requests.Request(method, url, params=params, headers=headers, data=data, json=json_body))
-        return bool(cache.contains(request=prepared))
+        # contains() ignores expiry: an expired entry is re-fetched and must be paced like any other request.
+        response = cache.get_response(cache.create_key(prepared))
+        return response is not None and not getattr(response, "is_expired", True)
     except Exception:  # noqa: BLE001 - cache probing is best effort
         return False
 
@@ -241,3 +243,33 @@ def post_json(url: str, **kwargs):
         return response.json()
     except ValueError:
         return None
+
+
+_ROBOTS: dict[str, list | None] = {}
+
+
+def robots_allowed(url: str) -> bool:
+    """RFC 9309 check for one URL: a 2xx robots.txt is parsed, a 4xx one means no restrictions, an unreachable or
+    5xx one means "disallow" (asked again on the next call). Used before fetching cover images from arbitrary hosts."""
+
+    from urllib.parse import urlsplit
+
+    from .sources import googleplay  # its parser implements the RFC matching rules
+
+    parts = urlsplit(url)
+    if parts.scheme not in {"http", "https"} or not parts.netloc:
+        return False
+    origin = f"{parts.scheme}://{parts.netloc}"
+    if _ROBOTS.get(origin) is None:
+        _pace(parts.netloc.lower())
+        try:
+            response = session().get(origin + "/robots.txt", timeout=TIMEOUT)
+        except requests.RequestException:
+            return False
+        if 400 <= response.status_code < 500:
+            _ROBOTS[origin] = []
+        elif response.status_code >= 300:
+            return False
+        else:
+            _ROBOTS[origin] = googleplay.parse_robots(response.text, "ncupload") or []
+    return googleplay.robots_match(_ROBOTS[origin] or [], (parts.path or "/") + (f"?{parts.query}" if parts.query else ""))

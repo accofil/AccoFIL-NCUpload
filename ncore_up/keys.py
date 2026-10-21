@@ -31,6 +31,8 @@ NAMES = [
     "SETLISTFM_KEY", "LASTFM_KEY", "TVDB_KEY", "FANART_KEY", "SPOTIFY_CLIENT_ID", "SPOTIFY_CLIENT_SECRET", "GITHUB_TOKEN", "TMDB_API",
 ]
 _VALUES: dict[str, str] = {}
+_SETTINGS: dict[str, str] = {}
+TRUE = {"1", "true", "yes", "on", "igen"}
 
 
 def load(values: dict[str, str]) -> None:
@@ -45,10 +47,26 @@ def load(values: dict[str, str]) -> None:
         ua_key = _ua_tmdb_key()
         if ua_key:
             _VALUES["TMDB_API"] = ua_key
+    _SETTINGS.clear()
+    secret = {"NCORE_" + n for n in NAMES}
+    _SETTINGS.update({k: str(v).strip() for k, v in values.items() if k.startswith("NCORE_") and k not in secret})
+    _SETTINGS.update({k: v.strip() for k, v in os.environ.items() if k.startswith("NCORE_") and k not in secret})
 
 
 def get(name: str) -> str:
     return _VALUES.get(name, "")
+
+
+def setting(name: str, default: str = "") -> str:
+    """An NCORE_* setting (config.env or environment) for code without a Config at hand."""
+
+    return _SETTINGS.get(name) or os.environ.get(name, "") or default
+
+
+def flag(name: str) -> bool:
+    """An on/off NCORE_* setting: 1, true, yes, on, igen."""
+
+    return setting(name).lower() in TRUE
 
 
 def missing() -> list[str]:

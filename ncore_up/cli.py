@@ -22,7 +22,7 @@ from pathlib import Path
 import requests
 
 from . import __version__, categories as cats, form as forms, keys, net, plan as plans, qbit, release as rel, torrent
-from .client import NcoreClient, NcoreError, SessionExpired, load_cookies
+from .client import NcoreClient, NcoreError, SearchTruncated, SessionExpired, load_cookies
 from .config import CONFIG_FILE, Config
 from . import batch as batch_jobs
 from . import banlist, duplicates, requirements, workflow, privacy, safeio
@@ -60,7 +60,7 @@ def build_parser() -> argparse.ArgumentParser:
                        ("--package", "Android csomagnév"), ("--language", "tartalom nyelve (hu/en/de)"), ("--kind", "tartalomfajta (audiobook, book, comic, manga, magazine)")):
         hint.add_argument(flag, help=text)
     p.add_argument("--auto", action="store_true", help="felügyelet nélkül: csak hibátlan és biztos azonosítású tervet tölt fel, a többit félreteszi")
-    p.add_argument("--answers", help="kiegészítő JSON adatlap; alapból PATH.ncore.json")
+    p.add_argument("--answers", help="kiegészítő JSON adatlap; alapból ~/.config/ncore-up/answers/<név>.ncore.json")
     p.add_argument("--proof-link", action="append", default=[], help="igazoló link, ismételhető")
     p.add_argument("--install-guide", help="magyar telepítési útmutató UTF-8 fájlja")
     queue = p.add_mutually_exclusive_group()
@@ -84,6 +84,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--doctor", action="store_true", help="adatforrások és kulcsok állapota (alapból hálózati hívás nélkül)")
     p.add_argument("--doctor-live", action="store_true", help="--doctor mellett kisméretű, élő adatforrás-próbák, feltöltés nélkül")
     p.add_argument("--json", action="store_true", help="--doctor jelentés JSON formátumban")
+    p.add_argument("--seed-audit", action="store_true", help="a feltöltött torrentek seedelésének ellenőrzése (qBittorrent + fájlok), csak olvas")
     p.add_argument("--version", action="version", version=f"AccoFIL NCUpload {__version__}")
     return p
 
@@ -131,6 +132,8 @@ def main(argv: list[str] | None = None) -> int:
                     needed = " vagy ".join(" + ".join(option) for option in source.get("credential_options", [])) or ", ".join(source["missing_keys"])
                     say(f"{source['name']:<20} {source['status']}" + (" — kell: " + needed if source["missing_keys"] else ""))
             return 0
+        if args.seed_audit:
+            return seed_audit(config)
         if args.import_cookies:
             from .session import import_cookies
             import_cookies(Path(args.import_cookies), Path(config.cookies))
@@ -229,25 +232,57 @@ def run(args: argparse.Namespace, config: Config, client: NcoreClient) -> int:
         return 2
     options.ncup_dir = config.ncup_dir
     options.bdinfo = config.bdinfo
-    if release.path.resolve().is_relative_to(config.ncup_dir.resolve()):
+    resolved = release.path.resolve()
+    if resolved.is_relative_to(config.ncup_dir.resolve()) or resolved.is_relative_to(Path.home() / "NCUP") or ".ncup" in resolved.parts:
         say("HIBA: az NCUP előkészített kiadásait forrásként nem dolgozom fel újra; az eredeti anyagot add meg")
         return 2
+    if not args.offline:
+        # With preallocation and no ".!qB" extension an unfinished download looks complete on disk.
+        try:
+            busy = qbit.incomplete_at(config.qb_url, config.qb_user, config.qb_pass, str(release.path))
+        except qbit.QbitError as exc:
+            if args.auto or args.batch or args.batch_list or args.resume_batch or not args.dry_run:
+                say(f"HIBA: nem tudom ellenőrizni, hogy a letöltés befejeződött-e: {exc}")
+                return 10 if args.auto else 2
+            busy = []
+            say(f"FIGYELEM: a letöltés befejezettsége nem ellenőrizhető: {exc}")
+        if busy:
+            say("HIBA: a forrás még nem töltődött le teljesen (qBittorrent): " + "; ".join(busy[:5]))
+            return 10 if args.auto else 2
     say("NCUP fájlszabályok, kibontás és adatok gyűjtése (PORT.hu, TMDB, MusicBrainz, moly.hu, Steam, ...), techinfo és képek ...")
     try:
         plan = plans.build(release, options, client, run_dir)
     except ValueError as exc:
         workflow.write_json(run_dir / "review.json", {"path": str(release.path), "status": "NEEDS_REVIEW", "reason": str(exc),
-                            "answers_file": str(release.path.with_name(release.path.name + ".ncore.json")), "example": {"category": "", "hints": {}}})
+                            "answers_file": str(workflow.answers_path(release.path)), "example": {"category": "", "hints": {}}})
         say(f"Átnézésre: {exc}\n  {run_dir / 'review.json'}")
         return 10 if args.auto else 2
 
-    candidates = client.exact_matches(release.name)
+    try:
+        return _prepared(args, config, client, release, plan, run_dir, job_key, answers)
+    finally:
+        if plan.preparation and not getattr(args, "_keep_job", False):
+            plan.preparation.discard()  # dry-run, rejected or failed: nothing seeds from this job
+
+
+def _hits(plan, label: str, call, *args, **kwargs) -> list[dict]:
+    """A dupe search that reports a truncated result list as a doubt instead of aborting the run (or the batch)."""
+
+    try:
+        return call(*args, **kwargs)
+    except SearchTruncated as exc:
+        plan.doubts.append(f"dupe-keresés ({label}): túl sok találat, nem mind ellenőrizhető — nézd át kézzel")
+        return [] if label == "pontos név" else list(exc.results)
+
+
+def _prepared(args, config: Config, client, release, plan, run_dir: Path, job_key: str, answers: dict) -> int:
+    candidates = _hits(plan, "pontos név", client.exact_matches, release.name)
     if plan.data.name != release.name:
-        candidates += client.exact_matches(plan.data.name)
+        candidates += _hits(plan, "pontos név", client.exact_matches, plan.data.name)
     if plan.meta and plan.category.group != "video":
         query = " ".join([*plan.meta.creators[:1], plan.meta.title]).strip() if plan.category.group in {"ebook", "music", "clip"} else plan.meta.title
         if query and len(query) >= 6:
-            candidates += client.search(query, by="name")
+            candidates += _hits(plan, "cím", client.search, query, by="name")
     if plan.category.group == "ebook" and hasattr(client, "duplicate_facts"):
         if len(candidates) > 20:
             plan.doubts.append("túl sok könyvtalálat: pontosítani kell a műazonosítást")
@@ -256,7 +291,7 @@ def run(args: argparse.Namespace, config: Config, client: NcoreClient) -> int:
                 if not item.get("format") and str(item.get("torrent_id", "")).isdigit():
                     item.update(client.duplicate_facts(int(item["torrent_id"])))
     if plan.data.infobar and plan.data.infobar.imdb_id:
-        others = client.search(plan.data.infobar.imdb_id, by="imdb")
+        others = _hits(plan, "IMDb", client.search, plan.data.infobar.imdb_id, by="imdb")
         if others:
             plan.notes.append(f"azonos IMDb-vel {len(others)} torrent van fent (nézd meg a dupe-szabályzat szerint):"
                               + "".join(f"\n      #{o['torrent_id']} {o['release_name']} ({o['category']})" for o in others[:8]))
@@ -283,6 +318,8 @@ def run(args: argparse.Namespace, config: Config, client: NcoreClient) -> int:
 
     plan.data.description = forms.description_text(plan.data)
     description_path.write_text(plan.data.description, encoding="utf-8")
+    if privacy.redact(plan.data.description) != plan.data.description:
+        plan.errors.append("a leírás titoknak látszó adatot tartalmaz (süti, kulcs, jelszó vagy passkey): nem töltöm fel")
     requirements.evaluate(plan)  # final edited text, not just resolver metadata
     if getattr(client, "offline", False):
         plan.requirements.append(requirements.Requirement("online_checks", "UNKNOWN", "nCore munkamenet, tiltólista és dupe ellenőrzése még szükséges"))
@@ -331,6 +368,7 @@ def run(args: argparse.Namespace, config: Config, client: NcoreClient) -> int:
     say("Torrent készítése (mkbrr)...")
     try:
         if plan.preparation:
+            plan.preparation.prune()
             plan.preparation.verify()
         local_torrent = torrent.create(config.mkbrr, plan.content_path, torrent_path)
         if forms.needs_techinfo(plan.category.code, plan.data.original):
@@ -394,6 +432,7 @@ def run(args: argparse.Namespace, config: Config, client: NcoreClient) -> int:
         ledger.reserve(job_key, run_dir, min(args.daily_limit if args.daily_limit is not None else rank_budget, rank_budget), local_hash)
     finally:
         ledger.close()
+    args._keep_job = True  # from here on the payload may be (or become) an nCore torrent: never discard it
     workflow.write_json(run_dir / "state.json", state)
 
     try:
@@ -414,6 +453,8 @@ def run(args: argparse.Namespace, config: Config, client: NcoreClient) -> int:
     (run_dir / "result.txt").write_text(privacy.redact(f"torrent_id={result.torrent_id}\nurl={result.url}\n"), encoding="utf-8")
     state.update(status="uploaded", torrent_id=result.torrent_id)
     _save_state(state, config)
+    if plan.preparation:
+        plan.preparation.mark("uploaded", torrent_id=result.torrent_id, run_dir=str(run_dir))
 
     if args.no_seed:
         say("Seedelés kihagyva (--no-seed): 30 percen belül el kell indítani!")
@@ -469,11 +510,13 @@ def _seed(state: dict, config: Config, client) -> int:
         if not content.exists():
             raise qbit.QbitError(f"az előkészített tartalom hiányzik: {content}")
         site_hash = torrent.info_hash(site)
-        same = site_hash == state["local_hash"]
         site_path.write_bytes(site)
         site_path.chmod(0o600)
+        # Category + tag mark the torrent as an NCUpload seed, so moves and cleanup scripts can tell it apart. A large
+        # payload's hash check takes minutes: wait up to 20 minutes (nCore wants seeding within 30).
         status = qbit.add_torrent(config.qb_url, config.qb_user, config.qb_pass, site, str(content.parent),
-                                  skip_checking=False, category=config.qb_category, info_hash=site_hash, wait=30)
+                                  skip_checking=False, category=config.qb_category or "ncupload", tags="ncupload",
+                                  info_hash=site_hash, wait=_seed_wait())
         state.update(status="complete", site_hash=site_hash, qbit_state=status, seed_verified=time.time())
         _save_state(state, config)
         say(f"qBittorrent seedelés visszaellenőrizve ({status}; mentési hely: {content.parent}).")
@@ -483,6 +526,57 @@ def _seed(state: dict, config: Config, client) -> int:
         _save_state(state, config)
         say(f"HIBA: feltöltve, de a seedelés nem indult el: {exc}\n  30 percen belül indítsd: ncupload --resume '{folder}'\n  Torrent: {site_path}")
         return 11
+
+
+def seed_audit(config: Config) -> int:
+    """Compare the upload ledger with qBittorrent: is every uploaded torrent still seeded from existing files?
+    Exit 0 when all are fine, 11 when any needs attention (the 5-copy seeding rule of the nCore wiki)."""
+
+    import sqlite3
+
+    database = config.work_dir / "uploads.sqlite3"
+    if not database.exists():
+        say("Még nincs feltöltésnapló.")
+        return 0
+    with sqlite3.connect(database) as db:
+        rows = db.execute("SELECT status, run_dir FROM jobs WHERE status IN ('complete','uploaded','seed_pending')").fetchall()
+    try:
+        items = {str(t.get("hash", "")).lower(): t for t in qbit.torrents(config.qb_url, config.qb_user, config.qb_pass)}
+    except qbit.QbitError as exc:
+        say(f"HIBA: {exc}")
+        return 4
+    bad = 0
+    for status, run_dir in rows:
+        try:
+            state = json.loads((Path(run_dir) / "state.json").read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            say(f"? {run_dir}: nincs olvasható state.json")
+            bad += 1
+            continue
+        tid, name = state.get("torrent_id", "?"), state.get("name", "")
+        item = items.get(str(state.get("site_hash", "")).lower())
+        content = Path(state.get("content_path", ""))
+        if item is None:
+            problem = "nincs a qBittorrentben"
+        elif not Path(str(item.get("content_path", ""))).exists():
+            problem = f"a fájlok hiányoznak ({item.get('state', '')}, mentési hely: {item.get('save_path', '')})"
+        elif str(item.get("state", "")) in qbit.BAD_STATES or str(item.get("state", "")).startswith(("paused", "stopped")):
+            problem = f"nem seedel ({item.get('state', '')})"
+        else:
+            say(f"OK  #{tid} {name} — {item.get('state', '')}, arány {float(item.get('ratio', 0) or 0):.2f}")
+            continue
+        bad += 1
+        extra = "" if content.exists() else " (az előkészített tartalom sincs meg)"
+        say(f"HIBA #{tid} {name} — {problem}{extra}; https://ncore.pro/torrents.php?action=details&id={tid}")
+    say(f"{len(rows)} feltöltésből {len(rows) - bad} rendben, {bad} figyelmet igényel.")
+    return 11 if bad else 0
+
+
+def _seed_wait() -> float:
+    try:
+        return max(30.0, float(keys.setting("NCORE_SEED_WAIT", "1200")))
+    except ValueError:
+        return 1200.0
 
 
 def _run_folder(args, folder: Path) -> None:
@@ -530,7 +624,7 @@ def _set_aside(run_dir: Path, plan: plans.Plan) -> None:
         "status": "NEEDS_REVIEW", "path": str(plan.release.path), "confidence": plan.confidence,
         "errors": plan.errors, "doubts": plan.doubts,
         "requirements": [r.as_dict() for r in plan.requirements if r.status != "PASS"],
-        "answers_file": str(plan.release.path.with_name(plan.release.path.name + ".ncore.json")),
+        "answers_file": str(workflow.answers_path(plan.source_release.path if plan.source_release else plan.release.path)),
         "answer_fields": {"proof_links": [], "install_guide": "", "source": "", "images": [], "hints": {},
                           "dupe_decisions": {"TORRENT_ID": {"action": "allow", "reason": "szabályzat szerinti konkrét indok"}}},
     })

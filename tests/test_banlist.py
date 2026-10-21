@@ -24,21 +24,21 @@ def snapshot():
 class ParserTests(unittest.TestCase):
     def test_current_live_wiki_has_no_unhandled_rules(self):
         data = snapshot()
-        self.assertEqual(data["version"], "v854")
+        self.assertEqual(data["version"], "v1")
         self.assertFalse(data["unknown_rules"], data["unknown_rules"])
         self.assertGreater(len(data["rules"]), 55)
         self.assertEqual({r["section"] for r in data["rules"]}, set(banlist.SECTIONS.values()))
 
     def test_new_names_and_groups_are_loaded_without_program_changes(self):
-        page = FIXTURE.read_text(encoding="utf-8").replace("- AIDA64", "- AIDA64<br/>- New Product")
-        page = page.replace('- összes &quot;-AARON&quot; release', '- összes &quot;-AARON&quot; release<br/>- összes &quot;-NEWTEAM&quot; release')
+        page = FIXTURE.read_text(encoding="utf-8").replace("- RENDSZERINFO64", "- RENDSZERINFO64<br/>- New Product")
+        page = page.replace('- összes &quot;-TESTBAN&quot; release', '- összes &quot;-TESTBAN&quot; release<br/>- összes &quot;-NEWTEAM&quot; release')
         data = banlist.parse_page(page)
         self.assertTrue(any(r.get("names") == ["New Product"] for r in data["rules"]))
         self.assertTrue(any(r.get("names") == ["NEWTEAM"] for r in data["rules"]))
         self.assertFalse(data["unknown_rules"])
 
     def test_new_conditional_prose_is_unknown_and_not_silently_accepted(self):
-        page = FIXTURE.read_text(encoding="utf-8").replace("- AIDA64", "- AIDA64<br/>- Csak engedély esetén tölthető fel: valami")
+        page = FIXTURE.read_text(encoding="utf-8").replace("- RENDSZERINFO64", "- RENDSZERINFO64<br/>- Csak engedély esetén tölthető fel: valami")
         self.assertEqual(len(banlist.parse_page(page)["unknown_rules"]), 1)
 
     def test_missing_or_new_sections_and_login_html_fail_closed(self):
@@ -60,19 +60,19 @@ class BanRulesTests(PlanCase):
         return [r.status for r in banlist.evaluate(data or snapshot(), plan)]
 
     def test_renaming_and_own_mode_do_not_hide_banned_software(self):
-        for name in ("Hard.Disk.Sentinel.6.30", "AIDA64.Extreme", "Webkresz.2026"):
+        for name in ("Lemez.Orzo.6.30", "RENDSZERINFO64.Extreme", "Tesztkresz.2026"):
             self.assertIn("FAIL", self.states(self.plan(name)))
-        self.assertIn("FAIL", self.states(self.plan("Unrelated", title="Hard Disk Sentinel")))
+        self.assertIn("FAIL", self.states(self.plan("Unrelated", title="Lemez Őrző")))
         self.assertEqual(self.states(self.plan("Normal.Software.1.0", title="Normal Software")), ["PASS"])
 
     def test_banned_groups_and_aliases_apply_in_both_modes(self):
-        for name in ("Film.2026.1080p-AARON", "Film.2026.1080p-LF8", "Film.2026.1080p-Matrix", "Film.2026.1080p-R.G.Mechanics"):
+        for name in ("Film.2026.1080p-TESTBAN", "Film.2026.1080p-ALIASA", "Film.2026.1080p-ALIASB", "Film.2026.1080p-R.X.Mechanix"):
             for original in (True, False):
                 self.assertIn("FAIL", self.states(self.plan(name, group="video", original=original)))
-        self.assertEqual(self.states(self.plan("Film.2026.1080p-AARONX", group="video")), ["PASS"])
-        self.assertIn("FAIL", self.states(self.plan("Renamed.Film", group="video", source="Film.2026.1080p-AARON")))
+        self.assertEqual(self.states(self.plan("Film.2026.1080p-TESTBANX", group="video")), ["PASS"])
+        self.assertIn("FAIL", self.states(self.plan("Renamed.Film", group="video", source="Film.2026.1080p-TESTBAN")))
         plan=self.plan("Description.Source",group="video")
-        plan.data.description="Forrás: Film.2026.1080p-AARON\n"
+        plan.data.description="Forrás: Film.2026.1080p-TESTBAN\n"
         self.assertIn("FAIL",self.states(plan))
 
     def test_explicit_nogrp_and_no1_own_exceptions(self):
@@ -82,12 +82,12 @@ class BanRulesTests(PlanCase):
             self.assertIn(expected, self.states(self.plan("Film.2026-No1", original=original, nfo_text="Visit BitHUmen.org")))
 
     def test_artist_album_pair_and_author_all_works(self):
-        self.assertIn("FAIL", self.states(self.plan("Music", group="music", title="Angyalok és emberek", creators=["Ossian"])))
-        self.assertEqual(self.states(self.plan("Music2", group="music", title="Different album", creators=["Ossian"])), ["PASS"])
-        self.assertIn("FAIL", self.states(self.plan("Book", group="ebook", title="Novel", creators=["Robin O'Wrightly"])))
+        self.assertIn("FAIL", self.states(self.plan("Music", group="music", title="Képzelt dalok", creators=["Kitalált Zenekar"])))
+        self.assertEqual(self.states(self.plan("Music2", group="music", title="Different album", creators=["Kitalált Zenekar"])), ["PASS"])
+        self.assertIn("FAIL", self.states(self.plan("Book", group="ebook", title="Novel", creators=["Képzelt Író"])))
 
     def test_video_names_and_aliases(self):
-        for title in ("A renitens", "Flush", "Lehúzva", "Mosolyka – Majd helyett MOST"):
+        for title in ("A lázadó teszt", "Splash", "Lecsapva", "Mosolygó – Holnap helyett MA"):
             self.assertIn("FAIL", self.states(self.plan("Video"+title, group="video", title=title)))
 
     def test_source_formats_and_name_without_year_are_blocked(self):
@@ -122,9 +122,9 @@ class BanRulesTests(PlanCase):
         with self.assertRaises(NcoreError):banlist.load(self.work)
         client=SimpleNamespace(banlist_page=lambda:FIXTURE.read_text(encoding='utf-8'))
         current=banlist.refresh(client,self.work)
-        with mock.patch.object(banlist.time,'time',return_value=current['checked_at']+6*24*3600):
+        with mock.patch.object(banlist.time,'time',return_value=current['checked_at']+8*24*3600):
             self.assertEqual(banlist.load(self.work)['sha256'],current['sha256'])
-        with mock.patch.object(banlist.time,'time',return_value=current['checked_at']+7*24*3600+1):
+        with mock.patch.object(banlist.time,'time',return_value=current['checked_at']+banlist.MAX_AGE+1):
             with self.assertRaises(NcoreError):banlist.load(self.work)
 
 
@@ -136,7 +136,7 @@ class LastUploadGateTests(CliCase):
             def banlist_page(self):
                 self.calls+=1
                 page=super().banlist_page()
-                return page.replace(html.escape("- Robin O'Wrightly"), "- Szerző Elek<br/>" + html.escape("- Robin O'Wrightly"))
+                return page.replace(html.escape("- Képzelt Író"), "- Szerző Elek<br/>" + html.escape("- Képzelt Író"))
         client=ChangedClient()
         from test_cli_run import LOCAL_TORRENT
         def hash_and_refresh(*a,**kw):

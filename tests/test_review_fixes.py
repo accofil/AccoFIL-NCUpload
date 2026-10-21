@@ -203,8 +203,14 @@ class AutoGates(CliCase):
 
     def test_sidecar_and_relative_files(self):
         root = self.book()
-        root.with_name(root.name + ".ncore.json").write_text(json.dumps({"category": "ebook_hun", "hints": {"language": "hu"}, "proof_links": ["https://moly.hu/konyvek/a-konyv"]}), encoding="utf-8")
-        code, _ = self.run_cli(root, "--auto", meta=self.book_meta(root))
+        answers = {"category": "ebook_hun", "hints": {"language": "hu"}, "proof_links": ["https://moly.hu/konyvek/a-konyv"]}
+        # a sheet next to downloaded content is never loaded (a pack could bring its own)
+        root.with_name(root.name + ".ncore.json").write_text(json.dumps({"install_guide": "/etc/passwd"}), encoding="utf-8")
+        with mock.patch.object(workflow, "ANSWERS_DIR", self.tmp / "answers"):
+            target = workflow.answers_path(root)
+            target.parent.mkdir(parents=True)
+            target.write_text(json.dumps(answers), encoding="utf-8")
+            code, _ = self.run_cli(root, "--auto", meta=self.book_meta(root))
         self.assertEqual(code, 0)
 
     def test_missing_game_installation_blocks(self):

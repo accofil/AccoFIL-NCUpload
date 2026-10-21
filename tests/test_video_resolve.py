@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 import json
 import re
+import os
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
@@ -234,7 +235,8 @@ class SeriesTests(unittest.TestCase):
     def test_episode_id_unknown_to_tmdb_searches_the_show_by_name(self):
         empty = {"movie_results": [], "person_results": [], "tv_results": [], "tv_episode_results": [], "tv_season_results": []}
         routes = DARK + [(r"/3/find/tt41538945$", {}, empty), (r"suggestion/x/tt41538945\.json$", {}, "imdb_suggest_tt41538945.json")]
-        meta, _ = resolve(routes, "Dark.Matter.2024.S02E08.1080p.WEB.h264-ETHEL", "hdser", {"imdb": "tt41538945"})
+        with mock.patch.dict(os.environ, {"NCORE_IMDB_SUGGEST": "1"}):  # the IMDb suggestion API is opt-in
+            meta, _ = resolve(routes, "Dark.Matter.2024.S02E08.1080p.WEB.h264-ETHEL", "hdser", {"imdb": "tt41538945"})
         self.assertEqual((meta.title, meta.identifiers["imdb"], meta.identifiers["imdb_episode"]), ("Dark Matter", "tt19231492", "tt41538945"))
         self.assertEqual(meta.extra["episode_title"], "A világmindenség alapvető egysége")
         self.assertEqual(meta.confidence, 0.7)

@@ -121,6 +121,8 @@ def imdb_suggest(text: str) -> list[dict] | None:
     text = (text or "").strip().lower()
     if not text:
         return []
+    if not keys.flag("NCORE_IMDB_SUGGEST"):
+        return None  # opt-in only: IMDb's terms forbid automated data gathering without consent
     data = net.get_json(IMDB_SUGGEST.format(query=quote(text)), quiet=True)
     return None if data is None else parse_imdb_suggest(data)
 

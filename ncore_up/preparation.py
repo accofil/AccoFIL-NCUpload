@@ -120,6 +120,16 @@ def archive_entries(path: Path) -> list[tuple[str, int, bool]]:
     return entries
 
 
+def image_type(path: Path) -> str:
+    """The container type 7-Zip reports for a disc image ("udf", "iso", "ext", ...), lower case; '' when unknown."""
+
+    if not shutil.which("7z"):
+        return ""
+    result = safeio.run(["7z", "l", "-slt", "-sccUTF-8", "-pNCUP_NO_PASSWORD", "--", str(path)], timeout=180)
+    match = re.search(r"(?m)^Type = (\S+)", result.stdout.decode("utf-8", "replace"))
+    return match.group(1).casefold() if match else ""
+
+
 def _extract_member(archive_path: Path, name: str, size: int, destination: Path) -> None:
     """Stream one validated member into an exclusively created bounded file.
 
@@ -190,11 +200,36 @@ class Workspace:
         from .workflow import fingerprint
         self.source_key = fingerprint(source)
 
+    def _root_for_source(self, root: Path) -> Path:
+        """An NCUP root on the same filesystem as the source, so staging is hardlinks, never a full copy.
+
+        Every upload seeds from its own directory entries: the other trackers' torrents, the user's moves and the
+        nightly delete-with-files cleanup of one torrent can then never take the other's data away.
+        """
+
+        source = self.source.path.resolve()
+        try:
+            device = source.stat().st_dev
+            if root.exists() and root.stat().st_dev == device:
+                return root
+            home = Path.home()
+            if home.stat().st_dev == device and not source.is_relative_to(home / "NCUP"):
+                self.operations.append({"action": "ncup-root-same-filesystem", "root": str(home / "NCUP")})
+                return home / "NCUP"
+            # Highest ancestor of the source on the same filesystem that the user can write to.
+            candidate = source.parent
+            while candidate.parent != candidate and candidate.parent.stat().st_dev == device and os.access(candidate.parent, os.W_OK):
+                candidate = candidate.parent
+            self.operations.append({"action": "ncup-root-same-filesystem", "root": str(candidate / ".ncup")})
+            return candidate / ".ncup"
+        except OSError:
+            return root
+
     def create(self) -> Path:
         if self.job is None:
             if self.root is None or not self.root.is_absolute():
                 raise ValueError("NCUP célmappa nincs beállítva; telepítés: install.sh --ncup-dir /teljes/út/NCUP")
-            root = self.root.expanduser()
+            root = self._root_for_source(self.root.expanduser())
             if root.is_symlink():
                 raise ValueError("az NCUP gyökere nem lehet szimbolikus link")
             root.mkdir(parents=True, exist_ok=True)
@@ -243,6 +278,8 @@ class Workspace:
                 continue  # other disc formats keep their existing static readers
             if not any("bdmv" in {p.casefold() for p in _member(name).parts} for name, _, _ in entries):
                 continue
+            if image_type(image) != "udf":
+                continue  # Blu-ray images are UDF; anything else (ext4, NTFS, HFS ... named .iso) is never mounted
             if original:
                 raise ValueError("Blu-ray ISO kibontásához saját feltöltési mód kell (--own); az eredeti lemezképfájlt megőriztem")
             output = self.create() / ("bluray-" + str(len(self.operations)))
@@ -402,6 +439,36 @@ class Workspace:
                 with os.fdopen(fd, "wb") as stream:
                     stream.write(updated)
                 os.replace(temporary, target)
+
+    def discard(self) -> None:
+        """Remove this attempt's own job directory (dry-run, rejected or failed plans). Only the mkdtemp folder this
+        Workspace created is touched; the source and other jobs are never affected."""
+
+        job, self.job, self.content = self.job, None, None
+        if job is None or not job.name.startswith("job-") or not job.is_dir() or job.is_symlink():
+            return
+        shutil.rmtree(job, ignore_errors=True)
+
+    def prune(self) -> None:
+        """Drop the intermediate trees (expanded/archive/bluray/disc) once the payload is staged: the payload holds its
+        own hardlinks or copies, so only the content directory is needed for seeding."""
+
+        if self.job is None or self.content is None:
+            return
+        for child in self.job.iterdir():
+            if child != self.content and child.is_dir() and not child.is_symlink() and re.match(r"(expanded|archive|bluray|disc)-", child.name):
+                shutil.rmtree(child, ignore_errors=True)
+
+    def mark(self, status: str, **extra) -> None:
+        """Record the job's final state (e.g. uploaded + torrent id) in its manifest, so cleanup can tell seeded jobs."""
+
+        if self.job is None:
+            return
+        from .workflow import write_json
+        write_json(self.job / "manifest.json", {"version": 1, "rules": payload.RULE_VERSION, "status": status,
+            "source": str(self.source.path), "source_name": self.source.name, "source_fingerprint": self.source_key,
+            "content": str(self.content) if self.content else None, "payload_fingerprint": self.expected,
+            "operations": self.operations, "excluded": self.excluded, **extra})
 
     def finalize(self) -> None:
         if self.content:

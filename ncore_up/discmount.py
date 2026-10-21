@@ -23,7 +23,8 @@ def unpack_bluray(image: Path, output: Path, expected: int) -> None:
         raise ValueError("Blu-ray ISO mountolásához Linux, sudo, unshare és mount szükséges")
     _space(output, expected)
     args = ["sudo", "-n", "unshare", "--mount", "--propagation", "private", "--fork", "--kill-child",
-            sys.executable, str(Path(__file__).resolve()), str(image.resolve()), str(output.resolve()),
+            # -I -S: as root, ignore the environment, user site and the venv's site-packages (stdlib only).
+            sys.executable, "-I", "-S", str(Path(__file__).resolve()), str(image.resolve()), str(output.resolve()),
             str(os.getuid()), str(os.getgid()), str(expected)]
     result = safeio.run(args, timeout=4 * 3600, file_limit=None)
     if result.returncode:
@@ -78,7 +79,7 @@ def _helper() -> None:
     mountpoint.chmod(0o755)
     mounted = False
     try:
-        subprocess.run(["mount", "-o", "loop,ro,nosuid,nodev,noexec", "--", str(image), str(mountpoint)],
+        subprocess.run(["mount", "-t", "udf", "-o", "loop,ro,nosuid,nodev,noexec", "--", str(image), str(mountpoint)],
                        check=True, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, timeout=120)
         mounted = True
         if not os.statvfs(mountpoint).f_flag & os.ST_RDONLY:
