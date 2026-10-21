@@ -108,6 +108,8 @@ def detect(name: str, extensions: Iterable[str], has_bdmv: bool, has_video_ts: b
     reasons = [f"magyar: {'igen' if hun else 'nem'} (" + ("név" if words & HUN_TOKENS else "hangsáv" if hungarian_audio else "nincs jel") + ")"]
 
     other_media = counts["mp3"] or counts["lossless"] or counts["ebook"]
+    # Blu-ray/DVD structures carry AACS files such as CPSUnit00001.cci: no console or mobile signature inside a disc.
+    disc = has_bdmv or has_video_ts
     # a packed (RAR) video release has no video files yet; the name still tells it apart from games
     is_video = has_bdmv or has_video_ts or counts["video"] > 0 or (not other_media and bool(words & (HD_TOKENS | DVD_TOKENS | SD_TOKENS)))
     if "XXX" in words:
@@ -117,9 +119,9 @@ def detect(name: str, extensions: Iterable[str], has_bdmv: bool, has_video_ts: b
         if counts["image"]:
             return Detection("xxx_imageset", ["XXX a névben, képek"], [])
         return Detection("xxx_xvid", ["XXX a névben"], [])
-    if set(exts) & {".apk", ".apks", ".xapk", ".aab", ".ipa", ".sis", ".sisx", ".jad"}:
+    if not disc and set(exts) & {".apk", ".apks", ".xapk", ".aab", ".ipa", ".sis", ".sisx", ".jad"}:
         return Detection("mobil", ["mobil alkalmazáscsomag"], [])
-    if set(exts) & {".nsp", ".nsz", ".xci", ".xcz", ".cia", ".3ds", ".cci", ".wbfs", ".rvz", ".gcm", ".xex", ".xbe", ".sfo"}:
+    if not disc and set(exts) & {".nsp", ".nsz", ".xci", ".xcz", ".cia", ".3ds", ".cci", ".wbfs", ".rvz", ".gcm", ".xex", ".xbe", ".sfo"}:
         return Detection("console", ["konzol fájlformátum"], [])
     if words & {"PS1", "PS2", "PS3", "PS4", "PS5", "PSP", "PSV", "NSW", "XBOX", "XBOX360", "WII", "WIIU"}:
         return Detection("console", ["konzol platform a névben"], [])

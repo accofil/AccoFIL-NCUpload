@@ -88,7 +88,9 @@ def evaluate(plan) -> list[Requirement]:
             valid = bool(actual and actual.casefold() != "ismeretlen" and (explicit or supplied))
             add("source", "PASS" if valid else "UNKNOWN", "a videó és hang eredetének igazolása (--source vagy adatlap)", explicit or "")
             if plan.release.has_bdmv or plan.release.has_video_ts or plan.category.code.startswith("dvd"):
-                add("disc_menu", "PASS" if options and options.menu is not None else "UNKNOWN", "lemez menüjének ellenőrzése (--menu)")
+                menu_known = bool(options and options.menu is not None) or plan.release.bd_menu is True
+                add("disc_menu", "PASS" if menu_known else "UNKNOWN", "lemez menüjének ellenőrzése (--menu)",
+                    "" if options and options.menu is not None else "BD-J menü a lemezen" if menu_known else "")
                 add("disc_extras", "PASS" if options and options.extras is not None else "UNKNOWN", "lemez extráinak ellenőrzése (--extras)")
         if group == "ebook" and meta:
             langs = {str(x).lower() for x in meta.languages}

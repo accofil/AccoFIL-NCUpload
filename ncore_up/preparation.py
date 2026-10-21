@@ -210,7 +210,10 @@ class Workspace:
         source = self.source.path.resolve()
         try:
             device = source.stat().st_dev
-            if root.exists() and root.stat().st_dev == device:
+            existing = root
+            while not existing.exists() and existing.parent != existing:  # a root not created yet lives on its parent's filesystem
+                existing = existing.parent
+            if existing.stat().st_dev == device:
                 return root
             home = Path.home()
             if home.stat().st_dev == device and not source.is_relative_to(home / "NCUP"):

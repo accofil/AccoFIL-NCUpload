@@ -24,14 +24,20 @@ def digest(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
-def generate(root: Path, base: str = "") -> tuple[str, dict[str, int]]:
+def generate(root: Path, base: str = "", per_file: bool = True) -> tuple[str, dict[str, int]]:
     """Preserve BDInfo/DVD analysis and append a real MediaInfo report per file.
 
     Relative Complete name values distinguish CD1/01.flac from CD2/01.flac;
     absolute server paths never go into the uploaded text. No synthetic codec,
     container or media information is substituted on a reader failure.
+    ``per_file=False`` (a full Blu-ray: the BDInfo scan is the techinfo nCore asks for, MediaInfo of thousands of
+    .clpi/.jar/.bdmv files is noise) keeps ``base`` alone but still records the payload it describes.
     """
     expected = inventory(root)
+    if not per_file:
+        if not base.strip() or not expected:
+            raise media.MediaError("hiányzik a lemez BDInfo-riportja a techinfóhoz")
+        return base.rstrip() + "\n", dict(expected)
     reports = [base.rstrip()] if base.strip() else []
     covered = {}
     for name, size in expected.items():

@@ -192,11 +192,13 @@ def _build(release: rel.Release, options: Options, client, work_dir: Path, works
     if forms.needs_techinfo(plan.category.code, plan.data.original):
         from . import techinfo
         try:
-            text, covered = techinfo.generate(plan.content_path, plan.texts.get("techinfo_fajl", ""))
+            disc = plan.release.has_bdmv and not plan.data.original
+            text, covered = techinfo.generate(plan.content_path, plan.texts.get("techinfo_fajl", ""), per_file=not disc)
             plan.texts["techinfo_fajl"] = text
             plan.techinfo_files = covered
             plan.techinfo_digest = techinfo.digest(text)
-            plan.notes.append(f"Techinfo: a kész torrent mind a(z) {len(covered)} fájlja feldolgozva")
+            plan.notes.append(f"Techinfo: BDInfo-scan lemezenként a fő playlistről ({len(covered)} fájl a torrentben)" if disc
+                              else f"Techinfo: a kész torrent mind a(z) {len(covered)} fájlja feldolgozva")
         except (OSError, ValueError, media.MediaError) as exc:
             plan.errors.append(f"teljes techinfo: {exc}")
     from .requirements import evaluate
@@ -363,7 +365,7 @@ def _check_all_videos(plan: Plan, main_info) -> None:
             continue
         if not info.codec or not info.width or not info.height or info.duration <= 0:
             _doubt(plan, f"hiányos videóelemzés: {item.relpath}", item.relpath)
-        if plan.category.group == "video":
+        if plan.category.group == "video" and not release.has_bdmv:  # an untouched full disc keeps its authored tracks
             errors, warnings = rules.video(info, plan.category.code, remux="REMUX" in cats.tokens(release.name),
                                            original=plan.data.original, foreign_original=plan.data.original and not plan.category.code.endswith("_hun"),
                                            source=release.name, anime=bool(plan.options and plan.options.hints.get("anime")))
@@ -428,7 +430,7 @@ def _video(plan: Plan, options: Options, client, work_dir: Path) -> None:
         data.subtitles = describe.subtitle_line(info.subtitles, external) if info else ""
         is_disc = release.has_bdmv or release.has_video_ts or code.startswith("dvd")
         data.extras = options.extras if options.extras is not None else ("ismeretlen" if is_disc else "nincs")
-        data.menu = options.menu if options.menu is not None else None if is_disc else False
+        data.menu = options.menu if options.menu is not None else release.bd_menu if is_disc else False
         body = describe.video_description(
             menu=data.menu if code in forms.DISC_FILM_CODES or is_disc else None, audio=info.audio if info else [],
             subtitles=info.subtitles if info else [], external_subs=external, extras=data.extras,
@@ -439,7 +441,7 @@ def _video(plan: Plan, options: Options, client, work_dir: Path) -> None:
         _video_checks(plan, info, release)
     else:
         data.description = (plot + "\n") if meta.description_hu else ""
-    if info and not release.has_video_ts:
+    if info and not release.has_video_ts and not release.has_bdmv:  # full discs: BDInfo + menu rules, not encode rules
         errors, warnings = rules.video(info, code, remux=bool(re.search(r"(?i)\bremux\b", release.name)), original=data.original,
                                        foreign_original=data.original and not hungarian, source=release.name, anime=bool(options.hints.get("anime")))
         plan.errors.extend(errors)
@@ -460,9 +462,35 @@ def _named_after(name: str, title: str) -> bool:
     return bool(shown) and name.lower().startswith(shown)
 
 
+def _disc_roots(release: rel.Release) -> dict[Path, int]:
+    """Each Blu-ray disc of a release (the folder holding BDMV) with its size: one for a single disc, several for a
+    season pack of Disc1..DiscN folders."""
+
+    roots: dict[Path, int] = {}
+    for item in release.files:
+        parts = Path(item.relpath).parts
+        upper = [p.upper() for p in parts]
+        if "BDMV" in upper:
+            root = Path(*parts[:upper.index("BDMV")])
+        elif len(parts) > 1 and parts[-1].casefold() == "disc.inf":
+            root = Path(*parts[:-1])
+        else:
+            continue
+        roots[root] = roots.get(root, 0) + item.size
+    for item in release.files:  # AACS/CERTIFICATE/ANY! trees belong to the disc beside its BDMV
+        parts = Path(item.relpath).parts
+        for root in roots:
+            if parts[:len(root.parts)] == root.parts and "BDMV" not in [p.upper() for p in parts] \
+                    and parts[-1].casefold() != "disc.inf":
+                roots[root] += item.size
+    return roots
+
+
 def _disc_label(release: rel.Release, info: media.VideoInfo | None) -> str:
     if release.has_bdmv:
-        return describe.disc_label(release.size, uhd=bool(info and info.height > 1100))
+        # BD25/BD50/... describes one disc: a multi-disc pack is labelled by its largest disc
+        largest = max(_disc_roots(release).values(), default=release.size)
+        return describe.disc_label(largest, uhd=bool(info and info.height > 1100))
     if release.has_video_ts or any(f.ext == ".iso" for f in release.files):
         return "DVD9" if release.size > 4.7e9 else "DVD5"
     return ""
@@ -536,7 +564,14 @@ def _sample(plan: Plan, options: Options, release: rel.Release, stream, info: me
 def _techinfo(plan: Plan, target, release: rel.Release, work_dir: Path) -> None:
     try:
         if release.has_bdmv:
-            text = media.bdinfo_text((plan.options.bdinfo if plan.options else None) or str(_bdinfo()), Path(target), work_dir)
+            tool = (plan.options.bdinfo if plan.options else None) or str(_bdinfo())
+            base = release.path if release.path.is_dir() else Path(target)
+            roots = sorted(_disc_roots(release)) or [Path(".")]
+            reports = []
+            for root in roots:
+                report = media.bdinfo_text(tool, base / root, work_dir)
+                reports.append(report if len(roots) == 1 else f"===== {root.as_posix()} =====\n\n{report}")
+            text = "\n\n".join(reports)
         else:
             path = Path(target) if Path(target).is_file() else media.disc_main_stream(release.path)
             if path is None:
@@ -575,7 +610,7 @@ def _clip(plan: Plan, options: Options, client, work_dir: Path) -> None:
         external = []
         data.description = compose.clip(
             meta, audio=describe.audio_line(info.audio) if info else "", subtitles=describe.subtitle_line(info.subtitles, external) if info else "",
-            menu=(None if release.has_bdmv or release.has_video_ts else False) if options.menu is None else options.menu,
+            menu=(release.bd_menu if release.has_bdmv or release.has_video_ts else False) if options.menu is None else options.menu,
             extras=options.extras if options.extras is not None else ("ismeretlen" if release.has_bdmv or release.has_video_ts else "nincs"),
             chapters=bool(info and info.chapters), sample=plan.has_sample, source=options.source or "ismeretlen")
         if not meta.tracks:

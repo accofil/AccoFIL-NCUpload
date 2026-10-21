@@ -31,7 +31,7 @@ def decision(release: rel.Release, item: rel.ReleaseFile, category: cats.Categor
         return "OMIT", "NFO feldolgozva metaadatként"
     group = category.group
     if group in {"video", "clip"}:
-        if release.has_bdmv and parts & DISC_DIRS:
+        if release.has_bdmv and (parts & DISC_DIRS or name == "disc.inf"):
             return "KEEP", "teljes Blu-ray struktúra"
         if ext in {".vob", ".ifo", ".bup"}:
             return "BLOCK", "DVD könyvtár helyett lemezkép szükséges"

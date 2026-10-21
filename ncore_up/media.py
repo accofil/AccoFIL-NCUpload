@@ -59,10 +59,11 @@ class VideoInfo:
     chapters: bool = False
 
 
-def _run(args: list[str], timeout: int = 600) -> subprocess.CompletedProcess:
+def _run(args: list[str], timeout: int = 600, memory_limit: int | None = safeio.MEMORY_LIMIT,
+         file_limit: int | None = safeio.PACKAGE_LIMIT) -> subprocess.CompletedProcess:
     # stdin closed: BDInfo without a playlist would wait for a key press
     try:
-        return safeio.run(args, timeout=timeout)
+        return safeio.run(args, timeout=timeout, memory_limit=memory_limit, file_limit=file_limit)
     except (OSError, subprocess.SubprocessError) as exc:
         raise MediaError(f"{args[0]}: {exc}") from exc
 
@@ -103,11 +104,12 @@ def bdinfo_text(bdinfo: str, disc_root: Path, work_dir: Path) -> str:
         raise MediaError(f"nem találom a BDInfót: {bdinfo}")
     work_dir.mkdir(parents=True, exist_ok=True)
     out = Path(tempfile.mkdtemp(prefix="bdinfo-", dir=work_dir))
-    listing = _run([bdinfo, "-l", str(disc_root), str(out)], timeout=600)
+    # The .NET runtime dies with SIGXFSZ under an RLIMIT_FSIZE and reserves huge address space: no limits for BDInfo.
+    listing = _run([bdinfo, "-l", str(disc_root), str(out)], timeout=600, memory_limit=None, file_limit=None)
     playlist = _main_playlist(listing.stdout.decode("utf-8", errors="replace"))
     if not playlist:
-        raise MediaError("a BDInfo nem listázott playlistet: " + _tail(listing, 300))
-    run = _run([bdinfo, "-m", playlist, str(disc_root), str(out)], timeout=7200)
+        raise MediaError(f"a BDInfo nem listázott playlistet (kilépési kód {listing.returncode}): " + _tail(listing, 300))
+    run = _run([bdinfo, "-m", playlist, str(disc_root), str(out)], timeout=7200, memory_limit=None, file_limit=None)
     reports = sorted(out.glob("*.txt"), key=lambda p: p.stat().st_size, reverse=True)
     if not reports:
         raise MediaError("a BDInfo nem készített jelentést: " + _tail(run))
@@ -115,14 +117,19 @@ def bdinfo_text(bdinfo: str, disc_root: Path, work_dir: Path) -> str:
 
 
 def bdinfo_report(text: str, disc_root: Path | None = None) -> str:
-    """The full report from "DISC INFO:" to the end of the playlist report, without the forum paste's [code] markers
-    and the repeated quick summary."""
+    """The QUICK SUMMARY of the scanned main playlist: the form of the nCore sample ("a scan csak arról a konkrét
+    playlistről, amiben a film vagy sorozat van"). Without one, the full report from "DISC INFO:" to the end of the
+    playlist report, without the forum paste's [code] markers."""
 
-    start = text.find("DISC INFO:")
-    body = text[start:] if start >= 0 else text
-    end = body.find("<---- END FORUMS PASTE")
-    if end >= 0:
-        body = body[:end]
+    quick = text.find("QUICK SUMMARY:")
+    if quick >= 0 and text[quick + len("QUICK SUMMARY:"):].strip():
+        body = text[quick + len("QUICK SUMMARY:"):]
+    else:
+        start = text.find("DISC INFO:")
+        body = text[start:] if start >= 0 else text
+        end = body.find("<---- END FORUMS PASTE")
+        if end >= 0:
+            body = body[:end]
     lines = [line.rstrip() for line in body.splitlines() if line.strip() not in {"[code]", "[/code]"}]
     result = "\n".join(lines).strip() + "\n"
     if disc_root is not None:

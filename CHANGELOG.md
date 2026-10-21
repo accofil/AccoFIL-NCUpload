@@ -1,5 +1,18 @@
 # AccoFIL NCUpload – változások
 
+## 0.7.3
+
+- Többlemezes Blu-ray csomag (Disc1..DiscN mappák, pl. sorozat-évadok) saját feltöltésként: lemezenként fut a
+  BDInfo, a lemezcímke (BD25/BD50/...) egy lemez méretéből számol.
+- A BDInfo a nCore-minta szerinti QUICK SUMMARY-t adja a fő playlistről; teljes Blu-raynél nem kerül a techinfóba
+  minden lemezfájl (`.clpi`, `.jar`, `.bdmv`) külön MediaInfo-ja.
+- A BDInfo fájlméret- és memóriakorlát nélkül fut (a .NET futtatókörnyezet SIGXFSZ-szel leállt); hibánál a
+  kilépési kódot is kiírja.
+- A BD-J menüt (BDMV/BDJO + JAR minden lemezen) automatikusan felismeri; HDMV-menünél továbbra is `--menu` kell.
+- A lemez AACS-fájlja (`CPSUnit00001.cci`) nem tesz 3DS-játékká, a `disc.inf` és a lemezstruktúra megmarad,
+  teljes lemeznél nem futnak az encode-hangszabályok.
+- Ha a beállított NCUP-mappa még nem létezik, a szülő fájlrendszere alapján dönt (eddig a `~/NCUP`-ra váltott).
+
 ## 0.7.2
 
 - Minden feltöltés (az eredeti release is) saját, hardlinkes NCUP-könyvtárból seedel, a forrással azonos

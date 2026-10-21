@@ -65,12 +65,13 @@ def copy_zip(archive, member: str, target: Path, limit: int = PACKAGE_LIMIT) -> 
         raise
 
 
-def command(args: list[str], file_limit: int | None = PACKAGE_LIMIT) -> list[str]:
+def command(args: list[str], file_limit: int | None = PACKAGE_LIMIT, memory_limit: int | None = MEMORY_LIMIT) -> list[str]:
     # prlimit applies limits before exec and is safe when other threads exist.
     tool = shutil.which('prlimit') if sys.platform.startswith('linux') else None
     if not tool:
         return list(args)
-    prefix = [tool, f'--as={MEMORY_LIMIT}']
+    # .NET tools (BDInfo) reserve far more address space than they use: they pass memory_limit=None.
+    prefix = [tool] + ([f'--as={memory_limit}'] if memory_limit is not None else [])
     if file_limit is not None:
         prefix.append(f'--fsize={file_limit}')
     return prefix + ['--', *map(str, args)]
@@ -104,7 +105,7 @@ def pipe(args: list[str], timeout: float = 120):
 
 def run(args: list[str], timeout: float = 120, *, stdout_limit: int = 16 << 20,
         stderr_limit: int = 2 << 20, file_limit: int | None = PACKAGE_LIMIT,
-        prefix_only: bool = False) -> subprocess.CompletedProcess:
+        prefix_only: bool = False, memory_limit: int | None = MEMORY_LIMIT) -> subprocess.CompletedProcess:
     """Capture bounded output, kill the process group on timeout/overflow; stdin is always closed.
 
     Linux uses prlimit for address space and generated file size. Other systems
@@ -112,7 +113,7 @@ def run(args: list[str], timeout: float = 120, *, stdout_limit: int = 16 << 20,
     """
     output = [bytearray(), bytearray()]
     exceeded = threading.Event()
-    with subprocess.Popen(command(args, file_limit), stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+    with subprocess.Popen(command(args, file_limit, memory_limit), stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                           stdin=subprocess.DEVNULL, start_new_session=(os.name == 'posix')) as process:
         def drain(stream, index, limit):
             try:

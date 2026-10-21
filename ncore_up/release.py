@@ -50,6 +50,27 @@ class Release:
     def size(self) -> int:
         return sum(f.size for f in self.files)
 
+    @property
+    def bd_menu(self) -> bool | None:
+        """True when every Blu-ray disc of the release carries a BD-J menu (BDMV/BDJO/*.bdjo plus a JAR file);
+        None otherwise: an HDMV menu lives inside the streams and needs the uploader's answer (--menu)."""
+
+        if not self.has_bdmv:
+            return None
+        discs: dict[tuple, set[str]] = {}
+        for item in self.files:
+            parts = Path(item.relpath).parts
+            upper = [p.upper() for p in parts]
+            if "BDMV" not in upper or len(parts) < upper.index("BDMV") + 3:
+                continue
+            at = upper.index("BDMV")
+            found = discs.setdefault(tuple(parts[:at]), set())
+            if upper[at + 1] == "BDJO" and upper[-1].endswith(".BDJO"):
+                found.add("bdjo")
+            elif upper[at + 1] == "JAR" and item.size > 0:
+                found.add("jar")
+        return True if discs and all(found == {"bdjo", "jar"} for found in discs.values()) else None
+
 
 def read_nfo(path: Path) -> str:
     from .local import nfo

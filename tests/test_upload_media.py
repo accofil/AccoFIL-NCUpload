@@ -65,7 +65,7 @@ class CommandTests(unittest.TestCase):
     def test_run_closes_stdin(self):
         with mock.patch.object(media.safeio, "run", return_value=done()) as run:
             media._run(["bdinfo", "x"])
-        run.assert_called_once_with(["bdinfo", "x"], timeout=600)
+        run.assert_called_once_with(["bdinfo", "x"], timeout=600, memory_limit=media.safeio.MEMORY_LIMIT, file_limit=media.safeio.PACKAGE_LIMIT)
 
     def test_screenshot_args(self):
         m2ts = media.screenshot_args(Path("/d/BDMV/STREAM/00000.m2ts"), 812.0, Path("/o/screen1.png"), hdr=True)
@@ -85,7 +85,7 @@ class CommandTests(unittest.TestCase):
     def test_big_png_becomes_jpeg(self):
         sizes = {"screen1.png": 100, "screen2.png": 10 * 1024**2, "screen3.png": 100}
 
-        def fake_run(args, timeout=600):
+        def fake_run(args, timeout=600, **limits):
             target = Path(args[-1])
             target.write_bytes(b"x" * (sizes.get(target.name) or 50))
             return done()
@@ -110,7 +110,7 @@ class CommandTests(unittest.TestCase):
     def test_sample_is_recut_until_big_enough(self):
         calls = []
 
-        def fake_run(args, timeout=600):
+        def fake_run(args, timeout=600, **limits):
             seconds = int(args[args.index("-t") + 1])
             calls.append(seconds)
             Path(args[-1]).write_bytes(b"x" * (seconds * 1000))  # the middle has half the average bitrate
@@ -147,8 +147,12 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(media._main_playlist(LISTING), "00800.MPLS")
         self.assertIsNone(media._main_playlist("Please wait while we scan the disc...\n"))
 
-    def test_bdinfo_report_is_the_full_playlist_report(self):
-        text = media.bdinfo_report(REPORT, PurePosixPath("/data/Rel"))
+    def test_bdinfo_report_is_the_quick_summary(self):
+        text = media.bdinfo_report(REPORT + "Disc Size: 63,027,863,089 bytes\nPlaylist: 00800.MPLS\nVideo: HEVC\n", PurePosixPath("/data/Rel"))
+        self.assertEqual(text, "Disc Label: Rel\nDisc Size: 63,027,863,089 bytes\nPlaylist: 00800.MPLS\nVideo: HEVC\n")
+
+    def test_bdinfo_report_without_quick_summary_is_the_full_playlist_report(self):
+        text = media.bdinfo_report(REPORT.split("QUICK SUMMARY:")[0], PurePosixPath("/data/Rel"))
         self.assertTrue(text.startswith("DISC INFO:"))
         self.assertNotIn("[code]", text)
         self.assertNotIn("[/code]", text)
@@ -160,7 +164,7 @@ class ReportTests(unittest.TestCase):
     def test_bdinfo_invocation(self):
         calls = []
 
-        def fake_run(args, timeout=600):
+        def fake_run(args, timeout=600, **limits):
             calls.append(args)
             if "-l" in args:
                 return done(LISTING.encode())
@@ -173,7 +177,7 @@ class ReportTests(unittest.TestCase):
             text = media.bdinfo_text(str(bdinfo), Path("/data/Rel"), Path(tmp) / "work")
         self.assertEqual(calls[0][:3], [str(bdinfo), "-l", str(Path("/data/Rel"))])
         self.assertEqual(calls[1][:4], [str(bdinfo), "-m", "00800.MPLS", str(Path("/data/Rel"))])
-        self.assertTrue(text.startswith("DISC INFO:"))
+        self.assertTrue(text.startswith("Disc Label: Rel"))
 
     def test_bdinfo_without_playlist_stops(self):
         # without -m the BDInfo CLI asks for a playlist on the console and hangs (or crashes without a console)
