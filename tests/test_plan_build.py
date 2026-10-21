@@ -234,9 +234,9 @@ class VideoFilmTests(PlanCase):
         self.assertIn("mód: nem release (saját feltöltés)", plan.notes)
         self.assertIn("azonosítás biztonsága: 1.00", plan.notes)
         self.assertFalse(plan.auto_ok)  # source origin requires evidence even with high identity confidence
-        # seeded from an own hardlinked NCUP copy, never from the download folder itself
-        self.assertTrue(plan.content_path.is_relative_to(self.work / "NCUP"))
-        self.assertTrue(os.path.samefile(plan.content_path / f"{FILM}.mkv", plan.source_release.path / f"{FILM}.mkv"))
+        # nothing to extract, rebuild or omit: seeded from the download folder itself, no NCUP copy
+        self.assertEqual(plan.content_path, plan.release.path)
+        self.assertFalse((self.work / "NCUP").exists())
         # the resolver is asked again with nCore's own IMDb data
         self.assertEqual(client.asked, ["tt1234567"])
         self.assertEqual(calls[0]["hints"], {"title": "The Long Night", "year": "2020", "series": False})
@@ -495,9 +495,10 @@ class SampleStagingTests(PlanCase):
     def test_no_make_sample_is_an_error_and_touches_nothing(self):
         plan, _ = self.build(self.big(), "video", film_meta(), None, make_sample=False)
         self.assertIn("2 GB fölötti filmhez legalább 1 perces sample kell (UHD: ≥200 MB) — nincs (--no-make-sample miatt nem vágtam)", plan.errors)
-        # every upload seeds from its own hardlinked NCUP copy; no sample was cut into it
-        self.assertFalse((plan.content / "sample.mkv").exists())
-        self.assertEqual(sorted(p.name for p in plan.content.iterdir()), sorted(f.relpath for f in plan.release.files))
+        # nothing to change in the payload: no NCUP copy, the torrent is the source folder itself
+        self.assertIsNone(plan.content)
+        self.assertEqual(plan.content_path, plan.release.path)
+        self.assertFalse((plan.content_path / "sample.mkv").exists())
         self.assertEqual(self.calls["samples"], [])
         self.assertFalse(plan.auto_ok)
 
@@ -506,7 +507,7 @@ class SampleStagingTests(PlanCase):
         plan, _ = self.build(release, "video", film_meta(), None, make_sample=True)
         stage = plan.content
         self.assertEqual(stage.name, self.NAME)
-        self.assertEqual(stage.parent.parent, self.work / "NCUP")
+        self.assertEqual(stage.parent, self.work / "NCUP")  # NCUP/<release name>, no job folder around it
         self.assertEqual(plan.content_path, stage)
         for item in release.files:
             self.assertTrue(os.path.samefile(release.path / item.relpath, stage / item.relpath), item.relpath)
@@ -517,9 +518,11 @@ class SampleStagingTests(PlanCase):
         self.assertTrue(any(n.startswith("sample elkészítve (hardlinkes másolatba)") for n in plan.notes))
         self.assertEqual(plan.texts["techinfo_fajl"], f"MEDIAINFO {self.NAME}.mkv\n\n\nMEDIAINFO cover.jpg\n\n\nMEDIAINFO sample.mkv\n")
         self.assertEqual(plan.errors, [])
-        # a second run gets a fresh staging copy
+        # a second run (here a small file: no sample needed) seeds from the source and leaves no NCUP folder behind
+        plan.preparation.discard()
+        self.assertFalse(stage.exists())
         plan2, _ = self.build(rel.inspect(release.path), "video", film_meta(), None)
-        self.assertNotEqual(plan2.content, stage)
+        self.assertIsNone(plan2.content)
         self.assertEqual(plan2.data.name, plan.data.name)
 
     def test_uhd_sample_size(self):
@@ -532,7 +535,8 @@ class SampleStagingTests(PlanCase):
         self.infos["big.sample.mkv"] = video_info(duration=30.0)
         plan, _ = self.build(self.big({"Sample/big.sample.mkv": 3}), "video", film_meta(), None)
         self.assertEqual(self.calls["samples"], [])
-        self.assertTrue(os.path.samefile(plan.content / "Sample/big.sample.mkv", plan.source_release.path / "Sample/big.sample.mkv"))
+        self.assertIsNone(plan.content)  # the existing sample is used in place: no NCUP copy
+        self.assertTrue((plan.content_path / "Sample/big.sample.mkv").exists())
         self.assertIn("a sample rövidebb 1 percnél (30 mp)", plan.errors)
         self.assertIn("MEDIAINFO big.sample.mkv\n", plan.texts["techinfo_fajl"])
 

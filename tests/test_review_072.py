@@ -86,18 +86,22 @@ class WorkspaceTests(unittest.TestCase):
         job = space.job
         space.discard()
         self.assertFalse(job.exists())
+        self.assertFalse(content.exists())
+        self.assertFalse(space.manifest.exists())
         self.assertTrue(other.exists())
         self.assertTrue((self.source / "01.flac").exists())
 
     def test_prune_keeps_the_payload_and_mark_records_the_upload(self):
         space = preparation.Workspace(rel.inspect(self.source), self.root / "NCUP")
         content = space.stage(rel.inspect(self.source))
-        (space.job / "expanded-0").mkdir()
+        work = space.job
+        (work / "expanded-0").mkdir()
         space.prune()
-        self.assertFalse((space.job / "expanded-0").exists())
+        self.assertFalse(work.exists())
+        self.assertEqual(content, self.root / "NCUP" / "Album-GRP")
         self.assertTrue((content / "01.flac").exists())
         space.mark("uploaded", torrent_id=4242)
-        manifest = json.loads((space.job / "manifest.json").read_text(encoding="utf-8"))
+        manifest = json.loads(space.manifest.read_text(encoding="utf-8"))
         self.assertEqual((manifest["status"], manifest["torrent_id"]), ("uploaded", 4242))
 
     def test_root_on_another_filesystem_moves_next_to_the_source(self):

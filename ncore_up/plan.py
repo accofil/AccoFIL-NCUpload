@@ -156,8 +156,8 @@ def _build(release: rel.Release, options: Options, client, work_dir: Path, works
     plan.content = workspace.content
     plan.excluded_files = set(workspace.excluded)
     plan.errors.extend(preparation_errors)
-    if workspace.job:
-        plan.notes.append(f"NCUP kiadás: {plan.content_path}; jegyzék: {workspace.job / 'manifest.json'}")
+    if workspace.content:
+        plan.notes.append(f"NCUP kiadás: {plan.content_path}; jegyzék: {workspace.manifest}")
         if workspace.excluded:
             plan.notes.append("Kihagyott fájlok: " + ", ".join(sorted(workspace.excluded)))
     if code in {"dvd", "dvd_hun"}:
@@ -183,12 +183,8 @@ def _build(release: rel.Release, options: Options, client, work_dir: Path, works
         raise ValueError(f"ismeretlen kategóriacsoport: {group}")
     builder(plan, options, client, work_dir)
     _common(plan, options, work_dir)
-    if plan.content is None:
-        # Always seed from an own hardlinked NCUP copy, originals included (see Workspace._root_for_source).
-        try:
-            plan.stage_dir()
-        except (OSError, ValueError) as exc:
-            plan.errors.append(f"NCUP összeállítás: {exc}")
+    # NCUP only when the payload differs from the source (archive/ISO extraction, rebuilt structure, a made sample,
+    # omitted files); otherwise the torrent is made from and seeded in the source folder itself.
     if forms.needs_techinfo(plan.category.code, plan.data.original):
         from . import techinfo
         try:

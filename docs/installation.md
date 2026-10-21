@@ -10,8 +10,10 @@ olvasható források és írható NCUP célmappa. A telepítő Linuxra készült
 rendszercsomag-telepítés Debian/Ubuntu rendszert használ.
 Más Linuxon a külső programokat a saját csomagkezelőddel kell telepíteni.
 
-Az NCUP a szabályosan összeállított kiadások külön mappája. A forrásokat megőrzi:
-azonos fájlrendszeren hardlinket, másik lemezen másolatot készít. A másolat helyet foglal.
+Az NCUP a szabályosan összeállított kiadások külön mappája (`NCUP/<kiadás neve>`). Csak akkor kerül oda
+valami, ha a feltöltendő tartalom eltér a forrástól: archívum/ISO kibontása, a release szerkezetének újraépítése,
+sample vágása vagy kihagyandó fájl. Egyébként a torrent közvetlenül a forrásmappából készül és onnan seedel.
+A forrásokat megőrzi: azonos fájlrendszeren hardlinket, másik lemezen másolatot készít (a másolat helyet foglal).
 
 ## 2. Lépj be a szerverre
 

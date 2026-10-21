@@ -71,7 +71,7 @@ ncupload "/home/USER/storage/Eloado - Album"
 
 A program elkészíti a torrentet, majd megkérdezi: **„Feltöltsem nCore-ra?”**
 Az igen válasz után küldi el, kiírja az adatlap URL-jét és ellenőrzi a qBittorrent seedelést.
-A seedelt NCUP-fájlokat ezután a helyükön kell tartani.
+A seedelt fájlokat (a forrásmappát, vagy ha kellett, az `NCUP/<kiadás neve>` mappát) ezután a helyükön kell tartani.
 
 ## 6. Gyakori példák
 
@@ -195,7 +195,7 @@ A naplómappát és az NCUP-adatokat tartsd meg. [Részletes hibakeresés](troub
 
 | Fájl | Tartalom |
 |---|---|
-| NCUP `manifest.json` | Az előkészítés jegyzéke, a payloadon kívül. |
+| `NCUP/.manifests/<kiadás>.json` | Az NCUP-előkészítés jegyzéke (csak ha kellett NCUP), a payloadon kívül. |
 | `preview.json` | Név, kategória, útvonal, bizonyosság és hibák. |
 | `leiras.txt` | Adatlap szövege. |
 | `requirements.json` | Követelményenként PASS/FAIL/UNKNOWN. |

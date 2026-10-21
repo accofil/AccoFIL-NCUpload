@@ -342,9 +342,8 @@ class UploadTests(CliCase):
         self.input.assert_not_called()
         self.create.assert_called_once()
         mkbrr, content, target = self.create.call_args.args
-        # the torrent is made from the own hardlinked NCUP copy, which carries the release's own name
-        self.assertEqual((mkbrr, content.name, target), ("mkbrr", root.name, self.run_dir() / "local.torrent"))
-        self.assertTrue(content.is_relative_to(self.config.ncup_dir))
+        # nothing to extract or omit: the torrent is made from (and seeded in) the source folder itself
+        self.assertEqual((mkbrr, content, target), ("mkbrr", root, self.run_dir() / "local.torrent"))
         run_dir = self.run_dir()
         (form, files), = client.uploads
         saved = json.loads((run_dir / "form.json").read_text(encoding="utf-8"))

@@ -1,5 +1,15 @@
 # AccoFIL NCUpload – változások
 
+## 0.7.6
+
+- NCUP csak akkor készül, ha a feltöltendő tartalom eltér a forrástól (archívum/ISO kibontása, a release
+  szerkezetének újraépítése, sample vágása, kihagyandó fájl); egyébként a torrent közvetlenül a forrásmappából
+  készül és onnan seedel (a 0.7.2 óta minden feltöltés kapott hardlinkes NCUP-másolatot).
+- Az NCUP-mappa neve maga a kiadás neve (`NCUP/<kiadás neve>`), nincs `job-*` mappa körülötte; a kibontás
+  köztes fájljai a rejtett `NCUP/.work/` alatt készülnek és a feltöltés után törlődnek, a jegyzék
+  `NCUP/.manifests/<kiadás neve>.json`. Egy félbehagyott előkészítést a következő futás újraépít; a feltöltés
+  alatti vagy feltöltött (seedelt) mappához soha nem nyúl.
+
 ## 0.7.5
 
 - A nCore-torrent hash-e már a qBittorrentbe adás és a (nagy csomagnál hosszú) hash-ellenőrzés előtt mentődik;

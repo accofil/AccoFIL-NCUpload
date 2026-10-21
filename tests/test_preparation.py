@@ -58,7 +58,9 @@ class NCUPTests(unittest.TestCase):
         self.assertTrue(release.nfo.exists())
         self.assertTrue(os.path.samefile(release.path / "01.flac", prepared.path / "01.flac"))
         self.assertFalse(errors)
-        manifest = json.loads((work.job / "manifest.json").read_text())
+        self.assertEqual(prepared.path, self.ncup / release.name)  # NCUP/<release name>
+        self.assertFalse(any(p.name.startswith("job-") for p in self.ncup.iterdir()))
+        manifest = json.loads(work.manifest.read_text())
         self.assertEqual(manifest["status"], "ready")
         self.assertNotIn("manifest.json", {f.relpath for f in prepared.files})
         work.verify()
@@ -157,11 +159,17 @@ class NCUPTests(unittest.TestCase):
     def test_each_attempt_is_new_and_payload_change_detected(self):
         release = self.release({"01.flac": b"audio", "readme.txt": b"text"})
         first, result, _ = self.assemble(release)
-        second, _, _ = self.assemble(release)
-        self.assertNotEqual(first.content, second.content)
         (result.path / "extra.txt").write_bytes(b"changed")
         with self.assertRaisesRegex(ValueError, "NCUP kiadás"):
             first.verify()
+        # a never uploaded leftover is rebuilt under the same name; an uploading/uploaded one is never touched
+        second, again, _ = self.assemble(release)
+        self.assertEqual(second.content, first.content)
+        self.assertFalse((again.path / "extra.txt").exists())
+        second.mark("uploading")
+        with self.assertRaisesRegex(ValueError, "már van ilyen nevű"):
+            self.assemble(release)
+        self.assertTrue((again.path / "01.flac").exists())
 
     def test_source_change_detected(self):
         release = self.release({"01.flac": b"audio", "readme.txt": b"text"})

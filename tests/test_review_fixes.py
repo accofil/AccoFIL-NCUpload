@@ -392,10 +392,9 @@ class RuleAndWorkflowTests(unittest.TestCase):
             (root / "a.epub").write_bytes(b"new")
             (root / "gone.srt").unlink()
             second = stage()
-            self.assertNotEqual(first, second)
+            self.assertEqual(first, second)  # the never uploaded leftover is rebuilt from the current source
             self.assertEqual((second / "a.epub").read_bytes(), b"new")
             self.assertFalse((second / "gone.srt").exists())
-            self.assertEqual((first / "a.epub").read_bytes(), b"old")
 
     def test_ledger_reservations_and_quota(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import errno
 import hashlib
+import json
 import os
 import re
 import shutil
@@ -191,7 +192,9 @@ def _leaders(paths: list[Path]) -> list[Path]:
 class Workspace:
     def __init__(self, source: rel.Release, root: Path | None):
         self.source, self.root = source, root
-        self.job: Path | None = None
+        self.job: Path | None = None  # hidden working directory (NCUP/.work/...) for extraction; never seeded from
+        self.base: Path | None = None  # the NCUP root actually used
+        self.created_content = False
         self.content: Path | None = None
         self.operations: list[dict] = []
         self.excluded: dict[str, str] = {}
@@ -201,11 +204,7 @@ class Workspace:
         self.source_key = fingerprint(source)
 
     def _root_for_source(self, root: Path) -> Path:
-        """An NCUP root on the same filesystem as the source, so staging is hardlinks, never a full copy.
-
-        Every upload seeds from its own directory entries: the other trackers' torrents, the user's moves and the
-        nightly delete-with-files cleanup of one torrent can then never take the other's data away.
-        """
+        """An NCUP root on the same filesystem as the source, so staging is hardlinks, never a full copy."""
 
         source = self.source.path.resolve()
         try:
@@ -240,18 +239,49 @@ class Workspace:
             source = self.source.path.resolve()
             if root == source or (source.is_dir() and root.is_relative_to(source)) or source.is_relative_to(root):
                 raise ValueError("az NCUP célmappa és a forrás nem fedheti egymást")
-            self.job = Path(tempfile.mkdtemp(prefix="job-", dir=root))
+            self.base = root
+            self._claim()  # before this attempt writes its own manifest
+            (root / ".work").mkdir(mode=0o700, exist_ok=True)
+            self.job = Path(tempfile.mkdtemp(prefix=f"{self.source.name[:80]}-", dir=root / ".work"))
             self.receipt("preparing")
         return self.job
 
-    def receipt(self, status: str) -> None:
-        if self.job is None:
+    @property
+    def manifest(self) -> Path | None:
+        return None if self.base is None else self.base / ".manifests" / f"{self.source.name}.json"
+
+    def _claim(self) -> None:
+        """NCUP/<release name> may already hold an earlier attempt. One that never reached the upload (preparing /
+        assembled / ready / needs-review) is stale and gets rebuilt; one being or already uploaded (seeding), or a folder without our
+        manifest, is never touched."""
+
+        assert self.base is not None
+        target = self.base / self.source.name
+        self.stale = False
+        if not target.exists() and not target.is_symlink():
             return
-        from .workflow import write_json
-        write_json(self.job / "manifest.json", {"version": 1, "rules": payload.RULE_VERSION, "status": status,
-            "source": str(self.source.path), "source_name": self.source.name, "source_fingerprint": self.source_key,
-            "content": str(self.content) if self.content else None, "payload_fingerprint": self.expected,
-            "operations": self.operations, "excluded": self.excluded})
+        status = ""
+        try:
+            status = json.loads(self.manifest.read_text(encoding="utf-8")).get("status", "")  # type: ignore[union-attr]
+        except (OSError, ValueError):
+            pass
+        if target.is_symlink() or not target.is_dir() or not status or status in {"uploading", "uploaded", "complete"}:
+            raise ValueError(f"az NCUP-ban már van ilyen nevű kiadás ({status or 'nincs jegyzéke'}): {target}")
+        self.stale = True
+
+    def _target(self, name: str) -> Path:
+        """NCUP/<release name>: the seeded folder itself, no job directory around it."""
+
+        assert self.base is not None
+        target = self.base / name
+        if target.exists() or target.is_symlink():
+            if name != self.source.name or not getattr(self, "stale", False):
+                raise ValueError(f"az NCUP-ban már van ilyen nevű kiadás: {target}")
+            shutil.rmtree(target)
+        return target
+
+    def receipt(self, status: str) -> None:
+        self.mark(status)
 
     def expand(self, release: rel.Release, category: str | None, original: bool | None) -> rel.Release:
         archives = [f for f in release.files if archive(f.relpath)]
@@ -393,8 +423,10 @@ class Workspace:
         name = self.source.name
         if Path(name).name != name or name in {"", ".", ".."}:
             raise ValueError("érvénytelen NCUP kiadásnév")
-        stage = self.create() / name
+        self.create()
+        stage = self._target(name)
         stage.mkdir()
+        self.created_content = True
         omitted = excluded or set()
         mapping = {}
         for item in release.files:
@@ -444,13 +476,17 @@ class Workspace:
                 os.replace(temporary, target)
 
     def discard(self) -> None:
-        """Remove this attempt's own job directory (dry-run, rejected or failed plans). Only the mkdtemp folder this
-        Workspace created is touched; the source and other jobs are never affected."""
+        """Remove what this attempt created (dry-run, rejected or failed plans): its working directory, the NCUP folder
+        it staged and its manifest. The source and other releases are never affected."""
 
-        job, self.job, self.content = self.job, None, None
-        if job is None or not job.name.startswith("job-") or not job.is_dir() or job.is_symlink():
-            return
-        shutil.rmtree(job, ignore_errors=True)
+        job, content, created = self.job, self.content, self.created_content
+        self.job, self.content, self.created_content = None, None, False
+        if job is not None and job.parent.name == ".work" and job.is_dir() and not job.is_symlink():
+            shutil.rmtree(job, ignore_errors=True)
+        if created and content is not None and content.is_dir() and not content.is_symlink() and content.parent == self.base:
+            shutil.rmtree(content, ignore_errors=True)
+            if self.manifest is not None:
+                self.manifest.unlink(missing_ok=True)
 
     def prune(self) -> None:
         """Drop the intermediate trees (expanded/archive/bluray/disc) once the payload is staged: the payload holds its
@@ -458,17 +494,18 @@ class Workspace:
 
         if self.job is None or self.content is None:
             return
-        for child in self.job.iterdir():
-            if child != self.content and child.is_dir() and not child.is_symlink() and re.match(r"(expanded|archive|bluray|disc)-", child.name):
-                shutil.rmtree(child, ignore_errors=True)
+        if self.job.parent.name == ".work" and self.job.is_dir() and not self.job.is_symlink():
+            shutil.rmtree(self.job, ignore_errors=True)
+        self.job = None
 
     def mark(self, status: str, **extra) -> None:
         """Record the job's final state (e.g. uploaded + torrent id) in its manifest, so cleanup can tell seeded jobs."""
 
-        if self.job is None:
+        if self.manifest is None:
             return
         from .workflow import write_json
-        write_json(self.job / "manifest.json", {"version": 1, "rules": payload.RULE_VERSION, "status": status,
+        self.manifest.parent.mkdir(mode=0o700, exist_ok=True)
+        write_json(self.manifest, {"version": 1, "rules": payload.RULE_VERSION, "status": status,
             "source": str(self.source.path), "source_name": self.source.name, "source_fingerprint": self.source_key,
             "content": str(self.content) if self.content else None, "payload_fingerprint": self.expected,
             "operations": self.operations, "excluded": self.excluded, **extra})

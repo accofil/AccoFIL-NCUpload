@@ -338,7 +338,7 @@ def _prepared(args, config: Config, client, release, plan, run_dir: Path, job_ke
     workflow.write_json(run_dir / "requirements.json", [r.as_dict() for r in plan.requirements])
     workflow.write_json(run_dir / "preview.json", {"name": plan.data.name, "category": plan.category.code,
                         "source": str(release.path), "content_path": str(plan.content_path),
-                        "ncup_manifest": str(plan.preparation.job / "manifest.json") if plan.preparation and plan.preparation.job else None,
+                        "ncup_manifest": str(plan.preparation.manifest) if plan.preparation and plan.preparation.content else None,
                         "original": plan.data.original, "confidence": plan.confidence, "auto_ok": plan.auto_ok,
                         "errors": [privacy.redact(v) for v in plan.errors], "doubts": [privacy.redact(v) for v in plan.doubts],
                         "warnings": [privacy.redact(v) for v in plan.warnings]})
@@ -434,6 +434,8 @@ def _prepared(args, config: Config, client, release, plan, run_dir: Path, job_ke
     finally:
         ledger.close()
     args._keep_job = True  # from here on the payload may be (or become) an nCore torrent: never discard it
+    if plan.preparation:
+        plan.preparation.mark("uploading", run_dir=str(run_dir))  # a later attempt must not replace it
     workflow.write_json(run_dir / "state.json", state)
 
     try:
